@@ -30,5 +30,24 @@ function showRESTfulGet(data) {
 
 (function main() {
   var email = fillEmailInputElement();
-  httpget('/RESTful/' + email, showRESTfulGet, function(){alert('RESTful GET API test failed!');});
+
+  document.getElementById('testButton').onclick = function() {
+    var method = document.getElementById("testMethod").value;
+    if (method == "get") {
+      // test RESTful GET API
+      httpget('/RESTful/' + email, showRESTfulGet, function(){});
+    }
+    if (method == "post") {
+      // test RESTful POST API
+      alert("test POST not implemented");
+    }
+    if (method == "put") {
+      // test RESTful PUT API
+      alert("test PUT not implemented");
+    }
+    if (method == "delete") {
+      // test RESTful DELETE API
+      alert("test DELETE not implemented");
+    }
+  };
 })();
