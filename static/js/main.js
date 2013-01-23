@@ -73,6 +73,23 @@ function readInputAndConvertToJSON() {
   return JSON.stringify(data);
 }
 
+function httpput(jsonString, url, callback, failCallback) {
+  var xmlhttp = new XMLHttpRequest();
+
+   xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4) {
+      if (xmlhttp.status == 200) {
+        callback(eval('(' + xmlhttp.responseText + ')'));
+      } else {
+        setTimeout(failCallback, 0);
+      }
+    }
+  };
+
+  xmlhttp.open("PUT", url, true);
+  xmlhttp.send(jsonString);
+}
+
 (function main() {
   var email = fillEmailInputElement();
 
@@ -88,7 +105,7 @@ function readInputAndConvertToJSON() {
     }
     if (method == "put") {
       // test RESTful PUT API
-      alert("test PUT not implemented");
+      httpput(readInputAndConvertToJSON(), '/RESTful/' + email, function(){alert("put success");}, function(){alert("put failed");});
     }
     if (method == "delete") {
       // test RESTful DELETE API
