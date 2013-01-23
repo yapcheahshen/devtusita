@@ -10,14 +10,29 @@
 <body>
 <div style="width: 100%;">
  <div style="width: 10%; float: left;">
-   <a href="http://localhost:8080/RESTful/test@example.com">RESTful test #1</a><br />
-   <a href="http://localhost:8080/RESTful/test2@example.com">RESTful test #2</a><br />
+   <a href="/RESTful/test@example.com">RESTful test #1</a><br />
+   <a href="/RESTful/test2@example.com">RESTful test #2</a><br />
  </div>
  <div style="width: 80%; float: left;">
-   Hello! Your Email: {{ visitorEmail }}
+   Hello! <b style="color: red;"><i id="userEmail">{{ visitorEmail }}</i></b>
+   <br /><br />
+   RESTful test method:
+   <select name="method">
+     <option value="get" selected="selected">GET</option>
+     <option value="post">POST</option>
+     <option value="put">PUT</option>
+     <option value="delete">DELETE</option>
+   </select>
+   <br /><br />
+     Email: <input id="emailInput" size="40" type="email" name="email"><br>
+     Name: <input id="nameInput" size="40" type="text" name="name"><br>
+     Phone: <input id="phoneInput" size="30" type="text" name="phone"><br>
+     Address: <input id="addressInput" size="80" type="text" name="address"><br>
+     Notes: <br /><textarea id="notesTextarea" rows="10" cols="80" name="notes"></textarea><br>
    <br />
-   You are in main page.
+   <button type="button">Test</button>
  </div>
 </div>
+<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
