@@ -31,6 +31,7 @@ class MainPage(webapp2.RequestHandler):
   def get(self):
     template_values = {
       'visitorEmail': users.get_current_user().email(),
+      'signoutURL': users.create_logout_url("/"),
     }
 
     template = jinja_environment.get_template('index.html')
