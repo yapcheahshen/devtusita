@@ -3,22 +3,33 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Demo Page of Tusita</title>
+<title>Personal Page | Tusita Hermitage</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css" />
 
 </head>
 <body>
 <div style="width: 100%;">
- <div style="width: 10%; float: left;">
-   <a href="http://devtusita.appspot.com/">DEV TUSITA</a><br />
-   <a href="https://github.com/siongui/devtusita">GitHub Source Code</a><br />
-   <a href="https://appengine.google.com/">Google App Engine Dashboard</a><br />
-   <a href="/RESTful/test@example.com">RESTful test #1</a><br />
-   <a href="/RESTful/test2@example.com">RESTful test #2</a><br />
+ <div style="width: 15%; float: left;">&nbsp;</div>
+ <div style="width: 70%; float: left; text-align: right;">
+  {% if isLogin %}
+   Hello! <b style="color: red;"><i id="userEmail">{{ userEmail }}</i></b> (<a href="{{ signoutURL }}">Sign Out</a>)
+  {% else %}
+   <a href="{{ signinOrRegisterURL }}">Sign In or Register</a>
+  {% endif %}
  </div>
- <div style="width: 80%; float: left;">
-   Hello! <b style="color: red;"><i id="userEmail">{{ visitorEmail }}</i></b> (<a href="{{ signoutURL }}">sign out</a>)
-   <br /><br />
+</div>
+<div style="clear:both;"></div>
+<div style="width: 100%;">
+ <div style="width: 15%; float: left;">
+   The following links will be removed in the future.<br />
+   <a target="_blank" href="http://devtusita.appspot.com/">DEV TUSITA</a><br />
+   <a target="_blank" href="https://github.com/siongui/devtusita">GitHub Source Code</a><br />
+   <a target="_blank" href="https://appengine.google.com/">Google App Engine Dashboard</a><br />
+   <a target="_blank" href="/RESTful/test@example.com">RESTful test #1</a><br />
+   <a target="_blank" href="/RESTful/test2@example.com">RESTful test #2</a><br />
+ </div>
+ <div style="width: 70%; float: left;">
+<!--
    RESTful test method:
    <select id="testMethod" name="method">
      <option value="get" selected="selected">GET</option>
@@ -34,8 +45,12 @@
      Notes: <br /><textarea id="notesTextarea" rows="10" cols="80" name="notes"></textarea><br>
    <br />
    <button id="testButton" type="button">Test</button>
+-->
  </div>
+ <div style="width: 15%; float: left;">&nbsp;</div>
 </div>
+<!--
 <script type="text/javascript" src="/js/main.js"></script>
+-->
 </body>
 </html>

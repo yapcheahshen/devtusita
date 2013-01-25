@@ -29,10 +29,16 @@ class Person(ndb.Model):
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-    template_values = {
-      'visitorEmail': users.get_current_user().email(),
-      'signoutURL': users.create_logout_url("/"),
-    }
+    template_values = {}
+
+    user = users.get_current_user()
+    if user:
+      template_values['isLogin'] = True
+      template_values['userEmail'] = user.email()
+      template_values['signoutURL'] = users.create_logout_url("/")
+    else:
+      template_values['isLogin'] = False
+      template_values['signinOrRegisterURL'] = users.create_login_url("/")
 
     template = jinja_environment.get_template('index.html')
     self.response.out.write(template.render(template_values))
