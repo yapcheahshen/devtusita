@@ -45,29 +45,37 @@ class MainPage(webapp2.RequestHandler):
 
 
 class RESTfulHandler(webapp2.RequestHandler):
+  def isLegalUser(self, email):
+    user = users.get_current_user()
+    if not user:
+      return False
+    if email != user.email():
+      return False
+    return True
+
   def get(self, email):
-    if email != users.get_current_user().email():
-      self.error(403)
+    if not self.isLegalUser(email):
+      self.error(404)
       return
     # use email as ID for database access
-    person = Person.get_by_id(users.get_current_user().email())
+    person = Person.get_by_id(email)
     if (person):
       self.response.out.write(json.dumps(person.toDict()))
     else:
       self.error(404)
 
   def post(self, email):
-    if email != users.get_current_user().email():
-      self.error(403)
+    if not self.isLegalUser(email):
+      self.error(404)
       return
-    person = Person.get_by_id(users.get_current_user().email())
+    person = Person.get_by_id(email)
     if (person):
       # this entity already exists!
       self.error(403)
       return
     data = json.loads(self.request.body)
-    person = Person(id = users.get_current_user().email(),
-                    email = users.get_current_user().email(),
+    person = Person(id = email,
+                    email = email,
                     name = data['name'],
                     phone = data['phone'],
                     address = data['address'],
@@ -76,10 +84,10 @@ class RESTfulHandler(webapp2.RequestHandler):
     self.response.out.write(json.dumps(person.toDict()))
 
   def put(self, email):
-    if email != users.get_current_user().email():
-      self.error(403)
+    if not self.isLegalUser(email):
+      self.error(404)
       return
-    person = Person.get_by_id(users.get_current_user().email())
+    person = Person.get_by_id(email)
     data = json.loads(self.request.body)
     person.name = data['name']
     person.phone = data['phone']
@@ -89,10 +97,10 @@ class RESTfulHandler(webapp2.RequestHandler):
     self.response.out.write(json.dumps(person.toDict()))
 
   def delete(self, email):
-    if email != users.get_current_user().email():
-      self.error(403)
+    if not self.isLegalUser(email):
+      self.error(404)
       return
-    person = Person.get_by_id(users.get_current_user().email())
+    person = Person.get_by_id(email)
     if (person):
       person.key.delete()
     else:
