@@ -9,7 +9,9 @@ from google.appengine.api import users
 from google.appengine.ext import ndb
 
 jinja_environment = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
+    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
+    variable_start_string='{$',
+    variable_end_string='$}')
 
 class Person(ndb.Model):
   email = ndb.StringProperty()
