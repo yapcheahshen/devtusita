@@ -109,6 +109,12 @@ class RESTfulHandler(webapp2.RequestHandler):
       self.error(403)
 
 
+class RedirectPage(webapp2.RequestHandler):
+  def get(self):
+    self.redirect('/')
+
+
 app = webapp2.WSGIApplication([('/', MainPage),
+                               ('/firstLogin', RedirectPage),
                                ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})', RESTfulHandler)],
                               debug=True)
