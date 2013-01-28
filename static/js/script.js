@@ -10,6 +10,10 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
 function mainCtrl($scope) {
   $scope.userEmail = angular.element(document.getElementById('userEmail')).html();
   $scope.urlREST = '/RESTful/' + $scope.userEmail;
+  $scope.isLogin = (function() {
+    var patt=/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/;
+    return patt.test($scope.userEmail);
+  })();
 }
 
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
