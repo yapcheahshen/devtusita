@@ -36,7 +36,8 @@ function mainCtrl($scope, $http, $templateCache, $location) {
   }
 }
 
-function firstLoginCtrl() {
+function firstLoginCtrl($scope) {
+  $scope.email = $scope.userEmail;
 }
 
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
