@@ -1,19 +1,42 @@
 angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
+  $routeProvider.when('/firstLogin', {
+    templateUrl: '/partials/firstLogin.html',
+    controller: firstLoginCtrl
+  });
+
   $routeProvider.when('/testRESTful', {
     templateUrl: '/partials/testRESTful.html',
     controller: testRESTfulAPICtrl
   });
 });
 
-function mainCtrl($scope) {
+function mainCtrl($scope, $http, $templateCache, $location) {
   $scope.userEmail = angular.element(document.getElementById('userEmail')).html();
   $scope.urlREST = '/RESTful/' + $scope.userEmail;
   $scope.isLogin = (function() {
     var patt=/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/;
     return patt.test($scope.userEmail);
   })();
+
+  if ($scope.isLogin) {
+    $http({method: 'GET', url: $scope.urlREST, cache: $templateCache}).
+      success(function(data, status) {
+        $scope.status = status;
+        $scope.data = data;
+        $scope.isFirstLogin = false;
+      }).
+      error(function(data, status) {
+        $scope.status = status;
+        $scope.data = data || "Request failed";
+        $scope.isFirstLogin = true;
+        $location.path('/firstLogin');
+    });
+  }
+}
+
+function firstLoginCtrl() {
 }
 
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
