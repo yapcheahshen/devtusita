@@ -1,3 +1,13 @@
+angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
+
+  $routeProvider.when('/testRESTful', {
+    templateUrl: '/partials/testRESTful.html',
+    controller: testRESTfulAPICtrl
+  });
+});
+
+
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
   var userEmail = angular.element(document.getElementById('userEmail')).html();
   $scope.method = 'GET';

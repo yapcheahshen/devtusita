@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="tusitaPersonal">
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -39,26 +39,11 @@
    <a target="_blank" href="/RESTful/2{$ userEmail $}">RESTful test #2</a><br />
  </div>
  <div style="width: 70%; float: left;">
-   <div ng-controller="testRESTfulAPICtrl">
-     <select ng-model="method">
-       <option>GET</option>
-       <option>POST</option>
-       <option>PUT</option>
-       <option>DELETE</option>
-     </select>
-     <br />
-     Email:<input size="40" type="email" readonly ng-model="email"/><br />
-     Name:<input size="40" type="text" ng-model="name"/><br />
-     Phone:<input size="40" type="text" ng-model="phone"/><br />
-     Address:<input size="80" type="text" ng-model="address"/><br />
-     Notes:<br /><textarea rows="10" cols="80" ng-model="notes"></textarea>
-     <br />
-     <pre>http status code: {{status}}</pre>
-     <pre>http response data: {{data}}</pre>
-     <button ng-click="test()">Test</button>
-   </div>
+ &nbsp;<div ng-view></div>
  </div>
- <div style="width: 15%; float: left;">&nbsp;</div>
+ <div style="width: 15%; float: left;">
+  <a href="/testRESTful">test RESTful</a>
+ </div>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
 <script src="/js/script.js"></script>

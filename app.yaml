@@ -15,6 +15,9 @@ handlers:
 - url: /css
   static_dir: static/css
 
+- url: /partials
+  static_dir: static/partials
+
 - url: /.*
   script: main.app
 
