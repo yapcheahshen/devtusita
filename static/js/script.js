@@ -7,11 +7,14 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
   });
 });
 
+function mainCtrl($scope) {
+  $scope.userEmail = angular.element(document.getElementById('userEmail')).html();
+  $scope.urlREST = '/RESTful/' + $scope.userEmail;
+}
 
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
-  var userEmail = angular.element(document.getElementById('userEmail')).html();
   $scope.method = 'GET';
-  $scope.email = userEmail;
+  $scope.email = $scope.userEmail;
 
   function setInputFields(data) {
     $scope.name = data['name'];
@@ -29,11 +32,9 @@ function testRESTfulAPICtrl($scope, $http, $templateCache) {
            });
   };
 
-  var urlREST = '/RESTful/' + userEmail;
-
   $scope.test = function() {
     if ($scope.method == 'GET') {
-      $http({method: $scope.method, url: urlREST, cache: $templateCache}).
+      $http({method: $scope.method, url: $scope.urlREST, cache: $templateCache}).
         success(function(data, status) {
           $scope.status = status;
           $scope.data = data;
@@ -44,7 +45,7 @@ function testRESTfulAPICtrl($scope, $http, $templateCache) {
           $scope.status = status;
       });
     } else if ($scope.method == 'POST') {
-      $http({method: $scope.method, url: urlREST, data: getInputFieldsJSON(), cache: $templateCache}).
+      $http({method: $scope.method, url: $scope.urlREST, data: getInputFieldsJSON(), cache: $templateCache}).
         success(function(data, status) {
           $scope.status = status;
           $scope.data = data;
@@ -54,7 +55,7 @@ function testRESTfulAPICtrl($scope, $http, $templateCache) {
           $scope.status = status;
       });
     } else if ($scope.method == 'PUT') {
-      $http({method: $scope.method, url: urlREST, data: getInputFieldsJSON(), cache: $templateCache}).
+      $http({method: $scope.method, url: $scope.urlREST, data: getInputFieldsJSON(), cache: $templateCache}).
         success(function(data, status) {
           $scope.status = status;
           $scope.data = data;
@@ -64,7 +65,7 @@ function testRESTfulAPICtrl($scope, $http, $templateCache) {
           $scope.status = status;
       });
     } else if ($scope.method == 'DELETE') {
-      $http({method: $scope.method, url: urlREST, cache: $templateCache}).
+      $http({method: $scope.method, url: $scope.urlREST, cache: $templateCache}).
         success(function(data, status) {
           $scope.status = status;
           $scope.data = data;
