@@ -1,19 +1,30 @@
 <div style="padding: 5px;">
   Hello, <b><i style="color: red;">{{ userEmail }}</i></b>. You login in for the first time. <br />
   Please fill in the following basic data of you.<br />
+  (Please use latest version of Chrome to see Birthday datepicker)<br />
   <br />
-  Email:<input size="40" type="email" readonly ng-model="email"/><br />
-  Name:<input size="40" type="text" ng-model="name"/><br />
-  Birthday:<br />
-  Citizenship:<input size="40" type="text" ng-model="citizenship"/><br />
-  ID #:<input size="40" type="text" ng-model="idnum"/><br />
+<form name="basicData" class="css-form">
+  Email:<input size="40" type="email" readonly required ng-model="email"/><br />
+  Name:<input size="40" type="text" required ng-model="user.name"/><br />
+  Birthday:<input type="date" ng-model="user.birthday"/><br />
+  Citizenship:<input size="40" type="text" ng-model="user.citizenship"/><br />
+  ID #:<input size="40" type="text" ng-model="user.idnum"/><br />
 
-  Gender: <input type="radio" ng-model="gender" value="male">Male
-  <input type="radio" ng-model="gender" value="female">Female<br />
+  Gender: <input type="radio" ng-model="user.gender" value="male">Male
+  <input type="radio" ng-model="user.gender" value="female">Female<br />
 
-  Landline (Fixed Phone Line):<input size="40" type="text" ng-model="landline"/><br />
-  CellPhone:<input size="40" type="text" ng-model="cellphone"/><br />
-  Address:<input size="80" type="text" ng-model="address"/><br />
+  Landline (Fixed Phone Line):<input size="40" type="text" ng-model="user.landline"/><br />
+  CellPhone:<input size="40" type="text" ng-model="user.cellphone"/><br />
+  Address:<input size="80" type="text" ng-model="user.address"/><br />
+  <br />
   Emergency contact:<br />
-  Notes:<br /><textarea rows="10" cols="80" ng-model="notes"></textarea>
+  Name:<input size="40" type="text" ng-model="user.emg.name"/><br />
+  Relationship:<input size="40" type="text" ng-model="user.emg.relation"/><br />
+  Landline (Fixed Phone Line):<input size="40" type="text" ng-model="user.emg.landline"/><br />
+  CellPhone:<input size="40" type="text" ng-model="user.emg.cellphone"/><br />
+  Address:<input size="80" type="text" ng-model="user.emg.address"/><br />
+  <br />
+  Notes:<br /><textarea rows="10" cols="80" ng-model="user.notes"></textarea>
+</form>
 </div>
+{{user|json}}
