@@ -16,18 +16,30 @@
 
   Gender: <input type="radio" ng-model="user.gender" value="male">Male
   <input type="radio" ng-model="user.gender" value="female">Female<br />
-
+  <br />
   Landline (Fixed Phone Line):<input type="text" ng-model="user.landline"/><br />
   CellPhone:<input type="text" ng-model="user.cellphone"/><br />
   Address:<input size="60" type="text" ng-model="user.address"/><br />
   <br />
-  Emergency contact:<br />
-  &nbsp;&nbsp;Name:<input type="text" ng-model="user.emg.name"/><br />
-  &nbsp;&nbsp;Relationship:<input type="text" ng-model="user.emg.relation"/><br />
-  &nbsp;&nbsp;Landline (Fixed Phone Line):<input type="text" ng-model="user.emg.landline"/><br />
-  &nbsp;&nbsp;CellPhone:<input type="text" ng-model="user.emg.cellphone"/><br />
-  &nbsp;&nbsp;Address:<input size="60" type="text" ng-model="user.emg.address"/><br />
+  Dhamma Name:<input type="text" name="dhammaName" ng-model="user.dhammaname"/><br />
+  Current Status: <input type="radio" ng-model="user.status" value="ordained">Ordained
+  <input type="radio" ng-model="user.status" value="laity">Laity<br />
+  <div ng-show="user.status == 'ordained'" style="padding-left: 1em; padding-top: .5em;">
+    Preceptor Name:<input type="text" ng-model="user.preceptorname"/><br />
+    Date of Ordination:<input type="date" ng-model="user.dateordination"/><br />
+    Place of Ordination:<input type="text" ng-model="user.placeordination"/><br />
+  </div>
   <br />
+  <div style="border: 1px dotted blue; padding: .5em;">
+    Emergency contact:
+    <div style="padding-left: 1em; padding-top: .5em;">
+      Name:<input type="text" ng-model="user.emg.name"/><br />
+      Relationship:<input type="text" ng-model="user.emg.relation"/><br />
+      Landline (Fixed Phone Line):<input type="text" ng-model="user.emg.landline"/><br />
+      CellPhone:<input type="text" ng-model="user.emg.cellphone"/><br />
+      Address:<input size="60" type="text" ng-model="user.emg.address"/><br />
+    </div>
+  </div><br />
   Notes:<br /><textarea rows="3" cols="60" ng-model="user.notes"></textarea>
   <br /><br />
   Rules of Tusita Hermitage here: ...
