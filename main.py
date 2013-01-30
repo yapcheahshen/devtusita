@@ -14,10 +14,27 @@ jinja_environment = jinja2.Environment(
     variable_end_string='$}')
 
 class Person(ndb.Model):
+  json = ndb.TextProperty()
+  """
   email = ndb.StringProperty()
   name = ndb.StringProperty()
-  phone = ndb.StringProperty()
+  birthday = ndb.DateProperty()
+  citizenship = ndb.StringProperty()
+  idNumber = ndb.StringProperty()
+  gender = ndb.StringProperty()
+  landline = ndb.StringProperty()
+  cellphone = ndb.StringProperty()
   address = ndb.StringProperty()
+  dhammaName = ndb.StringProperty()
+  status = ndb.StringProperty()
+  preceptorName = ndb.StringProperty()
+  dateOrdination = ndb.StringProperty()
+  placeOrdination = ndb.StringProperty()
+  emgName = ndb.StringProperty()
+  emgRelation = ndb.StringProperty()
+  emgLandline = ndb.StringProperty()
+  emgCellphone = ndb.StringProperty()
+  emgAddress = ndb.StringProperty()
   notes = ndb.TextProperty()
 
   def toDict(self):
@@ -27,7 +44,8 @@ class Person(ndb.Model):
              'phone': self.phone,
              'address': self.address,
              'notes': self.notes }
- 
+  """
+
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
@@ -62,7 +80,8 @@ class RESTfulHandler(webapp2.RequestHandler):
     # use email as ID for database access
     person = Person.get_by_id(email)
     if (person):
-      self.response.out.write(json.dumps(person.toDict()))
+      #self.response.out.write(json.dumps(person.toDict()))
+      self.response.out.write(person.json)
     else:
       self.error(404)
 
@@ -75,6 +94,7 @@ class RESTfulHandler(webapp2.RequestHandler):
       # this entity already exists!
       self.error(403)
       return
+    """
     data = json.loads(self.request.body)
     person = Person(id = email,
                     email = email,
@@ -82,14 +102,19 @@ class RESTfulHandler(webapp2.RequestHandler):
                     phone = data['phone'],
                     address = data['address'],
                     notes = data['notes'])
+    """
+    person = Person(id = email,
+                    json = self.request.body)
     person.put()
-    self.response.out.write(json.dumps(person.toDict()))
+    #self.response.out.write(json.dumps(person.toDict()))
+    self.response.out.write(person.json)
 
   def put(self, email):
     if not self.isLegalUser(email):
       self.error(404)
       return
     person = Person.get_by_id(email)
+    """
     data = json.loads(self.request.body)
     person.name = data['name']
     person.phone = data['phone']
@@ -97,6 +122,13 @@ class RESTfulHandler(webapp2.RequestHandler):
     person.notes = data['notes']
     person.put()
     self.response.out.write(json.dumps(person.toDict()))
+    """
+    if (person):
+      person.json = self.request.body
+      person.put()
+      self.response.out.write(person.json)
+    else:
+      self.error(404)
 
   def delete(self, email):
     if not self.isLegalUser(email):
