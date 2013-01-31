@@ -28,7 +28,7 @@
 
 <div style="width: 100%;">
  <div style="width: 15%; float: left;">
-   The following links will be removed in the future.<br />
+  <div ng-show="host == 'localhost'">
    <a target="_blank" href="http://tusitainternational.net/zh/">兜率天修行林</a><br />
    <a target="_blank" href="http://devtusita.appspot.com/">website on appspot</a><br />
    <a target="_blank" href="https://github.com/siongui/devtusita">website source code</a><br />
@@ -37,11 +37,11 @@
    <a target="_blank" href="http://angularjs.org/">AngularJS</a><br />
    <a target="_blank" href="/RESTful/{$ userEmail $}">RESTful test #1</a><br />
    <a target="_blank" href="/RESTful/2{$ userEmail $}">RESTful test #2</a><br />
+   <a href="/testRESTful">test RESTful</a>
+  </div>
  </div>
  <div style="width: 70%; float: left;"><div ng-view></div>&nbsp;</div>
- <div style="width: 15%; float: left;">
-  <a href="/testRESTful">test RESTful</a>
- </div>
+ <div style="width: 15%; float: left;"></div>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
 <script src="/js/script.js"></script>

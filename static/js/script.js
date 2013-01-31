@@ -15,6 +15,7 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
 function mainCtrl($scope, $http, $templateCache, $location) {
   $scope.userEmail = angular.element(document.getElementById('userEmail')).html();
   $scope.urlREST = '/RESTful/' + $scope.userEmail;
+  $scope.host = $location.host();
   // check whether user logged in
   $scope.isLogin = (function() {
     // test whether email is valid
