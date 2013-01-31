@@ -6,6 +6,11 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
     controller: firstLoginCtrl
   });
 
+  $routeProvider.when('/updateUserData', {
+    templateUrl: '/partials/firstLogin.html',
+    controller: firstLoginCtrl
+  });
+
   $routeProvider.when('/testRESTful', {
     templateUrl: '/partials/testRESTful.html',
     controller: testRESTfulAPICtrl
@@ -59,7 +64,9 @@ function firstLoginCtrl($scope, $http, $templateCache, $location) {
     $scope.userData = angular.copy(user);
 
     // save user data to server through RESTful API
-    $http({method: 'POST',
+    var httpMethod = 'POST';
+    if ($location.path() == '/updateUserData') httpMethod = 'PUT';
+    $http({method: httpMethod,
            url: $scope.urlREST,
            data: JSON.stringify($scope.userData),
            cache: $templateCache}).
