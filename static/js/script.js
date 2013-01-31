@@ -16,7 +16,13 @@ function mainCtrl($scope, $http, $templateCache, $location) {
   $scope.userEmail = angular.element(document.getElementById('userEmail')).html();
   $scope.urlREST = '/RESTful/' + $scope.userEmail;
   $scope.userData = {}
+
   $scope.host = $location.host();
+
+  $scope.$on('updateUserDataEvent', function(event, data) {
+    $scope.userData = angular.copy(data);
+  });
+
   // check whether user logged in
   $scope.isLogin = (function() {
     // test whether email is valid
@@ -61,6 +67,7 @@ function firstLoginCtrl($scope, $http, $templateCache, $location) {
         // save successfully
         $scope.savingUserData = undefined;
         $scope.failToSaveUserData = undefined;
+        $scope.$emit('updateUserDataEvent', $scope.userData)
         //$scope.status = status;
         //$scope.userData = angular.copy(data);
         $location.path('/');
