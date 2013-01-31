@@ -12,7 +12,12 @@
  <div style="width: 15%; float: left;">&nbsp;</div>
  <div style="width: 70%; float: left; text-align: right;">
   {% if isLogin %}
-   Hello! <b style="color: red;"><i id="userEmail">{$ userEmail $}</i></b> (<a href="{$ signoutURL $}" target="_self">Sign Out</a>)
+   <div ng-show='userData.name'>
+    Hello! <b style="color: red;"><i>{{ userData.name }}</i></b> (<a href="{$ signoutURL $}" target="_self">Sign Out</a>)
+   </div>
+   <div ng-hide='userData.name'>
+    Hello! <b style="color: red;"><i id="userEmail">{$ userEmail $}</i></b> (<a href="{$ signoutURL $}" target="_self">Sign Out</a>)
+   </div>
   {% else %}
    <a href="{$ signinOrRegisterURL $}" target="_self">Sign In or Register</a>
   {% endif %}
