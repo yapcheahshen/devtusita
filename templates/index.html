@@ -12,10 +12,10 @@
  <div style="width: 15%; float: left;">&nbsp;</div>
  <div style="width: 70%; float: left; text-align: right;">
   {% if isLogin %}
-   <div ng-show='userData.name'>
+   <div ng-show='isUserDataReady'>
     Hello! <b style="color: red;"><i>{{ userData.name }}</i></b> (<a href="{$ signoutURL $}" target="_self">Sign Out</a>)
    </div>
-   <div ng-hide='userData.name'>
+   <div ng-hide='isUserDataReady'>
     Hello! <b style="color: red;"><i id="userEmail">{$ userEmail $}</i></b> (<a href="{$ signoutURL $}" target="_self">Sign Out</a>)
    </div>
   {% else %}
@@ -33,7 +33,7 @@
 
 <div style="width: 100%;">
  <div style="width: 15%; float: left;">
-  <div ng-show="userData.name">
+  <div ng-show="isUserDataReady">
    <hr /><a href="/">Home</a><br />
    <a href="/updateUserData">Update My Data</a>
   </div>

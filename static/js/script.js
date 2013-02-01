@@ -21,6 +21,7 @@ function mainCtrl($scope, $http, $templateCache, $location) {
   $scope.userEmail = angular.element(document.getElementById('userEmail')).html();
   $scope.urlREST = '/RESTful/' + $scope.userEmail;
   $scope.userData = {}
+  $scope.isUserDataReady = false;
 
   $scope.isDevServer = (function() {
     return $location.host() == 'localhost';
@@ -28,6 +29,7 @@ function mainCtrl($scope, $http, $templateCache, $location) {
 
   $scope.$on('updateUserDataEvent', function(event, data) {
     $scope.userData = angular.copy(data);
+    $scope.isUserDataReady = true;
   });
 
   // check whether user logged in
@@ -42,16 +44,11 @@ function mainCtrl($scope, $http, $templateCache, $location) {
     $http({method: 'GET', url: $scope.urlREST, cache: $templateCache}).
       success(function(data, status) {
         // retrieve user data successfully
-        //$scope.status = status;
         $scope.userData = angular.copy(data);
-        $scope.isFirstLogin = false;
+        $scope.isUserDataReady = true;
       }).
       error(function(data, status) {
-        // fail to retrieve user data => user logged in for the first time
-        //$scope.status = status;
-        //$scope.data = data || "Request failed";
-        $scope.isFirstLogin = true;
-        // redirect user to fill in basic user data.
+        // fail to retrieve user data => redirect user to fill in basic user data.
         $location.path('/firstLogin');
     });
   }
@@ -77,16 +74,12 @@ function firstLoginCtrl($scope, $http, $templateCache, $location) {
         $scope.savingUserData = undefined;
         $scope.failToSaveUserData = undefined;
         $scope.$emit('updateUserDataEvent', $scope.userData)
-        //$scope.status = status;
-        //$scope.userData = angular.copy(data);
         $location.path('/');
       }).
       error(function(data, status) {
         // failed to save user data
         $scope.savingUserData = undefined;
         $scope.failToSaveUserData = true;
-        //$scope.data = data || "Request failed";
-        //$scope.status = status;
     });
   };
  

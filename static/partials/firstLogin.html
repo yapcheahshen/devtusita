@@ -1,9 +1,8 @@
 <div style="padding: .75em;">
   <div ng-show="savingUserData" style="color: red;">Saving User Data...<br /></div>
   <div ng-show="failToSaveUserData" style="color: red;">Sorry. Fail to save your data. Please check your internet connection and try again.<br /></div>
-  <div ng-hide="userData.name">
-    Hello, <b><i style="color: red;">{{ userEmail }}</i></b>. You login in for the first time. <br />
-    Please fill in the following basic data of you.<br /><br />
+  <div ng-hide="isUserDataReady">
+    Hello, <b><i style="color: red;">{{ userEmail }}</i></b>. Please fill in the following basic data.<br /><br />
   </div>
 <form name="form" class="css-form">
   Email:<input type="email" readonly required ng-model="email"/><br />
