@@ -148,5 +148,6 @@ class RedirectPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/userdata', RedirectPage),
+                               ('/apply', RedirectPage),
                                ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})', RESTfulHandler)],
                               debug=True)

@@ -6,6 +6,11 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
     controller: userdataCtrl
   });
 
+  $routeProvider.when('/apply', {
+    templateUrl: '/partials/apply.html',
+    controller: applyCtrl
+  });
+
   $routeProvider.when('/testRESTful', {
     templateUrl: '/partials/testRESTful.html',
     controller: testRESTfulAPICtrl
@@ -85,6 +90,26 @@ function userdataCtrl($scope, $http, $templateCache, $location) {
  
   $scope.isUnchanged = function(user) {
     return angular.equals(user, $scope.userData);
+  };
+ 
+  $scope.reset();
+}
+
+function applyCtrl($scope) {
+  $scope.applicationData = {};
+
+  // callback if user press 'SUBMIT' button
+  $scope.submit = function(user) {
+    $scope.applicationData = angular.copy(user);
+  };
+
+  // callback if user press 'RESET' button
+  $scope.reset = function() {
+    $scope.user = angular.copy($scope.applicationData);
+  };
+ 
+  $scope.isUnchanged = function(user) {
+    return angular.equals(user, $scope.applicationData);
   };
  
   $scope.reset();

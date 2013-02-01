@@ -1,0 +1,87 @@
+<div style="padding: .75em;">
+<form name="form" class="css-form">
+  Meditation Method:<input type="text" ng-model="user.medMethod"/><br />
+  Meditation Instructor:<input type="text" ng-model="user.medInstructor"/><br />
+  <br />
+  Join our meditaion before? : <input type="radio" ng-model="user.joined" value="yes">Yes
+  <input type="radio" ng-model="user.joined" value="no">No<br />
+  <div ng-show="user.joined == 'yes'" style="padding-left: 1em; padding-top: .5em;">
+    Place:<input type="text" ng-model="user.joinedPlace"/><br />
+    Date:<input type="date" ng-model="user.joinedDate"/><br />
+    Instructor:<input type="text" ng-model="user.joinedInstructor"/><br />
+  </div>
+  <br />
+  Serious illness? : <input type="radio" ng-model="user.srIll" value="yes">Yes
+  <input type="radio" ng-model="user.srIll" value="no">No<br />
+  <div ng-show="user.srIll == 'yes'" style="padding-left: 1em; padding-top: .5em;">
+    Illness name:<input type="text" ng-model="user.srIllName"/><br />
+    Prescription:<input type="text" ng-model="user.srIllPrescription"/><br />
+    Treatment status:<input type="text" ng-model="user.srIllTreatment"/><br />
+  </div>
+  <br />
+  Mental illness? : <input type="radio" ng-model="user.mtIll" value="yes">Yes
+  <input type="radio" ng-model="user.mtIll" value="no">No<br />
+  <div ng-show="user.mtIll == 'yes'" style="padding-left: 1em; padding-top: .5em;">
+    Illness name:<input type="text" ng-model="user.mtIllName"/><br />
+    Prescription:<input type="text" ng-model="user.mtIllPrescription"/><br />
+    Treatment status:<input type="text" ng-model="user.mtIllTreatment"/><br />
+  </div>
+  <br />
+  In the past three yesrs, addict to alcohol, drug, or narcotic?<input type="radio" ng-model="user.adct" value="yes">Yes
+  <input type="radio" ng-model="user.adct" value="no">No<br />
+  <div ng-show="user.adct == 'yes'" style="padding-left: 1em; padding-top: .5em;">
+    Addiction time:<input type="date" ng-model="user.adctTime"/><br />
+    Addiction Type:<input type="text" ng-model="user.adctType"/><br />
+    Treatment status:<input type="text" ng-model="user.adctTreatment"/><br />
+  </div>
+  <br />
+  Apply for meditation:<input type="radio" ng-model="user.med" value="place">Meditation Place
+  <input type="radio" ng-model="user.med" value="date">Meditation Date<br />
+  <div ng-show="user.med == 'place'" style="padding-left: 1em; padding-top: .5em;">
+    Place:<input type="text" ng-model="user.medP.place"/><br />
+    From:<input type="date" ng-model="user.medP.from"/><br />
+    To:<input type="date" ng-model="user.medP.to"/><br />
+  </div>
+  <div ng-show="user.med == 'date'" style="padding-left: 1em; padding-top: .5em;">
+    <input type="radio" ng-model="user.medD" value="Tusita.2013">Tusita.2013
+    <input type="radio" ng-model="user.medD" value="Somewhere.2013">Somewhere.2013<br />
+  </div>
+  <br />
+
+<strong>5. Important Rules and Regulations of Tusita Hermitage </strong>
+<ol>
+<li>The Tusita Sangha Council (Council) Chairs the Management and Administration of the Hermitages</li>
+<li>Sangha &amp; Sayalay Officers serve on behalf of the Council to carry-out daily administrative duties of the Hermitages</li>
+<li>Students must respectfully adhere to administrative instructions given by management</li>
+<li>The Hermitages do not allow self-practitioners; interviews with the Meditation Teacher must be attended</li>
+<li>Students must take Dhamma instructions from only the approved Meditation Teacher</li>
+<li>Students should practice with respect, sincerity, diligence, honesty, patience, perseverance and continuous mindfulness throughout their stay at the Hermitages</li>
+</ol>
+
+<strong>6. Declaration</strong>
+<input type="checkbox" ng-model="user.applicantDeclaration" required /><strong><em> I hereby declare that:</strong></em>
+<ul>
+<li>I will respect the Theravada Sangha system, Tusita Sangha Council leadership and administration of the Hermitage.</li>
+<li>I will observe the No-Money rules strictly here during my stay and from now onwards (please relinquish all forms of money as well as all requisites not obtained according to Vinaya before entering the Hermitages).</li>
+<li>I promise to undergo the <strong><em>Purification of Virtue</em></strong> as outlined in the “<strong>Code of Discipline</strong>” from now onwards.</li>
+<li>I promise to continue to keep up to the Dhamma Vinaya as interpreted and observed by the Council during my stay.</li>
+<li>I will respectfully and faithfully go for, receive and apply the Dhamma instructions given by the Meditation Teacher.</li>
+<li>I have read and clearly understood the “<strong>Code of Discipline</strong>“ and “<strong>Important Rules & Regulations of Tusita Hermitage</strong>” and undertake to abide by all such discipline, rules and regulations.</li>
+<li>I will readily accept any changes and addition of rules pronounced by the Council.</li>
+<li>I will not give any teaching or involve in the administration of the Hermitages except at the request of the Council.</li>
+<li>I will be tolerant, forgiving and harmonious in the community.</li>
+<li>I will keep to the rules of Noble Silence and Non-Communication with Non-Residents (outsiders) except with the specific permission of the Council.</li>
+<li>I will declare and hand over my mobile phone, computer etc. to the Council’s care throughout my stay in the Hermitages.</li>
+<li>Besides my belongings properly stored with the consent of the management, I <strong>relinquish all requisites</strong> I leave behind at the Hermitages to the discretion of the Council.</li>
+<li>I have completed this <strong>Student Application Form </strong>honestly, true-heartedly and to the best of my ability.  I agree to all terms and conditions of training at the Hermitages</li>
+</ul>
+
+Sincerely,
+Name: <input type="text" ng-model="user.printName" required />,
+Date: <input type="date" ng-model="user.formSubmitDate" />
+
+  <br /><br />
+  <button ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
+  <button ng-click="submit(user)" ng-disabled="form.$invalid || isUnchanged(user)">SUBMIT</button>
+</form>
+</div>
