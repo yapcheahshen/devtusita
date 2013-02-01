@@ -1,14 +1,9 @@
 angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
-  $routeProvider.when('/firstLogin', {
-    templateUrl: '/partials/firstLogin.html',
-    controller: firstLoginCtrl
-  });
-
-  $routeProvider.when('/updateUserData', {
-    templateUrl: '/partials/firstLogin.html',
-    controller: firstLoginCtrl
+  $routeProvider.when('/userdata', {
+    templateUrl: '/partials/userdata.html',
+    controller: userdataCtrl
   });
 
   $routeProvider.when('/testRESTful', {
@@ -27,7 +22,7 @@ function mainCtrl($scope, $http, $templateCache, $location) {
     return $location.host() == 'localhost';
   })();
 
-  $scope.$on('updateUserDataEvent', function(event, data) {
+  $scope.$on('userDataSavedEvent', function(event, data) {
     $scope.userData = angular.copy(data);
     $scope.isUserDataReady = true;
   });
@@ -49,12 +44,12 @@ function mainCtrl($scope, $http, $templateCache, $location) {
       }).
       error(function(data, status) {
         // fail to retrieve user data => redirect user to fill in basic user data.
-        $location.path('/firstLogin');
+        $location.path('/userdata');
     });
   }
 }
 
-function firstLoginCtrl($scope, $http, $templateCache, $location) {
+function userdataCtrl($scope, $http, $templateCache, $location) {
   $scope.email = $scope.userEmail;
 
   // callback if user press 'SAVE' button
@@ -64,7 +59,7 @@ function firstLoginCtrl($scope, $http, $templateCache, $location) {
 
     // save user data to server through RESTful API
     var httpMethod = 'POST';
-    if ($location.path() == '/updateUserData') httpMethod = 'PUT';
+    if ($scope.isUserDataReady) httpMethod = 'PUT';
     $http({method: httpMethod,
            url: $scope.urlREST,
            data: JSON.stringify($scope.userData),
@@ -73,7 +68,7 @@ function firstLoginCtrl($scope, $http, $templateCache, $location) {
         // save successfully
         $scope.savingUserData = undefined;
         $scope.failToSaveUserData = undefined;
-        $scope.$emit('updateUserDataEvent', $scope.userData)
+        $scope.$emit('userDataSavedEvent', $scope.userData)
         $location.path('/');
       }).
       error(function(data, status) {
