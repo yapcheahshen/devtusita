@@ -22,7 +22,9 @@ function mainCtrl($scope, $http, $templateCache, $location) {
   $scope.urlREST = '/RESTful/' + $scope.userEmail;
   $scope.userData = {}
 
-  $scope.host = $location.host();
+  $scope.isDevServer = (function() {
+    return $location.host() == 'localhost';
+  })();
 
   $scope.$on('updateUserDataEvent', function(event, data) {
     $scope.userData = angular.copy(data);
