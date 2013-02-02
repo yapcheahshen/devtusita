@@ -51,7 +51,12 @@
       </label>
     </div>
   </div>
-  Landline (Fixed Phone Line):<input type="text" ng-model="user.landline"/><br />
+  <div class="control-group">
+    <label class="control-label" for="userDataLandline">Landline</label>
+    <div class="controls">
+     <input id="userDataLandline" type="text" placeholder="Fixed Phone Line" ng-model="user.landline"/>
+    </div>
+  </div>
   CellPhone:<input type="text" ng-model="user.cellphone"/><br />
   Address:<input size="60" type="text" ng-model="user.address"/><br />
   <br />
