@@ -4,12 +4,24 @@
   <div ng-hide="isUserDataReady">
     Hello, <b><i style="color: red;">{{ userEmail }}</i></b>. Please fill in the following basic data.<br /><br />
   </div>
-<form name="form" class="css-form">
-  Email:<input type="email" readonly required ng-model="email"/><br />
-  Name:<input type="text" name="name" required ng-model="user.name"/><br />
+<form name="form" class="form-horizontal css-form">
+  <div class="control-group">
+    <label class="control-label" for="userDataEmail">Email</label>
+    <div class="controls">
+      <input id="userDataEmail" type="email" placeholder="Email" readonly required ng-model="email"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="userDataName">Name</label>
+    <div class="controls">
+      <input id="userDataName" type="text" placeholder="Name" name="name" required ng-model="user.name"/><br />
+    </div>
+    <!--
     <div style="color:red;" ng-show="form.name.$dirty && form.name.$invalid">Invalid:
       <span ng-show="form.name.$error.required">Tell us your name.</span>
     </div>
+    -->
+  </div>
 
   Birthday:<input type="date" ng-model="user.birthday"/><br />
   Citizenship:<input type="text" ng-model="user.citizenship"/><br />
@@ -42,7 +54,7 @@
     </div>
   </div>
   <br /><br />
-  <button ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
-  <button ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)">SAVE</button>
+  <button class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
+  <button class="btn" ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)">SAVE</button>
 </form>
 </div>
