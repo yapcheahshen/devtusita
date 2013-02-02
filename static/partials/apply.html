@@ -68,15 +68,34 @@
       </div>
     </div>
   </div>
-
-  Mental illness? : <input type="radio" ng-model="user.mtIll" value="yes">Yes
-  <input type="radio" ng-model="user.mtIll" value="no">No<br />
-  <div ng-show="user.mtIll == 'yes'" style="padding-left: 1em; padding-top: .5em;">
-    Illness name:<input type="text" ng-model="user.mtIllName"/><br />
-    Prescription:<input type="text" ng-model="user.mtIllPrescription"/><br />
-    Treatment status:<input type="text" ng-model="user.mtIllTreatment"/><br />
+  <div class="control-group">
+    <label class="control-label">Mental Illness?</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" ng-model="user.mtIll" value="yes">Yes
+      </label>
+      <label class="radio inline">
+        <input type="radio" ng-model="user.mtIll" value="no">No
+      </label>
+      <div ng-show="user.mtIll == 'yes'">
+        <div class="control-group">
+          <label class="control-label" for="afMtillName">Illness Name</label>
+          <div class="controls">
+            <input id="afMtillName" type="text" placeholder="Illness Name" ng-model="user.mtIllName"/>
+          </div>
+          <label class="control-label" for="afMtillPrescription">Prescription</label>
+          <div class="controls">
+            <input id="afMtillPrescription" type="text" placeholder="Prescription" ng-model="user.mtIllPrescription"/>
+          </div>
+          <label class="control-label" for="afMtillTreatmentStatus">Treatment Status</label>
+          <div class="controls">
+            <input id="afMtillTreatmentStatus" type="text" placeholder="Treatment Status" ng-model="user.mtIllTreatment"/>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <br />
+
   In the past three yesrs, addict to alcohol, drug, or narcotic?<input type="radio" ng-model="user.adct" value="yes">Yes
   <input type="radio" ng-model="user.adct" value="no">No<br />
   <div ng-show="user.adct == 'yes'" style="padding-left: 1em; padding-top: .5em;">
