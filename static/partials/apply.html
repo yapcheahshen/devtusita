@@ -1,8 +1,19 @@
 <div style="padding: .75em;">
-<form name="form" class="css-form">
-  Meditation Method:<input type="text" ng-model="user.medMethod"/><br />
-  Meditation Instructor:<input type="text" ng-model="user.medInstructor"/><br />
-  <br />
+<form name="form" class="form-horizontal">
+  <fieldset>
+    <legend>Application Form</legend>
+    <div class="control-group">
+      <label class="control-label" for="afMeditationMethod">Meditation Method</label>
+      <div class="controls">
+        <input id="afMeditationMethod" type="text" placeholder="Meditation Method" ng-model="user.medMethod"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="afMeditationInstructor">Meditation Instructor</label>
+      <div class="controls">
+        <input id="afMeditationInstructor" type="text" placeholder="Meditation Instructor" ng-model="user.medInstructor"/>
+      </div>
+    </div>
   Join our meditaion before? : <input type="radio" ng-model="user.joined" value="yes">Yes
   <input type="radio" ng-model="user.joined" value="no">No<br />
   <div ng-show="user.joined == 'yes'" style="padding-left: 1em; padding-top: .5em;">
@@ -80,8 +91,13 @@ Sincerely,
 Name: <input type="text" ng-model="user.printName" required />,
 Date: <input type="text" ng-model="user.formSubmitDate" datepicker/>
 
-  <br /><br />
-  <button ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
-  <button ng-click="submit(user)" ng-disabled="form.$invalid || isUnchanged(user)">SUBMIT</button>
+  </fieldset>
+  <br />
+  <div class="control-group">
+    <div class="controls">
+      <button class="btn btn-primary" ng-click="submit(user)" ng-disabled="form.$invalid || isUnchanged(user)">SUBMIT</button>
+      <button class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
+    </div>
+  </div>
 </form>
 </div>
