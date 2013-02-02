@@ -4,7 +4,7 @@
   <div ng-hide="isUserDataReady">
     Hello, <b><i style="color: red;">{{ userEmail }}</i></b>. Please fill in the following basic data.<br /><br />
   </div>
-<form name="form" class="form-horizontal css-form">
+<form name="form" class="form-horizontal">
  <fieldset>
   <legend>Basic Data</legend>
   <div class="control-group">
@@ -17,7 +17,8 @@
     <label class="control-label" for="userDataName">Name</label>
     <div class="controls">
       <input id="userDataName" type="text" placeholder="Name" name="name" required ng-model="user.name"/>
-      <div style="color:red;" ng-show="form.name.$dirty && form.name.$invalid">Invalid:
+      <div ng-show="form.name.$dirty && form.name.$invalid"><br /></div>
+      <div class="alert alert-error" ng-show="form.name.$dirty && form.name.$invalid">Invalid:
         <span ng-show="form.name.$error.required">Please tell us your name.</span>
       </div>
     </div>
