@@ -95,15 +95,34 @@
       </div>
     </div>
   </div>
-
-  In the past three yesrs, addict to alcohol, drug, or narcotic?<input type="radio" ng-model="user.adct" value="yes">Yes
-  <input type="radio" ng-model="user.adct" value="no">No<br />
-  <div ng-show="user.adct == 'yes'" style="padding-left: 1em; padding-top: .5em;">
-    Addiction time:<input type="text" ng-model="user.adctTime" datepicker/><br />
-    Addiction Type:<input type="text" ng-model="user.adctType"/><br />
-    Treatment status:<input type="text" ng-model="user.adctTreatment"/><br />
+  <div class="control-group">
+    <label class="control-label">In the past three yesrs, addict to alcohol, drug, or narcotic?</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" ng-model="user.adct" value="yes">Yes
+      </label>
+      <label class="radio inline">
+        <input type="radio" ng-model="user.adct" value="no">No
+      </label>
+      <div ng-show="user.adct == 'yes'">
+        <div class="control-group">
+          <label class="control-label" for="afAddictTime">Addiction Time</label>
+          <div class="controls">
+            <input id="afAddictTime" type="text" placeholder="Addiction Time" ng-model="user.adctTime" datepicker/>
+          </div>
+          <label class="control-label" for="afAddictType">Addiction Type</label>
+          <div class="controls">
+            <input id="afAddictType" type="text" placeholder="Addiction Type" ng-model="user.adctType"/>
+          </div>
+          <label class="control-label" for="afAddictTreatmentStatus">Treatment Status</label>
+          <div class="controls">
+            <input id="afAddictTreatmentStatus" type="text" placeholder="Treatment Status" ng-model="user.adctTreatment"/>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <br />
+
   Apply for meditation:<input type="radio" ng-model="user.med" value="place">Meditation Place
   <input type="radio" ng-model="user.med" value="date">Meditation Date<br />
   <div ng-show="user.med == 'place'" style="padding-left: 1em; padding-top: .5em;">
