@@ -25,7 +25,6 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
       link: function postLink(scope, iElement, iAttrs) {
         iElement.datepicker({
           dateFormat: 'yy-mm-dd',
-          maxDate: new Date(),
           onSelect: function(dateText, inst) {
             scope.$apply(function(scope){
               $parse(iAttrs.ngModel).assign(scope, dateText);
