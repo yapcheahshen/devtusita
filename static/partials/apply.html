@@ -41,16 +41,34 @@
       </div>
     </div>
   </div>
-
-  <br />
-  Serious illness? : <input type="radio" ng-model="user.srIll" value="yes">Yes
-  <input type="radio" ng-model="user.srIll" value="no">No<br />
-  <div ng-show="user.srIll == 'yes'" style="padding-left: 1em; padding-top: .5em;">
-    Illness name:<input type="text" ng-model="user.srIllName"/><br />
-    Prescription:<input type="text" ng-model="user.srIllPrescription"/><br />
-    Treatment status:<input type="text" ng-model="user.srIllTreatment"/><br />
+  <div class="control-group">
+    <label class="control-label">Serious Illness?</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" ng-model="user.srIll" value="yes">Yes
+      </label>
+      <label class="radio inline">
+        <input type="radio" ng-model="user.srIll" value="no">No
+      </label>
+      <div ng-show="user.srIll == 'yes'">
+        <div class="control-group">
+          <label class="control-label" for="afSrillName">Illness Name</label>
+          <div class="controls">
+            <input id="afSrillName" type="text" placeholder="Illness Name" ng-model="user.srIllName"/>
+          </div>
+          <label class="control-label" for="afSrillPrescription">Prescription</label>
+          <div class="controls">
+            <input id="afSrillPrescription" type="text" placeholder="Prescription" ng-model="user.srIllPrescription"/>
+          </div>
+          <label class="control-label" for="afSrillTreatmentStatus">Treatment Status</label>
+          <div class="controls">
+            <input id="afSrillTreatmentStatus" type="text" placeholder="Treatment Status" ng-model="user.srIllTreatment"/>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <br />
+
   Mental illness? : <input type="radio" ng-model="user.mtIll" value="yes">Yes
   <input type="radio" ng-model="user.mtIll" value="no">No<br />
   <div ng-show="user.mtIll == 'yes'" style="padding-left: 1em; padding-top: .5em;">
