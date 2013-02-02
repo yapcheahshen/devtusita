@@ -7,7 +7,7 @@
   <input type="radio" ng-model="user.joined" value="no">No<br />
   <div ng-show="user.joined == 'yes'" style="padding-left: 1em; padding-top: .5em;">
     Place:<input type="text" ng-model="user.joinedPlace"/><br />
-    Date:<input type="date" ng-model="user.joinedDate"/><br />
+    Date:<input type="text" ng-model="user.joinedDate" datepicker/><br />
     Instructor:<input type="text" ng-model="user.joinedInstructor"/><br />
   </div>
   <br />
@@ -30,7 +30,7 @@
   In the past three yesrs, addict to alcohol, drug, or narcotic?<input type="radio" ng-model="user.adct" value="yes">Yes
   <input type="radio" ng-model="user.adct" value="no">No<br />
   <div ng-show="user.adct == 'yes'" style="padding-left: 1em; padding-top: .5em;">
-    Addiction time:<input type="date" ng-model="user.adctTime"/><br />
+    Addiction time:<input type="text" ng-model="user.adctTime" datepicker/><br />
     Addiction Type:<input type="text" ng-model="user.adctType"/><br />
     Treatment status:<input type="text" ng-model="user.adctTreatment"/><br />
   </div>
@@ -39,8 +39,8 @@
   <input type="radio" ng-model="user.med" value="date">Meditation Date<br />
   <div ng-show="user.med == 'place'" style="padding-left: 1em; padding-top: .5em;">
     Place:<input type="text" ng-model="user.medP.place"/><br />
-    From:<input type="date" ng-model="user.medP.from"/><br />
-    To:<input type="date" ng-model="user.medP.to"/><br />
+    From:<input type="text" ng-model="user.medP.from" datepicker/><br />
+    To:<input type="text" ng-model="user.medP.to" datepicker/><br />
   </div>
   <div ng-show="user.med == 'date'" style="padding-left: 1em; padding-top: .5em;">
     <input type="radio" ng-model="user.medD" value="Tusita.2013">Tusita.2013
@@ -78,7 +78,7 @@
 
 Sincerely,
 Name: <input type="text" ng-model="user.printName" required />,
-Date: <input type="date" ng-model="user.formSubmitDate" />
+Date: <input type="text" ng-model="user.formSubmitDate" datepicker/>
 
   <br /><br />
   <button ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>

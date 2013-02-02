@@ -79,7 +79,7 @@
   <input type="radio" ng-model="user.status" value="laity">Laity<br />
   <div ng-show="user.status == 'ordained'" style="padding-left: 1em; padding-top: .5em;">
     Preceptor Name:<input type="text" ng-model="user.preceptorname"/><br />
-    Date of Ordination:<input type="date" ng-model="user.dateordination"/><br />
+    Date of Ordination:<input type="text" ng-model="user.dateordination" datepicker/><br />
     Place of Ordination:<input type="text" ng-model="user.placeordination"/><br />
   </div>
   <br />
