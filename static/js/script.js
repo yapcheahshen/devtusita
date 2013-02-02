@@ -83,6 +83,9 @@ function welcomeCtrl($scope) {
 }
 
 function userdataCtrl($scope, $http, $templateCache, $location) {
+  // redirect to / if user is not logged in
+  if (!$scope.isLogin) $location.path('/');
+
   $scope.email = $scope.userEmail;
 
   // callback if user press 'SAVE' button
@@ -124,6 +127,9 @@ function userdataCtrl($scope, $http, $templateCache, $location) {
 }
 
 function applyCtrl($scope) {
+  // redirect to / if user is not logged in
+  if (!$scope.isLogin) $location.path('/');
+
   $scope.applicationData = {};
 
   // callback if user press 'SUBMIT' button
