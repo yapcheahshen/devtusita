@@ -12,7 +12,7 @@
 <body ng-controller="mainCtrl">
 <div class="container-fluid">
 <div class="row-fluid">
- <div class="span8 offset2" style="text-align: right;">
+ <div class="span8 offset2 alert alert-info" style="text-align: right;">
   {% if isLogin %}
    <div ng-show='isUserDataReady'>
     Hello! <b style="color: red;"><i>{{ userData.name }}</i></b> (<a href="{$ signoutURL $}" target="_self">Sign Out</a>)
@@ -27,13 +27,16 @@
 </div>
 
 <div class="row-fluid">
- <div class="span8 offset2" style="text-align: center; background-color: #FFFF99;"><h1>Personal Page of Tusita Hermitage</h1></div>
+ <div class="span8 offset2">
+  <div class="alert alert-block" style="text-align:center;">
+    <h2>Personal Page of Tusita Hermitage</h2>
+  </div>
+ </div>
 </div>
 
 <div class="row-fluid">
  <div class="span2">
   <div ng-show="isUserDataReady">
-   <hr>
    <a href="/">Home</a><br />
    <a href="/userdata">Update My Data</a><br />
    <a href="/apply">Meditation Application</a>
