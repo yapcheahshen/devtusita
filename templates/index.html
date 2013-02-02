@@ -11,8 +11,10 @@
 </head>
 <body ng-controller="mainCtrl">
 <div class="container-fluid">
+
 <div class="row-fluid">
- <div class="span8 offset2 alert alert-info" style="text-align: right;">
+ <div class="span8 offset2">
+  <div class="login-header">
   {% if isLogin %}
    <div ng-show='isUserDataReady'>
     Hello! <b style="color: red;"><i>{{ userData.name }}</i></b> (<a href="{$ signoutURL $}" target="_self">Sign Out</a>)
@@ -23,11 +25,7 @@
   {% else %}
    <a href="{$ signinOrRegisterURL $}" target="_self">Sign In or Register</a>
   {% endif %}
- </div>
-</div>
-
-<div class="row-fluid">
- <div class="span8 offset2">
+  </div>
   <div class="alert alert-block" style="text-align:center;">
     <h2>Personal Page of Tusita Hermitage</h2>
   </div>

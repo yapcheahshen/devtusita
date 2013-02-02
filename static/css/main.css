@@ -1,3 +1,9 @@
+.login-header {
+  text-align: right;
+  padding-top: .75em;
+  padding-bottom: .5em;
+}
+
 .css-form input.ng-invalid.ng-dirty {
   background-color: #FA787E;
 }
