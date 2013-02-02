@@ -5,6 +5,8 @@
     Hello, <b><i style="color: red;">{{ userEmail }}</i></b>. Please fill in the following basic data.<br /><br />
   </div>
 <form name="form" class="form-horizontal css-form">
+ <fieldset>
+  <legend>Basic Data</legend>
   <div class="control-group">
     <label class="control-label" for="userDataEmail">Email</label>
     <div class="controls">
@@ -100,16 +102,40 @@
       </div>
     </div>
   </div>
-  <div style="border: 1px dotted blue; padding: .5em;">
-    Emergency contact:
-    <div style="padding-left: 1em; padding-top: .5em;">
-      Name:<input type="text" ng-model="user.emg.name"/><br />
-      Relationship:<input type="text" ng-model="user.emg.relation"/><br />
-      Landline (Fixed Phone Line):<input type="text" ng-model="user.emg.landline"/><br />
-      CellPhone:<input type="text" ng-model="user.emg.cellphone"/><br />
-      Address:<input size="60" type="text" ng-model="user.emg.address"/><br />
+ </fieldset>
+  <fieldset>
+    <legend>Emergency Contact</legend>
+    <div class="control-group">
+      <label class="control-label" for="userDataEmergencyName">Name</label>
+      <div class="controls">
+       <input id="userDataEmergencyName" type="text" placeholder="Name" ng-model="user.emg.name"/>
+      </div>
     </div>
-  </div>
+    <div class="control-group">
+      <label class="control-label" for="userDataEmergencyRelation">Relationship</label>
+      <div class="controls">
+       <input id="userDataEmergencyRelation" type="text" placeholder="Relationship" ng-model="user.emg.relation"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="userDataEmergencyLandline">Landline</label>
+      <div class="controls">
+       <input id="userDataEmergencyLandline" type="text" placeholder="Fixed Phone Line" ng-model="user.emg.landline"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="userDataEmergencyCellphone">Cellphone</label>
+      <div class="controls">
+       <input id="userDataEmergencyCellphone" type="text" placeholder="Cellphone" ng-model="user.emg.cellphone"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="userDataEmergencyAddress">Address</label>
+      <div class="controls">
+       <input id="userDataEmergencyAddress" type="text" placeholder="Address" ng-model="user.emg.address"/>
+      </div>
+    </div>
+  </fieldset>
   <div class="control-group">
     <div class="controls">
       <button class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
