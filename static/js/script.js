@@ -1,6 +1,11 @@
 angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
+  $routeProvider.when('/', {
+    templateUrl: '/partials/welcome.html',
+    controller: welcomeCtrl
+  });
+
   $routeProvider.when('/userdata', {
     templateUrl: '/partials/userdata.html',
     controller: userdataCtrl
@@ -71,6 +76,10 @@ function mainCtrl($scope, $http, $templateCache, $location) {
         $location.path('/userdata');
     });
   }
+}
+
+function welcomeCtrl($scope) {
+  $scope.span8width = angular.element(document.getElementById('tstBanner')).width();
 }
 
 function userdataCtrl($scope, $http, $templateCache, $location) {
