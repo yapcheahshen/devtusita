@@ -34,7 +34,12 @@
       <input id="userDataCitizenship" type="text" placeholder="Citizenship" ng-model="user.citizenship"/>
     </div>
   </div>
-  ID #:<input type="text" ng-model="user.idnum"/><br />
+  <div class="control-group">
+    <label class="control-label" for="userDataIdnum">ID Number</label>
+    <div class="controls">
+      <input id="userDataIdnum" type="text" placeholder="ID Number" ng-model="user.idnum"/>
+    </div>
+  </div>
 
   Gender: <input type="radio" ng-model="user.gender" value="male">Male
   <input type="radio" ng-model="user.gender" value="female">Female<br />
