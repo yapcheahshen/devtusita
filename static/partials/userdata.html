@@ -40,10 +40,17 @@
       <input id="userDataIdnum" type="text" placeholder="ID Number" ng-model="user.idnum"/>
     </div>
   </div>
-
-  Gender: <input type="radio" ng-model="user.gender" value="male">Male
-  <input type="radio" ng-model="user.gender" value="female">Female<br />
-  <br />
+  <div class="control-group">
+    <label class="control-label">Gender</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" ng-model="user.gender" value="male">Male
+      </label>
+      <label class="radio inline">
+        <input type="radio" ng-model="user.gender" value="female">Female
+      </label>
+    </div>
+  </div>
   Landline (Fixed Phone Line):<input type="text" ng-model="user.landline"/><br />
   CellPhone:<input type="text" ng-model="user.cellphone"/><br />
   Address:<input size="60" type="text" ng-model="user.address"/><br />
