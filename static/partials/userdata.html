@@ -14,7 +14,7 @@
   <div class="control-group">
     <label class="control-label" for="userDataName">Name</label>
     <div class="controls">
-      <input id="userDataName" type="text" placeholder="Name" name="name" required ng-model="user.name"/><br />
+      <input id="userDataName" type="text" placeholder="Name" name="name" required ng-model="user.name"/>
     </div>
     <!--
     <div style="color:red;" ng-show="form.name.$dirty && form.name.$invalid">Invalid:
@@ -22,9 +22,18 @@
     </div>
     -->
   </div>
-
-  Birthday:<input type="date" ng-model="user.birthday"/><br />
-  Citizenship:<input type="text" ng-model="user.citizenship"/><br />
+  <div class="control-group">
+    <label class="control-label" for="userDataBirthday">Birthday</label>
+    <div class="controls">
+      <input id="userDataBirthday" type="date" placeholder="Birthday" ng-model="user.birthday"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="userDataCitizenship">Citizenship</label>
+    <div class="controls">
+      <input id="userDataCitizenship" type="text" placeholder="Citizenship" ng-model="user.citizenship"/>
+    </div>
+  </div>
   ID #:<input type="text" ng-model="user.idnum"/><br />
 
   Gender: <input type="radio" ng-model="user.gender" value="male">Male
