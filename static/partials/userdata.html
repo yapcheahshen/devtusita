@@ -85,7 +85,7 @@
       <label class="radio inline">
         <input type="radio" ng-model="user.status" value="laity">Laity
       </label>
-      <div ng-show="user.status == 'ordained'" style="padding-left: 1em; padding-top: .5em;">
+      <div ng-show="user.status == 'ordained'">
         <div class="control-group">
           <label class="control-label" for="userDataPreceptorName">Preceptor Name</label>
           <div class="controls">
@@ -97,7 +97,7 @@
           </div>
           <label class="control-label" for="userDataOrdinationPlace">Ordination Place</label>
           <div class="controls">
-            <input for="userDataOrdinationPlace" type="text" placeholder="Ordination Place" ng-model="user.placeordination"/>
+            <input id="userDataOrdinationPlace" type="text" placeholder="Ordination Place" ng-model="user.placeordination"/>
           </div>
         </div>
       </div>

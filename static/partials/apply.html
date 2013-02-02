@@ -14,13 +14,34 @@
         <input id="afMeditationInstructor" type="text" placeholder="Meditation Instructor" ng-model="user.medInstructor"/>
       </div>
     </div>
-  Join our meditaion before? : <input type="radio" ng-model="user.joined" value="yes">Yes
-  <input type="radio" ng-model="user.joined" value="no">No<br />
-  <div ng-show="user.joined == 'yes'" style="padding-left: 1em; padding-top: .5em;">
-    Place:<input type="text" ng-model="user.joinedPlace"/><br />
-    Date:<input type="text" ng-model="user.joinedDate" datepicker/><br />
-    Instructor:<input type="text" ng-model="user.joinedInstructor"/><br />
+  <div class="control-group">
+    <label class="control-label">Join Our Meditaion Before?</label>
+    <div class="controls">
+      <label class="radio inline">
+        <input type="radio" ng-model="user.joined" value="yes">Yes
+      </label>
+      <label class="radio inline">
+        <input type="radio" ng-model="user.joined" value="no">No
+      </label>
+      <div ng-show="user.joined == 'yes'">
+        <div class="control-group">
+          <label class="control-label" for="afJoinedPlace">Place</label>
+          <div class="controls">
+            <input id="afJoinedPlace" type="text" placeholder="Place" ng-model="user.joinedPlace"/>
+          </div>
+          <label class="control-label" for="afJoinedDate">Date</label>
+          <div class="controls">
+            <input id="afJoinedDate" type="text" placeholder="Date" ng-model="user.joinedDate" datepicker/>
+          </div>
+          <label class="control-label" for="afJoinedInstructor">Instructor</label>
+          <div class="controls">
+            <input id="afJoinedInstructor" type="text" placeholder="Instructor" ng-model="user.joinedInstructor"/>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
   <br />
   Serious illness? : <input type="radio" ng-model="user.srIll" value="yes">Yes
   <input type="radio" ng-model="user.srIll" value="no">No<br />
