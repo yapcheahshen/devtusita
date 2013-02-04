@@ -3,48 +3,16 @@
 
 import webapp2
 import jinja2
-import os, json
+import os
 
 from google.appengine.api import users
-from google.appengine.ext import ndb
+from database import create, read, update, delete
+
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
     variable_start_string='{$',
     variable_end_string='$}')
-
-class Person(ndb.Model):
-  json = ndb.TextProperty()
-  """
-  email = ndb.StringProperty()
-  name = ndb.StringProperty()
-  birthday = ndb.DateProperty()
-  citizenship = ndb.StringProperty()
-  idNumber = ndb.StringProperty()
-  gender = ndb.StringProperty()
-  landline = ndb.StringProperty()
-  cellphone = ndb.StringProperty()
-  address = ndb.StringProperty()
-  dhammaName = ndb.StringProperty()
-  status = ndb.StringProperty()
-  preceptorName = ndb.StringProperty()
-  dateOrdination = ndb.StringProperty()
-  placeOrdination = ndb.StringProperty()
-  emgName = ndb.StringProperty()
-  emgRelation = ndb.StringProperty()
-  emgLandline = ndb.StringProperty()
-  emgCellphone = ndb.StringProperty()
-  emgAddress = ndb.StringProperty()
-  notes = ndb.TextProperty()
-
-  def toDict(self):
-    # Python Dictionary (Dict) is equivalent to JavaScript object
-    return { 'email': self.email,
-             'name': self.name,
-             'phone': self.phone,
-             'address': self.address,
-             'notes': self.notes }
-  """
 
 
 class MainPage(webapp2.RequestHandler):
@@ -77,11 +45,10 @@ class RESTfulHandler(webapp2.RequestHandler):
     if not self.isLegalUser(email):
       self.error(404)
       return
-    # use email as ID for database access
-    person = Person.get_by_id(email)
-    if (person):
-      #self.response.out.write(json.dumps(person.toDict()))
-      self.response.out.write(person.json)
+
+    data = read(email)
+    if (data):
+      self.response.out.write(data)
     else:
       self.error(404)
 
@@ -89,44 +56,21 @@ class RESTfulHandler(webapp2.RequestHandler):
     if not self.isLegalUser(email):
       self.error(404)
       return
-    person = Person.get_by_id(email)
-    if (person):
-      # this entity already exists!
-      self.error(403)
-      return
-    """
-    data = json.loads(self.request.body)
-    person = Person(id = email,
-                    email = email,
-                    name = data['name'],
-                    phone = data['phone'],
-                    address = data['address'],
-                    notes = data['notes'])
-    """
-    person = Person(id = email,
-                    json = self.request.body)
-    person.put()
-    #self.response.out.write(json.dumps(person.toDict()))
-    self.response.out.write(person.json)
+
+    data = create(email, self.request.body)
+    if data:
+      self.response.out.write(data)
+    else:
+      self.error(404)
 
   def put(self, email):
     if not self.isLegalUser(email):
       self.error(404)
       return
-    person = Person.get_by_id(email)
-    """
-    data = json.loads(self.request.body)
-    person.name = data['name']
-    person.phone = data['phone']
-    person.address = data['address']
-    person.notes = data['notes']
-    person.put()
-    self.response.out.write(json.dumps(person.toDict()))
-    """
-    if (person):
-      person.json = self.request.body
-      person.put()
-      self.response.out.write(person.json)
+
+    data = update(email, self.request.body)
+    if data:
+      self.response.out.write(data)
     else:
       self.error(404)
 
@@ -134,11 +78,12 @@ class RESTfulHandler(webapp2.RequestHandler):
     if not self.isLegalUser(email):
       self.error(404)
       return
-    person = Person.get_by_id(email)
-    if (person):
-      person.key.delete()
+
+    data = delete(email)
+    if data:
+      self.response.out.write(data)
     else:
-      self.error(403)
+      self.error(404)
 
 
 class RedirectPage(webapp2.RequestHandler):
