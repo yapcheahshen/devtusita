@@ -113,6 +113,7 @@ def mafCreate(email, jsonData):
 
   form.put()
   person.activeMedAppForm = form.key
+  person.put()
   return form.json
 
 
@@ -157,6 +158,7 @@ def mafDelete(email):
     try:
       person.activeMedAppForm.delete()
       person.activeMedAppForm = None
+      person.put()
       return True
     except:
       return None
