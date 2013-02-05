@@ -6,6 +6,8 @@ import json
 
 class Person(ndb.Model):
   json = ndb.TextProperty()
+  activeMedAppForm = ndb.KeyProperty()
+  #archivedMedAppForm = ndb.KeyProperty(repeated = True)
   """
   email = ndb.StringProperty()
   name = ndb.StringProperty()
@@ -95,3 +97,68 @@ def delete(email):
     return True
   else:
     return False
+
+
+class MedAppForm(ndb.Model):
+  json = ndb.TextProperty()
+
+
+def mafCreate(email, jsonData):
+  person = Person.get_by_id(email)
+  if person == None:
+    return None
+
+  form = MedAppForm(json = jsonData,
+                    parent = person.key)
+
+  form.put()
+  person.activeMedAppForm = form.key
+  return form.json
+
+
+def mafRead(email):
+  person = Person.get_by_id(email)
+  if person == None:
+    return None
+
+  if (person.activeMedAppForm):
+    try:
+      form = person.activeMedAppForm.get()
+      return form.json
+    except:
+      return None
+  else:
+    return None
+
+
+def mafUpdate(email, jsonData):
+  person = Person.get_by_id(email)
+  if person == None:
+    return None
+
+  if (person.activeMedAppForm):
+    try:
+      form = person.activeMedAppForm.get()
+      form.json = jsonData
+      form.put()
+      return form.json
+    except:
+      return None
+  else:
+    return None
+
+
+def mafDelete(email):
+  person = Person.get_by_id(email)
+  if person == None:
+    return None
+
+  if (person.activeMedAppForm):
+    try:
+      person.activeMedAppForm.delete()
+      person.activeMedAppForm = None
+      return True
+    except:
+      return None
+  else:
+    return None

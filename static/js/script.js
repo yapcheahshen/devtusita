@@ -126,15 +126,36 @@ function userdataCtrl($scope, $http, $templateCache, $location) {
   $scope.reset();
 }
 
-function applyCtrl($scope) {
+function applyCtrl($scope, $http, $templateCache, $location) {
   // redirect to / if user is not logged in
   if (!$scope.isLogin) $location.path('/');
 
   $scope.applicationData = {};
+  $scope.urlRESTApply = $scope.urlREST + '/apply'
 
   // callback if user press 'SUBMIT' button
   $scope.submit = function(user) {
+    $scope.savingUserData = true;
     $scope.applicationData = angular.copy(user);
+
+    // save user data to server through RESTful API
+    var httpMethod = 'POST';
+//    if ($scope.isUserDataReady) httpMethod = 'PUT';
+    $http({method: httpMethod,
+           url: $scope.urlRESTApply,
+           data: JSON.stringify($scope.applicationData),
+           cache: $templateCache}).
+      success(function(data, status) {
+        // save successfully
+        $scope.savingUserData = undefined;
+        $scope.failToSaveUserData = undefined;
+        $location.path('/');
+      }).
+      error(function(data, status) {
+        // failed to save user data
+        $scope.savingUserData = undefined;
+        $scope.failToSaveUserData = true;
+    });
   };
 
   // callback if user press 'RESET' button

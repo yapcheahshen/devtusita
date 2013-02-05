@@ -6,7 +6,7 @@ import jinja2
 import os
 
 from google.appengine.api import users
-from database import create, read, update, delete
+from database import create, read, update, delete, mafCreate, mafRead, mafUpdate, mafDelete
 
 
 jinja_environment = jinja2.Environment(
@@ -41,49 +41,55 @@ class RESTfulHandler(webapp2.RequestHandler):
       return False
     return True
 
+  def checkData(self, data):
+    if (data):
+      self.response.out.write(data)
+    else:
+      self.error(404)
+
   def get(self, email):
     if not self.isLegalUser(email):
       self.error(404)
       return
 
-    data = read(email)
-    if (data):
-      self.response.out.write(data)
+    if self.request.url.endswith('apply'):
+      data = mafRead(email)
     else:
-      self.error(404)
+      data = read(email)
+    self.checkData(data)
 
   def post(self, email):
     if not self.isLegalUser(email):
       self.error(404)
       return
 
-    data = create(email, self.request.body)
-    if data:
-      self.response.out.write(data)
+    if self.request.url.endswith('apply'):
+      data = mafCreate(email, self.request.body)
     else:
-      self.error(404)
+      data = create(email, self.request.body)
+    self.checkData(data)
 
   def put(self, email):
     if not self.isLegalUser(email):
       self.error(404)
       return
 
-    data = update(email, self.request.body)
-    if data:
-      self.response.out.write(data)
+    if self.request.url.endswith('apply'):
+      data = mafUpdate(email, self.request.body)
     else:
-      self.error(404)
+      data = update(email, self.request.body)
+    self.checkData(data)
 
   def delete(self, email):
     if not self.isLegalUser(email):
       self.error(404)
       return
 
-    data = delete(email)
-    if data:
-      self.response.out.write(data)
+    if self.request.url.endswith('apply'):
+      data = mafDelete(email)
     else:
-      self.error(404)
+      data = delete(email)
+    self.checkData(data)
 
 
 class RedirectPage(webapp2.RequestHandler):
@@ -93,5 +99,6 @@ class RedirectPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/(userdata|apply)', RedirectPage),
+                               ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/apply', RESTfulHandler),
                                ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})', RESTfulHandler)],
                               debug=True)
