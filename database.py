@@ -108,6 +108,9 @@ def mafCreate(email, jsonData):
   if person == None:
     return None
 
+  if (person.activeMedAppForm):
+    return None
+
   form = MedAppForm(json = jsonData,
                     parent = person.key)
 
