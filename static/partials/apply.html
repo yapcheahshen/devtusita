@@ -1,7 +1,23 @@
 <div style="padding: .75em;">
 <div ng-show="isRecord">
   <div ng-show="isLoadingRecord">Loading Record</div>
-  <div ng-hide="isLoadingRecord">{{ recordData }}</div>
+  <div ng-hide="isLoadingRecord">
+    <table class="table">
+      <caption>Meditation Application Record</caption>
+      <thead>
+        <tr>
+          <th>KEY</th>
+          <th>VALUE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, value) in recordData">
+          <td>{{key}}</td>
+          <td>{{value}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div ng-hide="isRecord">
 <form name="form" class="form-horizontal">
