@@ -1,0 +1,18 @@
+<div ng-show="isLoadingRecord">Loading Record</div>
+<div ng-hide="isLoadingRecord">
+  <table class="table table-striped">
+    <caption class="alert alert-info">Meditation Application Record</caption>
+    <thead>
+      <tr>
+        <th>JSON</th>
+        <th>???</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="appForm in appForms">
+        <td>{{appForm}}</td>
+        <td>...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

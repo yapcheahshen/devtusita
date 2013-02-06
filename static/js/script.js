@@ -17,7 +17,7 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
   });
 
   $routeProvider.when('/record', {
-    templateUrl: '/partials/apply.html',
+    templateUrl: '/partials/record.html',
     controller: recordCtrl
   });
 
@@ -175,7 +175,6 @@ function applyCtrl($scope, $http, $templateCache, $location) {
 }
 
 function recordCtrl($scope, $http, $templateCache) {
-  $scope.isRecord = true;
   $scope.isLoadingRecord = true;
   $scope.urlREST = $scope.urlREST + '/apply';
 
