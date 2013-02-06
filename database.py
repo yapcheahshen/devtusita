@@ -6,7 +6,7 @@ import json
 
 class Person(ndb.Model):
   json = ndb.TextProperty()
-  activeMedAppForm = ndb.KeyProperty()
+  activeMedAppForm = ndb.KeyProperty(repeated = True)
   #archivedMedAppForm = ndb.KeyProperty(repeated = True)
   """
   email = ndb.StringProperty()
@@ -108,14 +108,14 @@ def mafCreate(email, jsonData):
   if person == None:
     return None
 
-  if (person.activeMedAppForm):
-    return None
-
   form = MedAppForm(json = jsonData,
                     parent = person.key)
 
   form.put()
-  person.activeMedAppForm = form.key
+  if person.activeMedAppForm:
+    person.activeMedAppForm.append(form.key)
+  else:
+    person.activeMedAppForm = [form.key]
   person.put()
   return form.json
 
@@ -126,16 +126,17 @@ def mafRead(email):
     return None
 
   if (person.activeMedAppForm):
-    try:
-      form = person.activeMedAppForm.get()
-      return form.json
-    except:
-      return None
+    forms = []
+    for key in person.activeMedAppForm:
+      forms.append(json.loads(key.get().json))
+    return json.dumps(forms)
   else:
     return None
 
 
 def mafUpdate(email, jsonData):
+  return None
+  """
   person = Person.get_by_id(email)
   if person == None:
     return None
@@ -150,9 +151,12 @@ def mafUpdate(email, jsonData):
       return None
   else:
     return None
+  """
 
 
 def mafDelete(email):
+  return None
+  """
   person = Person.get_by_id(email)
   if person == None:
     return None
@@ -167,3 +171,4 @@ def mafDelete(email):
       return None
   else:
     return None
+  """

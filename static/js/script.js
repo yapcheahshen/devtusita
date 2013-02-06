@@ -186,7 +186,7 @@ function recordCtrl($scope, $http, $templateCache) {
     success(function(data, status) {
       // read successfully
       $scope.isLoadingRecord = undefined;
-      $scope.recordData = data;
+      $scope.appForms = data;
     }).
     error(function(data, status) {
       // failed to read user data
