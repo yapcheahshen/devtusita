@@ -141,25 +141,24 @@ function applyCtrl($scope, $http, $templateCache, $location) {
   // callback if user press 'SUBMIT' button
   $scope.submit = function(user) {
     $scope.savingUserData = true;
-    $scope.applicationData = angular.copy(user);
 
     // save user data to server through RESTful API
-    var httpMethod = 'POST';
-//    if ($scope.isUserDataReady) httpMethod = 'PUT';
-    $http({method: httpMethod,
+    $http({method: 'POST',
            url: $scope.urlRESTApply,
-           data: JSON.stringify($scope.applicationData),
+           data: JSON.stringify(user),
            cache: $templateCache}).
       success(function(data, status) {
         // save successfully
         $scope.savingUserData = undefined;
         $scope.failToSaveUserData = undefined;
-        $location.path('/');
+        $scope.applicationData = angular.copy(user);
+        $('#saveAppFormModal').modal();
       }).
       error(function(data, status) {
         // failed to save user data
         $scope.savingUserData = undefined;
         $scope.failToSaveUserData = true;
+        $('#saveAppFormModal').modal();
     });
   };
 
