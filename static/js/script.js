@@ -16,6 +16,11 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
     controller: applyCtrl
   });
 
+  $routeProvider.when('/record', {
+    templateUrl: '/partials/apply.html',
+    controller: recordCtrl
+  });
+
   $routeProvider.when('/testRESTful', {
     templateUrl: '/partials/testRESTful.html',
     controller: testRESTfulAPICtrl
@@ -168,6 +173,26 @@ function applyCtrl($scope, $http, $templateCache, $location) {
   };
  
   $scope.reset();
+}
+
+function recordCtrl($scope, $http, $templateCache) {
+  $scope.isRecord = true;
+  $scope.isLoadingRecord = true;
+  $scope.urlREST = $scope.urlREST + '/apply';
+
+  // read data from server
+  $http({method: 'GET',
+         url: $scope.urlREST,
+         cache: $templateCache}).
+    success(function(data, status) {
+      // read successfully
+      $scope.isLoadingRecord = undefined;
+      $scope.recordData = data;
+    }).
+    error(function(data, status) {
+      // failed to read user data
+      $scope.isLoadingRecord = undefined;
+  });
 }
 
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
