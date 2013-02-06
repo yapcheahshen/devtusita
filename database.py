@@ -128,7 +128,9 @@ def mafRead(email):
   if (person.activeMedAppForm):
     forms = []
     for key in person.activeMedAppForm:
-      forms.append(json.loads(key.get().json))
+      form = json.loads(key.get().json)
+      form['urlsafe'] = key.urlsafe()
+      forms.append(form)
     return json.dumps(forms)
   else:
     return None

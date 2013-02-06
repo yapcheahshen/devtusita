@@ -4,14 +4,14 @@
     <caption class="alert alert-info">Meditation Application Record</caption>
     <thead>
       <tr>
-        <th>JSON</th>
-        <th>???</th>
+        <th>DATA</th>
+        <th>KEY</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="appForm in appForms">
-        <td>{{appForm}}</td>
-        <td>...</td>
+        <td>{{ appForm }}</td>
+        <td><a href="#{{ appForm.urlsafe }}">key</a></td>
       </tr>
     </tbody>
   </table>
