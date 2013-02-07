@@ -135,7 +135,11 @@ function applyCtrl($scope, $http, $templateCache, $location) {
   // redirect to / if user is not logged in
   if (!$scope.isLogin) $location.path('/');
 
-  $scope.applicationData = {};
+  $scope.applicationData = {'joined': 'no',
+                            'srIll': 'no',
+                            'mtIll': 'no',
+                            'adct': 'no'};
+  $scope.user = angular.copy($scope.applicationData);
   $scope.urlRESTApply = $scope.urlREST + '/apply'
 
   // callback if user press 'SUBMIT' button
