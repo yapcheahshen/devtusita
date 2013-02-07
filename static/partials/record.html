@@ -1,18 +1,31 @@
-<div ng-show="isLoadingRecord">Loading Record</div>
+<div ng-show="isLoadingRecord">Loading Record...</div>
 <div ng-hide="isLoadingRecord">
   <table class="table table-striped">
     <caption class="alert alert-info">Meditation Application Record</caption>
     <thead>
       <tr>
-        <th>DATA</th>
-        <th>KEY</th>
+        <th>Data</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="appForm in appForms">
-        <td>{{ appForm }}</td>
-        <td><a href="#{{ appForm.urlsafe }}">key</a></td>
+        <td>Record #{{ $index + 1 }}</td>
+        <td><a name="{{ appForm.urlsafe }}" ng-click="showAppForm(appForm.urlsafe)">See</a></td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div id="showAppFormModal" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Meditation Application Detail</h3>
+  </div>
+  <div class="modal-body">
+    <p>{{appForm}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
 </div>

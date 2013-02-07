@@ -178,6 +178,15 @@ function recordCtrl($scope, $http, $templateCache) {
   $scope.isLoadingRecord = true;
   $scope.urlREST = $scope.urlREST + '/apply';
 
+  $scope.showAppForm = function(urlsafe) {
+    $scope.appForm = undefined;
+    for (var i=0; i < $scope.appForms.length; i++) {
+      if ($scope.appForms[i].urlsafe == urlsafe)
+        $scope.appForm = $scope.appForms[i];
+    }
+    $('#showAppFormModal').modal();
+  };
+
   // read data from server
   $http({method: 'GET',
          url: $scope.urlREST,
