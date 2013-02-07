@@ -23,7 +23,114 @@
     <h3>Meditation Application Detail</h3>
   </div>
   <div class="modal-body">
-    <p>{{appForm}}</p>
+    <div class="row-fluid">
+      <div class="span4">Meditation Method</div>
+      <div class="span8">{{appForm.medMethod}}</div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">Meditation Instructor</div>
+      <div class="span8">{{appForm.medInstructor}}</div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">Join Our Meditaion Before?</div>
+      <div class="span8">{{appForm.joined}}</div>
+    </div>
+    <div ng-show="appForm.joined == 'yes'">
+      <div class="row-fluid">
+        <div class="span4 offset2">Place</div>
+        <div class="span6">{{appForm.joinedPlace}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Date</div>
+        <div class="span6">{{appForm.joinedDate}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Instructor</div>
+        <div class="span6">{{appForm.joinedInstructor}}</div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">Serious Illness?</div>
+      <div class="span8">{{appForm.srIll}}</div>
+    </div>
+    <div ng-show="appForm.srIll == 'yes'">
+      <div class="row-fluid">
+        <div class="span4 offset2">Illness Name</div>
+        <div class="span6">{{appForm.srIllName}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Prescription</div>
+        <div class="span6">{{appForm.srIllPrescription}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Treatment Status</div>
+        <div class="span6">{{appForm.srIllTreatment}}</div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">Mental Illness?</div>
+      <div class="span8">{{appForm.mtIll}}</div>
+    </div>
+    <div ng-show="appForm.mtIll == 'yes'">
+      <div class="row-fluid">
+        <div class="span4 offset2">Illness Name</div>
+        <div class="span6">{{appForm.mtIllName}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Prescription</div>
+        <div class="span6">{{appForm.mtIllPrescription}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Treatment Status</div>
+        <div class="span6">{{appForm.mtIllTreatment}}</div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">In the past three yesrs, addict to alcohol, drug, or narcotic?</div>
+      <div class="span8">{{appForm.adct}}</div>
+    </div>
+    <div ng-show="appForm.adct == 'yes'">
+      <div class="row-fluid">
+        <div class="span4 offset2">Addiction Time</div>
+        <div class="span6">{{appForm.adctTime}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Addiction Type</div>
+        <div class="span6">{{appForm.adctType}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">Treatment Status</div>
+        <div class="span6">{{appForm.adctTreatment}}</div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">Meditation Application According to:</div>
+      <div class="span8">{{appForm.med}}</div>
+    </div>
+    <div ng-show="appForm.med == 'place'">
+      <div class="row-fluid">
+        <div class="span4 offset2">Place</div>
+        <div class="span6">{{appForm.medP.place}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">From</div>
+        <div class="span6">{{appForm.medP.from}}</div>
+      </div>
+      <div class="row-fluid">
+        <div class="span4 offset2">To</div>
+        <div class="span6">{{appForm.medP.to}}</div>
+      </div>
+    </div>
+    <div ng-show="appForm.med == 'date'">
+      <div class="row-fluid">
+        <div class="span4 offset2"></div>
+        <div class="span6">{{appForm.medD}}</div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">Submit Date:</div>
+      <div class="span8">{{appForm.formSubmitDate}}</div>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
