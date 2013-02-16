@@ -1,12 +1,14 @@
-<div style="padding: .75em;">
-  <div ng-show="savingUserData" style="color: red;">Saving User Data...<br /></div>
-  <div ng-show="failToSaveUserData" style="color: red;">Sorry. Fail to save your data. Please check your internet connection and try again.<br /></div>
-  <div ng-hide="isUserDataReady">
-    Hello, <b><i style="color: red;">{{ userEmail }}</i></b>. Please fill in the following basic data.<br /><br />
+<div style="padding: .75em;width:920px;margin-left:-20px;">
+  <div ng-show="savingUserData" style="color: red;">Saving User Data...<br/></div>
+  <div ng-show="failToSaveUserData" style="color: red;">Sorry. Fail to save your data. Please check your internet connection and try again.<br/></div>
+  <div ng-hide="isUserDataReady" style="text-align:left;margin-left:170px;margin-top:20px;width:600px;font-family: cursive sans-serif serif;font-size: 17px;">
+    <span style="color:#D2691E;font-weight:600;">Hello!</span>
+    <span style="color:#D2691E;margin-left:3px;font-weight:600;">{{ userEmail }}</span>
+    <span style="color:#698B69;margin-left:8px;font-weight:600;">Please fill in the following basic data.</span>
   </div>
-<form name="form" class="form-horizontal">
- <fieldset>
-  <legend>Basic Data</legend>
+<form name="form" class="form-horizontal" style="margin:auto;">
+ <fieldset style="backgrouond-color:#333333;width:300px;margin:auto;text-align:center;border:1px dashed #999999;padding:30px;">
+  <legend style="border:1px dashed #999999;padding:10px;width:200px;height:30px;margin-top:30px;color:#ffffff;background-color:#999999;">Basic Data</legend>
   <div class="control-group">
     <label class="control-label" for="userDataEmail">Email</label>
     <div class="controls">
@@ -104,8 +106,8 @@
     </div>
   </div>
  </fieldset>
-  <fieldset>
-    <legend>Emergency Contact</legend>
+  <fieldset style="backgrouond-color:#333333;width:400px;margin:auto;text-align: center;border:1px dashed #999999;padding:30px;">
+    <legend style="border:1px dashed #999999;padding:10px;width:200px;height:30px;margin-top:30px;color:#ffffff;background-color:#999999;">Emergency Contact</legend>
     <div class="control-group">
       <label class="control-label" for="userDataEmergencyName">Name</label>
       <div class="controls">
@@ -139,8 +141,8 @@
   </fieldset>
   <div class="control-group">
     <div class="controls">
-      <button class="btn btn-primary" ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)">SAVE</button>
-      <button class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
+      <button class="btn btn-primary" ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)" style="float:left;margin-left:250px;width:60px;">SAVE</button>
+      <button class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)" style="margin-left:-150px;width:60px;">RESET</button>
     </div>
   </div>
 </form>
