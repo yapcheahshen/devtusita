@@ -11,3 +11,20 @@
 .css-form input.ng-valid.ng-dirty {
   background-color: #78FA89;
 }
+body{background-color:#ecf3fe;font-family: sans-serif cursive serif;}
+ #all{margin:auto;width:950px;height:auto;text-align:center;}
+ #title{background-color:#003A7F;width:940px;margin:auto;margin-top:-10px;height:40px;}
+ #login,#login1,#login2{background-color:#528B8B;text-align:center;float:right;padding-top:10px;}
+ #login{width:150px;height:30px;}
+ #login1,#login2{width:320px;height:30px;}
+ a{font-size:13px;color:#ffffff;}
+ a:hover,.fontStyle_logout a:hover{color:#98F5FF;text-decoration: none;font-weight:600;}
+ #root{background-color:#E0EEEE;width:940px;height:30px;margin:auto;border:1px dashed #999999;}
+ #path{width:250px;padding-top:5px;margin-left:25px;font-size:13px;color:#53868B;}
+ #content{background-color:#E0EEEE;width:940px;margin:auto;height:1250px;}
+ #content p{padding-top:30px;}
+ h3{color:#B4EEB4;font-size:20px;margin-left:100px;}
+ #indexA{color:#2f4f4f;font-size:15px;}
+ #indexA:hover{background-color:#5F9EA0;color:#ffffff;padding:3px;}
+ .fontStyle_hello,.fontStyle_user{color:#B4EEB4;margin-left:3px;font-size:13px;font-weight:600;}
+ .fontStyle_logout a{color:#CAFF70;margin-left:8px;font-weight:600;}
