@@ -1,149 +1,150 @@
-<div style="padding: .75em;width:920px;margin-left:-20px;">
-  <div ng-show="savingUserData" style="color: red;">Saving User Data...<br/></div>
-  <div ng-show="failToSaveUserData" style="color: red;">Sorry. Fail to save your data. Please check your internet connection and try again.<br/></div>
-  <div ng-hide="isUserDataReady" style="text-align:left;margin-left:170px;margin-top:20px;width:600px;font-family: cursive sans-serif serif;font-size: 17px;">
-    <span style="color:#D2691E;font-weight:600;">Hello!</span>
-    <span style="color:#D2691E;margin-left:3px;font-weight:600;">{{ userEmail }}</span>
-    <span style="color:#698B69;margin-left:8px;font-weight:600;">Please fill in the following basic data.</span>
+<div id="divTop">
+  <div ng-show="savingUserData" style="color: red;">Saving User Data...</div>
+  <div ng-show="failToSaveUserData" style="color: red;">Sorry. Fail to save your data. Please check your internet connection and try again.</div>
+  <div ng-hide="isUserDataReady" id="helloDiv">
+    <span id="helloWord">Hello!</span>
+    <span id="userEmail">{{ userEmail }}</span>
+    <span id="please">Please fill in the following basic data.</span>
   </div>
-<form name="form" class="form-horizontal" style="margin:auto;">
- <fieldset style="backgrouond-color:#333333;width:300px;margin:auto;text-align:center;border:1px dashed #999999;padding:30px;">
-  <legend style="border:1px dashed #999999;padding:10px;width:200px;height:30px;margin-top:30px;color:#ffffff;background-color:#999999;">Basic Data</legend>
-  <div class="control-group">
-    <label class="control-label" for="userDataEmail">Email</label>
-    <div class="controls">
-      <input id="userDataEmail" type="email" placeholder="Email" readonly required ng-model="email"/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataName">Name</label>
-    <div class="controls">
-      <input id="userDataName" type="text" placeholder="Name" name="name" required ng-model="user.name"/>
-      <div ng-show="form.name.$dirty && form.name.$invalid"><br /></div>
-      <div class="alert alert-error" ng-show="form.name.$dirty && form.name.$invalid">Invalid:
-        <span ng-show="form.name.$error.required">Please tell us your name.</span>
+  <form name="form" class="form-horizontal" id="formStyle">
+    <fieldset id="basicData">
+      <legend class="title">Basic Data</legend>
+      <div class="control-group">
+        <label class="control-label" for="userDataEmail">Email</label>
+        <div class="controls">
+          <input id="userDataEmail" type="email" placeholder="Email" readonly required ng-model="email"/>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataBirthday">Birthday</label>
-    <div class="controls">
-      <input id="userDataBirthday" type="text" placeholder="Birthday" ng-model="user.birthday" datepicker/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataCitizenship">Citizenship</label>
-    <div class="controls">
-      <input id="userDataCitizenship" type="text" placeholder="Citizenship" ng-model="user.citizenship"/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataIdnum">ID Number</label>
-    <div class="controls">
-      <input id="userDataIdnum" type="text" placeholder="ID Number" ng-model="user.idnum"/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Gender</label>
-    <div class="controls">
-      <label class="radio inline">
-        <input type="radio" ng-model="user.gender" value="male">Male
-      </label>
-      <label class="radio inline">
-        <input type="radio" ng-model="user.gender" value="female">Female
-      </label>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataLandline">Landline</label>
-    <div class="controls">
-     <input id="userDataLandline" type="text" placeholder="Fixed Phone Line" ng-model="user.landline"/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataCellphone">Cellphone</label>
-    <div class="controls">
-     <input id="userDataCellphone" type="text" placeholder="Cellphone" ng-model="user.cellphone"/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataAddress">Address</label>
-    <div class="controls">
-     <input id="userDataAddress" type="text" placeholder="Address" ng-model="user.address"/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="userDataDhammaName">Dhamma Name</label>
-    <div class="controls">
-     <input id="userDataDhammaName" type="text" placeholder="Dhamma Name" ng-model="user.dhammaname"/>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Current Status</label>
-    <div class="controls">
-      <label class="radio inline">
-        <input type="radio" ng-model="user.status" value="ordained">Ordained
-      </label>
-      <label class="radio inline">
-        <input type="radio" ng-model="user.status" value="laity">Laity
-      </label>
-      <div ng-show="user.status == 'ordained'">
-        <div class="control-group">
-          <label class="control-label" for="userDataPreceptorName">Preceptor Name</label>
-          <div class="controls">
-            <input id="userDataPreceptorName" type="text" placeholder="Preceptor Name" ng-model="user.preceptorname"/>
-          </div>
-          <label class="control-label" for="userDataOrdinationDate">Ordination Date</label>
-          <div class="controls">
-            <input id="userDataOrdinationDate" type="text" placeholder="Ordination Date" ng-model="user.dateordination" datepicker/>
-          </div>
-          <label class="control-label" for="userDataOrdinationPlace">Ordination Place</label>
-          <div class="controls">
-            <input id="userDataOrdinationPlace" type="text" placeholder="Ordination Place" ng-model="user.placeordination"/>
+      <div class="control-group">
+        <label class="control-label" for="userDataName">Name</label>
+        <div class="controls">
+          <input id="userDataName" type="text" placeholder="Name" name="name" required ng-model="user.name"/>
+          <div ng-show="form.name.$dirty && form.name.$invalid"></div>
+          <div class="alert alert-error" ng-show="form.name.$dirty && form.name.$invalid">
+            <span>Invalid:</span>
+            <span ng-show="form.name.$error.required">Please tell us your name.</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
- </fieldset>
-  <fieldset style="backgrouond-color:#333333;width:400px;margin:auto;text-align: center;border:1px dashed #999999;padding:30px;">
-    <legend style="border:1px dashed #999999;padding:10px;width:200px;height:30px;margin-top:30px;color:#ffffff;background-color:#999999;">Emergency Contact</legend>
+      <div class="control-group">
+        <label class="control-label" for="userDataBirthday">Birthday</label>
+        <div class="controls">
+          <input id="userDataBirthday" type="text" placeholder="Birthday" ng-model="user.birthday" datepicker/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataCitizenship">Citizenship</label>
+        <div class="controls">
+          <input id="userDataCitizenship" type="text" placeholder="Citizenship" ng-model="user.citizenship"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataIdnum">ID Number</label>
+        <div class="controls">
+          <input id="userDataIdnum" type="text" placeholder="ID Number" ng-model="user.idnum"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Gender</label>
+        <div class="controls">
+          <label class="radio inline">
+            <input type="radio" ng-model="user.gender" value="male">Male
+          </label>
+          <label class="radio inline">
+            <input type="radio" ng-model="user.gender" value="female">Female
+          </label>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataLandline">Landline</label>
+        <div class="controls">
+          <input id="userDataLandline" type="text" placeholder="Fixed Phone Line" ng-model="user.landline"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataCellphone">Cellphone</label>
+        <div class="controls">
+          <input id="userDataCellphone" type="text" placeholder="Cellphone" ng-model="user.cellphone"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataAddress">Address</label>
+        <div class="controls">
+          <input id="userDataAddress" type="text" placeholder="Address" ng-model="user.address"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataDhammaName">Dhamma Name</label>
+        <div class="controls">
+          <input id="userDataDhammaName" type="text" placeholder="Dhamma Name" ng-model="user.dhammaname"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Current Status</label>
+        <div class="controls">
+          <label class="radio inline">
+            <input type="radio" ng-model="user.status" value="ordained">Ordained
+          </label>
+          <label class="radio inline">
+            <input type="radio" ng-model="user.status" value="laity">Laity
+          </label>
+          <div ng-show="user.status == 'ordained'">
+            <div class="control-group">
+              <label class="control-label" for="userDataPreceptorName">Preceptor Name</label>
+              <div class="controls">
+                <input id="userDataPreceptorName" type="text" placeholder="Preceptor Name" ng-model="user.preceptorname"/>
+              </div>
+              <label class="control-label" for="userDataOrdinationDate">Ordination Date</label>
+              <div class="controls">
+                <input id="userDataOrdinationDate" type="text" placeholder="Ordination Date" ng-model="user.dateordination" datepicker/>
+              </div>
+              <label class="control-label" for="userDataOrdinationPlace">Ordination Place</label>
+              <div class="controls">
+                <input id="userDataOrdinationPlace" type="text" placeholder="Ordination Place" ng-model="user.placeordination"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset id="emerCont">
+      <legend class="title">Emergency Contact</legend>
+      <div class="control-group">
+        <label class="control-label" for="userDataEmergencyName">Name</label>
+        <div class="controls">
+          <input id="userDataEmergencyName" type="text" placeholder="Name" ng-model="user.emg.name"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataEmergencyRelation">Relationship</label>
+        <div class="controls">
+          <input id="userDataEmergencyRelation" type="text" placeholder="Relationship" ng-model="user.emg.relation"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataEmergencyLandline">Landline</label>
+        <div class="controls">
+          <input id="userDataEmergencyLandline" type="text" placeholder="Fixed Phone Line" ng-model="user.emg.landline"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataEmergencyCellphone">Cellphone</label>
+        <div class="controls">
+          <input id="userDataEmergencyCellphone" type="text" placeholder="Cellphone" ng-model="user.emg.cellphone"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="userDataEmergencyAddress">Address</label>
+        <div class="controls">
+          <input id="userDataEmergencyAddress" type="text" placeholder="Address" ng-model="user.emg.address"/>
+        </div>
+      </div>
+    </fieldset>
     <div class="control-group">
-      <label class="control-label" for="userDataEmergencyName">Name</label>
       <div class="controls">
-       <input id="userDataEmergencyName" type="text" placeholder="Name" ng-model="user.emg.name"/>
+        <button id="save" class="btn btn-primary" ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)">SAVE</button>
+        <button id="reset" class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
       </div>
     </div>
-    <div class="control-group">
-      <label class="control-label" for="userDataEmergencyRelation">Relationship</label>
-      <div class="controls">
-       <input id="userDataEmergencyRelation" type="text" placeholder="Relationship" ng-model="user.emg.relation"/>
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="userDataEmergencyLandline">Landline</label>
-      <div class="controls">
-       <input id="userDataEmergencyLandline" type="text" placeholder="Fixed Phone Line" ng-model="user.emg.landline"/>
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="userDataEmergencyCellphone">Cellphone</label>
-      <div class="controls">
-       <input id="userDataEmergencyCellphone" type="text" placeholder="Cellphone" ng-model="user.emg.cellphone"/>
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="userDataEmergencyAddress">Address</label>
-      <div class="controls">
-       <input id="userDataEmergencyAddress" type="text" placeholder="Address" ng-model="user.emg.address"/>
-      </div>
-    </div>
-  </fieldset>
-  <div class="control-group">
-    <div class="controls">
-      <button class="btn btn-primary" ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)" style="float:left;margin-left:250px;width:60px;">SAVE</button>
-      <button class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)" style="margin-left:-150px;width:60px;">RESET</button>
-    </div>
-  </div>
-</form>
+  </form>
 </div>
