@@ -158,6 +158,10 @@ function recordCtrl($scope, $http, $templateCache) {
   });
 }
 
+function retreatCtrl($scope) {
+  $scope.message = "retreat";
+}
+
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
   $scope.method = 'GET';
   $scope.email = $scope.userEmail;

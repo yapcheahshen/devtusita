@@ -24,8 +24,13 @@ class MainPage(webapp2.RequestHandler):
       template_values['isLogin'] = True
       template_values['userEmail'] = user.email()
       template_values['signoutURL'] = users.create_logout_url("/")
+      if users.is_current_user_admin():
+        template_values['isCurrentUserAdmin'] = True
+      else:
+        template_values['isCurrentUserAdmin'] = False
     else:
       template_values['isLogin'] = False
+      template_values['isCurrentUserAdmin'] = False
       template_values['signinOrRegisterURL'] = users.create_login_url("/")
 
     template = jinja_environment.get_template('index.html')

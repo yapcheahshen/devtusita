@@ -40,6 +40,9 @@
    <a href="/userdata">Update My Data</a><br />
    <a href="/apply">Meditation Application</a><br />
    <a href="/record">Meditation Record</a>
+  {% if isCurrentUserAdmin %}
+   <br /><a href="/retreat">Add Retreat</a>
+  {% endif %}
    <hr>
  </div>
  <div id="root">
