@@ -8,6 +8,7 @@ angular.module('tusitaPersonal-directives', []).
       restrict: 'A',
       link: function postLink(scope, iElement, iAttrs) {
         iElement.datepicker({
+          changeYear: true,
           dateFormat: 'yy-mm-dd',
           onSelect: function(dateText, inst) {
             scope.$apply(function(scope){
