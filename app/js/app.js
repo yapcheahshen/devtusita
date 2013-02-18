@@ -1,4 +1,4 @@
-angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider) {
+angular.module('tusitaPersonal', ['tusitaPersonal-directives'], function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $routeProvider.when('/', {
@@ -25,23 +25,4 @@ angular.module('tusitaPersonal', [], function($routeProvider, $locationProvider)
     templateUrl: '/partials/testRESTful.html',
     controller: testRESTfulAPICtrl
   });
-}).directive('datepicker', function($parse) {
-    // Reference:
-    // http://docs.angularjs.org/guide/directive
-    // http://api.jqueryui.com/datepicker/
-    // http://jsfiddle.net/nnsese/xB6c2/26/
-    var directiveDefinitionObject = {
-      restrict: 'A',
-      link: function postLink(scope, iElement, iAttrs) {
-        iElement.datepicker({
-          dateFormat: 'yy-mm-dd',
-          onSelect: function(dateText, inst) {
-            scope.$apply(function(scope){
-              $parse(iAttrs.ngModel).assign(scope, dateText);
-            });
-          }
-        });
-      }
-    };
-    return directiveDefinitionObject;
-  });
+});
