@@ -10,7 +10,7 @@ from database import create, read, update, delete, mafCreate, mafRead, mafUpdate
 
 
 jinja_environment = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
+    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'app')),
     variable_start_string='{$',
     variable_end_string='$}')
 
