@@ -29,3 +29,6 @@ body{background-color:#ecf3fe;font-family: sans-serif cursive serif;}
  .fontStyle_hello,.fontStyle_user{color:#B4EEB4;margin-left:3px;font-size:13px;font-weight:600;}
  .fontStyle_logout a{color:#CAFF70;margin-left:8px;font-weight:600;}
 
+[ng-cloak] {
+  display: none;
+}

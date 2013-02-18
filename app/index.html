@@ -12,7 +12,7 @@
 <body ng-controller="mainCtrl">
 <div id="all">
  <img src="/img/Tusita-header.jpg"/>
- <div id="title">
+ <div id="title" ng-cloak>
    {% if isLogin %}
    <div ng-show='isUserDataReady'>
     <p id="login1">
@@ -35,7 +35,7 @@
   {% endif %}
   <h3>Personal Page of Tusita Hermitage</h3>
  </div>
- <div ng-show="isUserDataReady">
+ <div ng-show="isUserDataReady" ng-cloak>
    <a href="/">Home</a><br />
    <a href="/userdata">Update My Data</a><br />
    <a href="/apply">Meditation Application</a><br />
