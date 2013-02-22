@@ -127,7 +127,7 @@ function applyCtrl($scope, $http, $templateCache, $location) {
 }
 
 // show meditation application data of the user
-function recordCtrl($scope, $http, $templateCache, $location) {
+function recordCtrl($scope, $http, $location) {
   // redirect to / if user is not logged in
   if (!$scope.isLogin) $location.path('/');
 
@@ -145,8 +145,7 @@ function recordCtrl($scope, $http, $templateCache, $location) {
 
   // read meditation application data from server
   $http({method: 'GET',
-         url: $scope.urlRESTApply,
-         cache: $templateCache}).
+         url: $scope.urlRESTApply}).
     success(function(data, status) {
       // read successfully
       $scope.isLoadingRecord = undefined;
