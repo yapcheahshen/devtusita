@@ -13,3 +13,13 @@ Development
   3. <i><b>app/js/\*</b></i> : JavaScript files goes here. (use [AngularJS](http://angularjs.org/))
   4. <i><b>app/img/\*</b></i> : image files goes here.
   5. <i><b>app/partials/\*</b></i> : partial html files used by [AngularJS](http://angularjs.org/).
+
+## Database
+Several models are used to store data on server. The first is:
+### Person
+```python
+class Person(ndb.Model):
+  json = ndb.TextProperty()
+  activeMedAppForm = ndb.KeyProperty(repeated = True)
+```
+This is a model inherited from <i>[ndb.Model](https://developers.google.com/appengine/docs/python/ndb/modelclass)</i> to store basic information of users, such as name, birthday, and etc.
