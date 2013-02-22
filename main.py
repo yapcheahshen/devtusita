@@ -112,7 +112,7 @@ class RESTfulRetreatHandler(webapp2.RequestHandler):
     else:
       pass
 
-  def get(self, email):
+  def post(self, email):
     if not self.isAdmin(email):
       self.error(404)
     else:

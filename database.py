@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from google.appengine.ext import ndb
-import json
+import json, datetime
 
 class Person(ndb.Model):
   json = ndb.TextProperty()
@@ -13,6 +13,7 @@ class MedAppForm(ndb.Model):
 
 class Retreat(ndb.Model):
   json = ndb.TextProperty()
+  startDate = ndb.DateProperty()
 
 
 def create(email, jsonData):
@@ -98,7 +99,19 @@ def mafDelete(email):
 
 
 def retreatCreate(jsonData):
-  rt = Retreat(json = jsonData)
+  # extract start date of retreat
+  try:
+    retreatObj = json.loads(jsonData)
+    # startDateStr example: 2013-02-22
+    startDateStr = retreatObj['startDate']
+    # array = [year, month, day]
+    array = startDateStr.split('-')
+    # from Python doc: class datetime.date(year, month, day)
+    startDate = datetime.date(int(array[0]), int(array[1]), int(array[2]))
+  except:
+    return
+
+  rt = Retreat(json = jsonData, startDate = startDate)
   rt.put()
   return rt.json
 
