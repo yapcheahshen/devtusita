@@ -116,5 +116,12 @@ def retreatCreate(jsonData):
   return rt.json
 
 
-def retreatRead():
-  pass
+def retreatRead(email):
+  # return all retreats
+  retreats = Retreat.query()
+
+  result = []
+  for retreat in retreats:
+    result.append(retreat.json)
+
+  return result
