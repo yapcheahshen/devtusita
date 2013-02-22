@@ -46,6 +46,8 @@ def update(email, jsonData):
 def delete(email):
   person = Person.get_by_id(email)
   if (person):
+    for form in person.activeMedAppForm:
+      form.delete()
     person.key.delete()
     return True
   else:
@@ -90,8 +92,8 @@ def mafRead(email):
 
 
 def mafUpdate(email, jsonData):
-  return None
+  return
 
 
 def mafDelete(email):
-  return None
+  return
