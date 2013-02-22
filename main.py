@@ -106,6 +106,12 @@ class RESTfulRetreatHandler(webapp2.RequestHandler):
       return False
     return True
 
+  def checkData(self, data):
+    if (data):
+      self.response.out.write(data)
+    else:
+      self.error(404)
+
   def get(self, email):
     if not self.isAdmin(email):
       self.error(404)
@@ -116,11 +122,7 @@ class RESTfulRetreatHandler(webapp2.RequestHandler):
     if not self.isAdmin(email):
       self.error(404)
     else:
-      data = retreatCreate(self.request.body)
-      if data:
-        self.response.out.write(data)
-      else:
-        self.error(404)
+      self.checkData(retreatCreate(self.request.body))
 
 
 class RedirectPage(webapp2.RequestHandler):
