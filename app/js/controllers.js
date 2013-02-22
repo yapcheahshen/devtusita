@@ -4,10 +4,6 @@ function mainCtrl($scope, $http, $templateCache, $location) {
   $scope.userData = {}
   $scope.isUserDataReady = false;
 
-  $scope.isDevServer = (function() {
-    return $location.host() == 'localhost';
-  })();
-
   $scope.$on('userDataSavedEvent', function(event, data) {
     $scope.userData = angular.copy(data);
     $scope.isUserDataReady = true;
@@ -98,7 +94,7 @@ function applyCtrl($scope, $http, $templateCache, $location) {
   $scope.submit = function(user) {
     $scope.savingUserData = true;
 
-    // save user data to server through RESTful API
+    // save meditation application data to server through RESTful API
     $http({method: 'POST',
            url: $scope.urlRESTApply,
            data: JSON.stringify(user),
@@ -111,7 +107,7 @@ function applyCtrl($scope, $http, $templateCache, $location) {
         $('#saveAppFormModal').modal();
       }).
       error(function(data, status) {
-        // failed to save user data
+        // failed to save meditation application
         $scope.savingUserData = undefined;
         $scope.failToSaveUserData = true;
         $('#saveAppFormModal').modal();
@@ -130,12 +126,13 @@ function applyCtrl($scope, $http, $templateCache, $location) {
   $scope.reset();
 }
 
+// show meditation application data of the user
 function recordCtrl($scope, $http, $templateCache, $location) {
   // redirect to / if user is not logged in
   if (!$scope.isLogin) $location.path('/');
 
   $scope.isLoadingRecord = true;
-  $scope.urlREST = $scope.urlREST + '/apply';
+  $scope.urlRESTApply = $scope.urlREST + '/apply';
 
   $scope.showAppForm = function(urlsafe) {
     $scope.appForm = undefined;
@@ -146,9 +143,9 @@ function recordCtrl($scope, $http, $templateCache, $location) {
     $('#showAppFormModal').modal();
   };
 
-  // read data from server
+  // read meditation application data from server
   $http({method: 'GET',
-         url: $scope.urlREST,
+         url: $scope.urlRESTApply,
          cache: $templateCache}).
     success(function(data, status) {
       // read successfully
@@ -156,7 +153,7 @@ function recordCtrl($scope, $http, $templateCache, $location) {
       $scope.appForms = data;
     }).
     error(function(data, status) {
-      // failed to read user data
+      // failed to read meditation application data
       $scope.isLoadingRecord = undefined;
   });
 }
