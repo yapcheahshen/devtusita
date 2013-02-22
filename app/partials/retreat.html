@@ -1,6 +1,5 @@
 <div id="divTop">
   <div ng-show="savingRetreatData" style="color: red;">Saving Retreat Data...</div>
-  <div ng-show="failToSaveRetreatData" style="color: red;">Sorry. Fail to save retreat data. Please check your internet connection and try again.</div>
   <form name="form" class="form-horizontal" id="formStyle">
     <fieldset id="basicData">
       <legend class="title">Retreat Data</legend>
@@ -54,4 +53,19 @@
       </div>
     </div>
   </form>
+</div>
+
+
+<div id="saveAppFormModal" class="modal hide fade">
+  <div class="modal-header">
+    <h3>Info</h3>
+  </div>
+  <div class="modal-body">
+    <div ng-hide="failToSaveRetreatData"><p>Please wait for our review!</p></div>
+    <div ng-show="failToSaveRetreatData"><p>Cannot save retreat data! Please check your internet connection and try again!</p></div>
+  </div>
+  <div class="modal-footer">
+    <div ng-hide="failToSaveRetreatData"><a href="/" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a></div>
+    <div ng-show="failToSaveRetreatData"><button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button></div>
+  </div>
 </div>

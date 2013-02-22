@@ -183,11 +183,13 @@ function retreatCtrl($scope, $http, $templateCache, $location) {
         $scope.savingRetreatData = undefined;
         $scope.failToSaveRetreatData = undefined;
         $scope.retreatData = angular.copy(retreat);
+        $('#saveAppFormModal').modal();
       }).
       error(function(data, status) {
         // failed to save retreat data
         $scope.savingRetreatData = undefined;
         $scope.failToSaveRetreatData = true;
+        $('#saveAppFormModal').modal();
     });
   };
 
