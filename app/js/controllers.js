@@ -79,10 +79,28 @@ function userdataCtrl($scope, $http, $templateCache, $location) {
   $scope.reset();
 }
 
-function applyCtrl($scope, $http, $templateCache, $location) {
+function applyCtrl($scope, $http, $location) {
   // redirect to / if user is not logged in
   if (!$scope.isLogin) $location.path('/');
 
+  $scope.urlRESTRetreat = $scope.urlREST + '/retreat'
+  $scope.isRetreatDataReady = false;
+  // Get Retreat Data
+  $http({method: 'GET',
+         url: $scope.urlRESTRetreat}).
+    success(function(data, status) {
+      // get retreat data successfully
+      $scope.retreats = data;
+      $scope.isRetreatDataReady = true;
+    }).
+    error(function(data, status) {
+      // failed to get retreat data
+      // FIXME: do better error showing
+      alert('fail to get retreat data');
+      $location.path('/');
+  });
+
+  // set default option value of application form
   $scope.applicationData = {'joined': 'no',
                             'srIll': 'no',
                             'mtIll': 'no',
@@ -97,8 +115,7 @@ function applyCtrl($scope, $http, $templateCache, $location) {
     // save meditation application data to server through RESTful API
     $http({method: 'POST',
            url: $scope.urlRESTApply,
-           data: JSON.stringify(user),
-           cache: $templateCache}).
+           data: JSON.stringify(user)}).
       success(function(data, status) {
         // save successfully
         $scope.savingUserData = undefined;
