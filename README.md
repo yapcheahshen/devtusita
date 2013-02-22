@@ -34,5 +34,8 @@ This models stores the user meditation application. The only one field <i>json</
 ## RESTful API
 The are repective API for each model:
 ### RESTful API for Person
-CRUD (create, read, update, and delete) are all supported. The url for communication is <b>//RESTful/{{email}}</b>, where {{email}} is the email address of the user.
+CRUD (create, read, update, and delete) are all supported. The url for communication is <b>/RESTful/{{email}}</b>, where {{email}} is the email address of the user.
+
+### RESTful API for MedAppForm
+Only <i>create</i> and <i>read</i> are supported. The url is <b>/RESTful/{{email}}/apply</b>, where {{email}} is the email address of the user. The read operation will return all applied form back to client.
 
