@@ -21,6 +21,7 @@ class MainPage(webapp2.RequestHandler):
 
     user = users.get_current_user()
     if user:
+      # user already login
       template_values['isLogin'] = True
       template_values['userEmail'] = user.email()
       template_values['signoutURL'] = users.create_logout_url("/")
@@ -29,6 +30,7 @@ class MainPage(webapp2.RequestHandler):
       else:
         template_values['isCurrentUserAdmin'] = False
     else:
+      # user not login
       template_values['isLogin'] = False
       template_values['isCurrentUserAdmin'] = False
       template_values['signinOrRegisterURL'] = users.create_login_url("/")
@@ -55,46 +57,60 @@ class RESTfulHandler(webapp2.RequestHandler):
   def get(self, email):
     if not self.isLegalUser(email):
       self.error(404)
-      return
-
-    if self.request.url.endswith('apply'):
-      data = mafRead(email)
     else:
-      data = read(email)
-    self.checkData(data)
+      if self.request.url.endswith('apply'):
+        data = mafRead(email)
+      else:
+        data = read(email)
+      self.checkData(data)
 
   def post(self, email):
     if not self.isLegalUser(email):
       self.error(404)
-      return
-
-    if self.request.url.endswith('apply'):
-      data = mafCreate(email, self.request.body)
     else:
-      data = create(email, self.request.body)
-    self.checkData(data)
+      if self.request.url.endswith('apply'):
+        data = mafCreate(email, self.request.body)
+      else:
+        data = create(email, self.request.body)
+      self.checkData(data)
 
   def put(self, email):
     if not self.isLegalUser(email):
       self.error(404)
-      return
-
-    if self.request.url.endswith('apply'):
-      data = mafUpdate(email, self.request.body)
     else:
-      data = update(email, self.request.body)
-    self.checkData(data)
+      if self.request.url.endswith('apply'):
+        data = mafUpdate(email, self.request.body)
+      else:
+        data = update(email, self.request.body)
+      self.checkData(data)
 
   def delete(self, email):
     if not self.isLegalUser(email):
       self.error(404)
-      return
-
-    if self.request.url.endswith('apply'):
-      data = mafDelete(email)
     else:
-      data = delete(email)
-    self.checkData(data)
+      if self.request.url.endswith('apply'):
+        data = mafDelete(email)
+      else:
+        data = delete(email)
+      self.checkData(data)
+
+
+class RESTfulRetreatHandler(webapp2.RequestHandler):
+  def isAdmin(self, email):
+    user = users.get_current_user()
+    if not user:
+      return False
+    if email != user.email():
+      return False
+    if not users.is_current_user_admin():
+      return False
+    return True
+
+  def get(self, email):
+    if not self.isAdmin(email):
+      self.error(404)
+    else:
+      pass
 
 
 class RedirectPage(webapp2.RequestHandler):
@@ -105,5 +121,6 @@ class RedirectPage(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/(userdata|apply|record)', RedirectPage),
                                ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/apply', RESTfulHandler),
+                               ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/retreat', RESTfulRetreatHandler),
                                ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})', RESTfulHandler)],
                               debug=True)
