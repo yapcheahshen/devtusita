@@ -130,7 +130,10 @@ function applyCtrl($scope, $http, $templateCache, $location) {
   $scope.reset();
 }
 
-function recordCtrl($scope, $http, $templateCache) {
+function recordCtrl($scope, $http, $templateCache, $location) {
+  // redirect to / if user is not logged in
+  if (!$scope.isLogin) $location.path('/');
+
   $scope.isLoadingRecord = true;
   $scope.urlREST = $scope.urlREST + '/apply';
 
@@ -158,8 +161,39 @@ function recordCtrl($scope, $http, $templateCache) {
   });
 }
 
-function retreatCtrl($scope) {
-  $scope.message = "retreat";
+function retreatCtrl($scope, $http, $templateCache, $location) {
+  // redirect to / if user is not logged in
+  if (!$scope.isLogin) $location.path('/');
+
+  $scope.retreatData = {'receiverEmail': $scope.userEmail};
+  $scope.retreat = angular.copy($scope.retreatData);
+  $scope.urlRESTRetreat = $scope.urlREST + '/retreat'
+
+  // callback if user press 'SUBMIT' button
+  $scope.submit = function(retreat) {
+    $scope.savingRetreatData = true;
+
+    // save retreat data to server through RESTful API
+    $http({method: 'POST',
+           url: $scope.urlRESTRetreat,
+           data: JSON.stringify(retreat),
+           cache: $templateCache}).
+      success(function(data, status) {
+        // save successfully
+        $scope.savingRetreatData = undefined;
+        $scope.failToSaveRetreatData = undefined;
+        $scope.retreatData = angular.copy(retreat);
+      }).
+      error(function(data, status) {
+        // failed to save retreat data
+        $scope.savingRetreatData = undefined;
+        $scope.failToSaveRetreatData = true;
+    });
+  };
+
+  $scope.isUnchanged = function(retreat) {
+    return angular.equals(retreat, $scope.retreatData);
+  };
 }
 
 function testRESTfulAPICtrl($scope, $http, $templateCache) {
