@@ -124,6 +124,9 @@
   <div class="control-group">
     <label class="control-label">Available Retreat</label>
     <div class="controls">
+      <div ng-repeat="retreat in retreats">
+        <input type="radio" ng-model="user.retreat" value="{{retreat.urlsafe}}">{{retreat.place}}(from {{retreat.startDate}} to {{retreat.endDate}})
+      </div>
     </div>
   </div>
 
