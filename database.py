@@ -122,6 +122,8 @@ def retreatRead(email):
 
   result = []
   for retreat in retreats:
-    result.append(retreat.json)
+    obj = json.loads(retreat.json)
+    obj['urlsafe'] = retreat.key.urlsafe()
+    result.append(obj)
 
   return json.dumps(result)
