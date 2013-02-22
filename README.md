@@ -22,10 +22,17 @@ class Person(ndb.Model):
   json = ndb.TextProperty()
   activeMedAppForm = ndb.KeyProperty(repeated = True)
 ```
-This is a model inherited from <i>[ndb.Model](https://developers.google.com/appengine/docs/python/ndb/modelclass)</i> to store basic information of users, such as name, birthday, and etc. There are two properties in this <b>Person</b> model, <i>json</i> and <i>activeMedAppForm</i>. <i>json</i> stores user information in JSON format, and <i>activeMedAppForm</i> stores key(s) of user meditation application(s). The data of user meditation application is stored in another model called <i>MedAppForm</i>, which will be described next.
+This is a model inherited from <i>[ndb.Model](https://developers.google.com/appengine/docs/python/ndb/modelclass)</i> to store basic information of users, such as name, birthday, and etc. There are two properties in this <b>Person</b> model, <i>json</i> and <i>activeMedAppForm</i>. The field <i>json</i> stores user information in JSON format, and the field <i>activeMedAppForm</i> stores key(s) of user meditation application(s). The data of user meditation application is stored in another model called <i>MedAppForm</i>, which will be described next.
 
 ### MedAppForm
 ```python
 class MedAppForm(ndb.Model):
   json = ndb.TextProperty()
 ```
+This models stores the user meditation application. The only one field <i>json</i> store the form data in JSON format.
+
+## RESTful API
+The are repective API for each model:
+### RESTful API for Person
+CRUD (create, read, update, and delete) are all supported. The url for communication is <b>//RESTful/{{email}}</b>, where {{email}} is the email address of the user.
+
