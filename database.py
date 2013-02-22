@@ -124,4 +124,4 @@ def retreatRead(email):
   for retreat in retreats:
     result.append(retreat.json)
 
-  return result
+  return json.dumps(result)

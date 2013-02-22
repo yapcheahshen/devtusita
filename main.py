@@ -96,6 +96,14 @@ class RESTfulHandler(webapp2.RequestHandler):
 
 
 class RESTfulRetreatHandler(webapp2.RequestHandler):
+  def isLegalUser(self, email):
+    user = users.get_current_user()
+    if not user:
+      return False
+    if email != user.email():
+      return False
+    return True
+
   def isAdmin(self, email):
     user = users.get_current_user()
     if not user:
@@ -113,7 +121,7 @@ class RESTfulRetreatHandler(webapp2.RequestHandler):
       self.error(404)
 
   def get(self, email):
-    if not self.isAdmin(email):
+    if not self.isLegalUser(email):
       self.error(404)
     else:
       self.checkData(retreatRead(email))
