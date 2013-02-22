@@ -7,7 +7,12 @@ import json
 class Person(ndb.Model):
   json = ndb.TextProperty()
   activeMedAppForm = ndb.KeyProperty(repeated = True)
-  #archivedMedAppForm = ndb.KeyProperty(repeated = True)
+
+class MedAppForm(ndb.Model):
+  json = ndb.TextProperty()
+
+class Retreat(ndb.Model):
+  json = ndb.TextProperty()
 
 
 def create(email, jsonData):
@@ -18,7 +23,6 @@ def create(email, jsonData):
   person = Person(id = email,
                   json = jsonData)
   person.put()
-  #return json.dumps(person.toDict())
   return person.json
 
 
@@ -26,7 +30,6 @@ def read(email):
   # use email as ID for database access
   person = Person.get_by_id(email)
   if (person):
-    #return json.dumps(person.toDict())
     return person.json
   else:
     return None
@@ -37,7 +40,6 @@ def update(email, jsonData):
   if (person):
     person.json = jsonData
     person.put()
-    #return json.dumps(person.toDict())
     return person.json
   else:
     return None
@@ -52,10 +54,6 @@ def delete(email):
     return True
   else:
     return False
-
-
-class MedAppForm(ndb.Model):
-  json = ndb.TextProperty()
 
 
 def mafCreate(email, jsonData):
@@ -97,3 +95,13 @@ def mafUpdate(email, jsonData):
 
 def mafDelete(email):
   return
+
+
+def retreatCreate(jsonData):
+  rt = Retreat(json = jsonData)
+  rt.put()
+  return rt.json
+
+
+def retreatRead():
+  pass

@@ -6,7 +6,7 @@ import jinja2
 import os
 
 from google.appengine.api import users
-from database import create, read, update, delete, mafCreate, mafRead, mafUpdate, mafDelete
+from database import create, read, update, delete, mafCreate, mafRead, mafUpdate, mafDelete, retreatRead, retreatCreate
 
 
 jinja_environment = jinja2.Environment(
@@ -111,6 +111,16 @@ class RESTfulRetreatHandler(webapp2.RequestHandler):
       self.error(404)
     else:
       pass
+
+  def get(self, email):
+    if not self.isAdmin(email):
+      self.error(404)
+    else:
+      data = retreatCreate(self.request.body)
+      if data:
+        self.response.out.write(data)
+      else:
+        self.error(404)
 
 
 class RedirectPage(webapp2.RequestHandler):
