@@ -1,6 +1,6 @@
 <form name="form" class="form-horizontal" ng-show="isRetreatDataReady" id="formStyle_apply">
   <fieldset id="fieldsetStyle">
-    <legend id="legendMed_apply" style="margin-left:150px;">Meditation Application Form</legend>
+    <legend id="legendMed_apply" class="titleMed">Meditation Application Form</legend>
     <div class="control-group divStyle01">
       <label class="control-label" for="afMeditationMethod">Meditation Method</label>
       <div class="controls divStyle03">
@@ -238,7 +238,6 @@
       Date: <input type="text" ng-model="user.formSubmitDate" datepicker/>
   </div>
   </fieldset>
-  <br />
   <div class="control-group" id="submit">
     <div class="controls">
       <button id="sub" class="btn btn-primary" ng-click="submit(user)" ng-disabled="form.$invalid || isUnchanged(user)">SUBMIT</button>

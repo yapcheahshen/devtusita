@@ -13,31 +13,29 @@
 }
 body{background-color:#ecf3fe;font-family:inherit sans-serif cursive serif;}
  #all{margin:auto;width:950px;height:auto;text-align:center;}
- #title{background-color:#003A7F;width:940px;margin:auto;margin-top:-10px;height:40px;}
- #login,#login1,#login2{background-color:#528B8B;text-align:center;float:right;padding-top:10px;}
- #login{width:150px;height:30px;}
- #login1,#login2{width:320px;height:30px;}
- a{font-size:13px;color:#ffffff;}
- a:hover,.fontStyle_logout a:hover{color:#98F5FF;text-decoration: none;font-weight:600;}
- #root{background-color:#ADD8E6;width:940px;height:30px;margin:auto;border:1px dashed #999999;}
- #path{width:350px;float:left;padding:5px;}
- #indexA{color:#00688B;font-size:15px;}
- #indexA:hover{background-color:#6495ED;color:#ffffff;padding-left:7px;padding-right:7px;padding-bottom:6px;padding-top:6px;}
- .spanStyle02b{margin-left:30px;font-weight:600;}
- .spanStyle01a{color:#104E8B;margin-left:5px;font-size:12px;}
- .spanStyle01b{color:#00688B;margin-left:5px;font-size:15px;}
- #userdataReback{width:500px;float:right;background-color:#848484;color:#ffffff;padding:5px;margin-right:50px;margin-top:-9px;}
- .spanStyle02a{margin-left:10px;color:#333333;}
- .aStyle00{margin-right:3px;font-size:14px;}
- .aStyle00:hover{font-size:12px;background-color:#20B2AA;color:#ffffff;padding-left:5px;padding-right:5px;padding-bottom:6px;padding-top:8px;}
+ #title{background-color:#003A7F;width:940px;margin:auto;margin-top:-10px;height:40px;}/*the style for webName and longinAndout*/
+ #login,#login1,#login2{background-color:#528B8B;text-align:center;float:right;padding-top:10px;}/*the style for login and logout background*/
+ #login{width:200px;height:30px;}/*the style for login width*/
+ #login1,#login2{width:360px;height:30px;}/*the style for logout width*/
+ a{font-size:13px;color:#ffffff;}/*id login href*/
+ a:hover,.fontStyle_logout a:hover{color:#98F5FF;text-decoration: none;font-weight:600;}/*id login href*/
+ .fontStyle_hello,.fontStyle_user{color:#B4EEB4;margin-left:3px;font-size:13px;font-weight:600;}/*Hello! user name*/
+ .fontStyle_logout a{color:#CAFF70;margin-left:8px;font-weight:600;}/*id login1 and login2 href*/
+ #userEmail{color:#FFA500}
+ #root{background-color:#ADD8E6;width:940px;height:30px;margin:auto;border:1px dashed #999999;}/*this style included two id, named "path" and "userdataReback".*/
+ #path{width:350px;float:left;padding:5px;}/*go Tustia*/
+ #indexA{color:#00688B;font-size:15px;}/*go Tustia href*/
+ #indexA:hover{background-color:#6495ED;color:#ffffff;padding-left:7px;padding-right:7px;padding-bottom:6px;padding-top:6px;}/*go Tustia href*/
+ .spanStyle02b{font-weight:600;}/*go Tustia*/
+ .spanStyle01a{color:#104E8B;margin-left:5px;font-size:12px;}/*web position¡GFriends of the Tusita*/
+ .spanStyle01b{color:#00688B;margin-left:5px;font-size:15px;}/*&#8596*/
+ #userdataReback{width:550px;float:right;background-color:#848484;color:#ffffff;padding:5px;margin-top:-9px;}/*friend's user item*/
+ .spanStyle02a{margin-left:8px;color:#333333;}/*the color for span line*/
+ .aStyle00{font-size:14px;padding-bottom:6px;padding-top:8px;}/*friend's user item href */
+ .aStyle00:hover{font-size:12px;background-color:#20B2AA;color:#ffffff;}/*friend's user item href */
+ h3{color:#B4EEB4;font-size:20px;margin-left:30px;}/*Personal Page of Tusita Hermitage*/
  #content{background-color:#D6D6D6;width:940px;margin:auto;height:1250px;}
- #content p{padding-top:30px;}
- h3{color:#B4EEB4;font-size:20px;margin-left:100px;}
- .fontStyle_hello,.fontStyle_user{color:#B4EEB4;margin-left:3px;font-size:13px;font-weight:600;}
- .fontStyle_logout a{color:#CAFF70;margin-left:8px;font-weight:600;}
- .iframeStyle{margin-top:5px;}
- #iframe01{border:1px dashed #999999;width:800px;height:300px;margin:auto;}
- #iframe02{border:1px dashed #999999;width:800px;height:600px;margin:auto;}
+ #iframeDiv{width:940px;margin:auto;}/*welcome iframe*/
 [ng-cloak] {
   display: none;
 }
