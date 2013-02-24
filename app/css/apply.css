@@ -1,6 +1,6 @@
 #formStyle_apply{width:940px;height:auto;margin:auto;margin-top:-10px;background-color:#D6D6D6;}
 #fieldsetStyle{width:700px;height:auto;margin:auto;border:1px dashed #999999;margin-top:50px;background-color:#D6D6D6;}
-.titleMed{margin-left:150px;width:380px;border:1px dashed #999999;padding-bittom:10px;background-color:#708090;color:#ffffff;}
+.titleMed{font-size:18px;margin-left:150px;width:380px;border:1px dashed #999999;padding-bittom:10px;background-color:#708090;color:#ffffff;}
 .divStyle01{width:450px;margin:auto;}/*item group*/
 .divStyle02{width:150px;text-align:left;}/*radio*/
 .divStyle03{width:220px;}/*text*/
@@ -8,6 +8,6 @@
 #sincerDiv{height:80px;}
 #sinStyle{font-size:20px;}/*Sincerely*/
 #submit{height:auto;padding-bottom:30px;}/*submit*/
-#sub,#res{float:left;width:80px;}
+#sub,#res{float:left;width:90px;}
 #sub{margin-left:200px;}
 #res{margin-left:100px;}

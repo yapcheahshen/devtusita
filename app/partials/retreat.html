@@ -2,53 +2,53 @@
   <div ng-show="savingRetreatData" style="color: red;">Saving Retreat Data...</div>
   <form name="form" class="form-horizontal" id="formStyle">
     <fieldset id="basicData">
-      <legend class="title">Retreat Data</legend>
+      <legend class="title" id="titleBasic">Retreat Data</legend>
 
       <div class="control-group">
         <label class="control-label" for="retreatPlace">Place</label>
-        <div class="controls">
+        <div class="controls itemDiv">
           <input id="retreatPlace" type="text" placeholder="Place" ng-model="retreat.place"/>
         </div>
       </div>
 
       <div class="control-group">
         <label class="control-label" for="retreatStartDate">Start Date</label>
-        <div class="controls">
+        <div class="controls itemDiv">
           <input id="retreatStartDate" type="text" placeholder="Start Date" ng-model="retreat.startDate" datepicker/>
         </div>
       </div>
 
       <div class="control-group">
         <label class="control-label" for="retreatEndDate">End Date</label>
-        <div class="controls">
+        <div class="controls itemDiv">
           <input id="retreatEndDate" type="text" placeholder="End Date" ng-model="retreat.endDate" datepicker/>
         </div>
       </div>
 
       <div class="control-group">
         <label class="control-label" for="retreatInstructor">Instructor</label>
-        <div class="controls">
+        <div class="controls itemDiv">
           <input id="retreatInstructor" type="text" placeholder="Instructor" ng-model="retreat.instructor"/>
         </div>
       </div>
 
       <div class="control-group">
         <label class="control-label" for="retreatReceiver">Receiver Email</label>
-        <div class="controls">
+        <div class="controls itemDiv">
           <input id="retreatReceiver" type="text" placeholder="Receiver Email" ng-model="retreat.receiverEmail"/>
         </div>
       </div>
 
       <div class="control-group">
         <label class="control-label" for="retreatMax">Maxi # of Students</label>
-        <div class="controls">
+        <div class="controls itemDiv">
           <input id="retreatMax" type="text" placeholder="Maximum Number of Students" ng-model="retreat.max"/>
         </div>
       </div>
 
     </fieldset>
     <div class="control-group">
-      <div class="controls">
+      <div class="controls itemDiv">
         <button id="save" class="btn btn-primary" ng-click="submit(retreat)" ng-disabled="form.$invalid || isUnchanged(retreat)">SAVE</button>
       </div>
     </div>

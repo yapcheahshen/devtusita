@@ -22,16 +22,16 @@ body{background-color:#ecf3fe;font-family:inherit sans-serif cursive serif;}
  .fontStyle_hello,.fontStyle_user{color:#B4EEB4;margin-left:3px;font-size:13px;font-weight:600;}/*Hello! user name*/
  .fontStyle_logout a{color:#CAFF70;margin-left:8px;font-weight:600;}/*id login1 and login2 href*/
  #userEmail{color:#FFA500}
- #root{background-color:#ADD8E6;width:940px;height:30px;margin:auto;border:1px dashed #999999;}/*this style included two id, named "path" and "userdataReback".*/
- #path{width:350px;float:left;padding:5px;}/*go Tustia*/
+ #root{width:940px;height:30px;margin:auto;background-color:#ADD8E6;border:1px dashed #999999;}/*this style included two id, named "path" and "userdataReback".*/
+ #path{float:left;width:268px;height:30px;padding-top:3px;}/*go Tustia*/
  #indexA{color:#00688B;font-size:15px;}/*go Tustia href*/
  #indexA:hover{background-color:#6495ED;color:#ffffff;padding-left:7px;padding-right:7px;padding-bottom:6px;padding-top:6px;}/*go Tustia href*/
  .spanStyle02b{font-weight:600;}/*go Tustia*/
- .spanStyle01a{color:#104E8B;margin-left:5px;font-size:12px;}/*web position¡GFriends of the Tusita*/
- .spanStyle01b{color:#00688B;margin-left:5px;font-size:15px;}/*&#8596*/
- #userdataReback{width:550px;float:right;background-color:#848484;color:#ffffff;padding:5px;margin-top:-9px;}/*friend's user item*/
- .spanStyle02a{margin-left:8px;color:#333333;}/*the color for span line*/
- .aStyle00{font-size:14px;padding-bottom:6px;padding-top:8px;}/*friend's user item href */
+ .spanStyle01a{color:#104E8B;margin-left:2px;font-size:12px;}/*web position¡GFriends of the Tusita*/
+ .spanStyle01b{color:#00688B;margin-left:2px;font-size:15px;}/*&#8596*/
+ #userdataReback{float:left;width:672px;height:30px;margin-top:-9px;background-color:#848484;color:#ffffff;}/*friend's user item*/
+ .spanStyle02a{float:left;margin-left:-3px;padding-top:3px;height:27px;color:#333333;}/*the color for span line*/
+ .aStyle00{padding:4px;font-size:12px;}/*friend's user item href */
  .aStyle00:hover{font-size:12px;background-color:#20B2AA;color:#ffffff;}/*friend's user item href */
  h3{color:#B4EEB4;font-size:20px;margin-left:30px;}/*Personal Page of Tusita Hermitage*/
  #content{background-color:#D6D6D6;width:940px;margin:auto;height:1250px;}
