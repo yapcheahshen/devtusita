@@ -115,7 +115,7 @@ def writeJs():
     obj['zh_TW'][tuple[0].decode('utf-8')] = tuple[1].decode('utf-8')
 
   with open(dst, 'w') as f:
-    f.write('var paliI18nLocales = ')
+    f.write('var tusitaLocales = ')
     f.write(json.dumps(obj))
     f.write(';')
 
