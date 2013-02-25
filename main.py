@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import webapp2
-import jinja2
-import os
+import webapp2, jinja2, os, json
 
 from google.appengine.api import users
 from database import create, read, update, delete
 from database import mafCreate, mafRead
 from database import retreatRead, retreatCreate, retreatUpdate
+from gaelibs import locale
 
 
 jinja_environment = jinja2.Environment(
@@ -19,7 +18,11 @@ jinja_environment = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-    template_values = {}
+    userLocale = locale.determineLocale(self.request.headers.get('accept_language'))
+    langQ = json.dumps(locale.parseAcceptLanguage(self.request.headers.get('accept_language')))
+    template_values = {
+      'locale': '%s~%s' % (userLocale, langQ)
+    }
 
     user = users.get_current_user()
     if user:
