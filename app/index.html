@@ -18,14 +18,14 @@
    {% if isLogin %}
    <div ng-show='isUserDataReady'>
     <p id="login1">
-    <span class="fontStyle_hello">Hello!</span>
+    <span class="fontStyle_hello">{{_("Hello")}}!</span>
     <span class="fontStyle_user">{{ userData.name }}</span>
     <span class="fontStyle_logout"><a href="{$ signoutURL $}" target="_self">({{_("Sign Out")}})</a></span>
     </p>
    </div>
    <div ng-hide='isUserDataReady'>
     <p id="login2">
-    <span class="fontStyle_hello">Hello!</span>
+    <span class="fontStyle_hello">{{_("Hello")}}!</span>
     <span class="fontStyle_user" id="userEmail">{$ userEmail $}</span>
     <span class="fontStyle_logout"><a href="{$ signoutURL $}" target="_self">({{_("Sign Out")}})</a></span>
     </p>
@@ -39,19 +39,19 @@
  </div>
  <div id="root">
   <p id="path">
-   <span class="spanStyle02b"><a id="indexA" href="http://tusitainternational.net/zh/" target="_self">Tusita</a></span>
+   <span class="spanStyle02b"><a id="indexA" href="http://tusitainternational.net/zh/" target="_self">{{_("Tusita")}}</a></span>
    <span class="spanStyle01b">&#8596</span>
-   <span class="spanStyle01a">Friends of the Tusita</span>
+   <span class="spanStyle01a">{{_("Friends of the Tusita")}}</span>
   </p>
   <p ng-show="isUserDataReady" id="userdataReback" ng-cloak>
-   <span class="spanStyle02a" style="margin-left:5px;"><a class="aStyle00" href="/userdata">Update My Data</a>│</span>
-   <span class="spanStyle02a"><a class="aStyle00" href="/apply">Meditation Application</a>│</span>
-   <span class="spanStyle02a"><a class="aStyle00" href="/record">Meditation Record</a>│</span>
+   <span class="spanStyle02a" style="margin-left:5px;"><a class="aStyle00" href="/userdata">{{_("Update My Data")}}</a>│</span>
+   <span class="spanStyle02a"><a class="aStyle00" href="/apply">{{_("Meditation Application")}}</a>│</span>
+   <span class="spanStyle02a"><a class="aStyle00" href="/record">{{_("Meditation Record")}}</a>│</span>
   {% if isCurrentUserAdmin %}
-   <span class="spanStyle02a"><a class="aStyle00" href="/retreat">Add Retreat</a>│</span>
-   <span class="spanStyle02a"><a class="aStyle00" href="/manageRetreats">Manage Retreats</a>│</span>
+   <span class="spanStyle02a"><a class="aStyle00" href="/retreat">{{_("Add Retreat")}}</a>│</span>
+   <span class="spanStyle02a"><a class="aStyle00" href="/manageRetreats">{{_("Manage Retreats")}}</a>│</span>
   {% endif %}
-   <span class="spanStyle02a"><a class="aStyle00" href="/">Home</a>│</span>
+   <span class="spanStyle02a"><a class="aStyle00" href="/">{{_("Home")}}</a>│</span>
   </p>
  </div>
  <div id="content">
