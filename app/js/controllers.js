@@ -216,10 +216,10 @@ function manageRetreatsCtrl($scope, $http, $location) {
   if (!$scope.isLogin) $location.path('/');
 
   $scope.manageRetreat = function(urlsafe) {
-    $scope.retreat = undefined;
+    $scope.retreatSelected = undefined;
     for (var i=0; i < $scope.retreats.length; i++) {
       if ($scope.retreats[i].urlsafe == urlsafe)
-        $scope.retreat = $scope.retreats[i];
+        $scope.retreatSelected = $scope.retreats[i];
     }
     $('#manageRetreatModal').modal();
   };
