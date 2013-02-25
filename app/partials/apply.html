@@ -1,3 +1,5 @@
+<div ng-hide="isRetreatDataReady">Loading Retreat Data...</div>
+<div ng-show="isRetreatDataReady">
 <form name="form" class="form-horizontal" ng-show="isRetreatDataReady" id="formStyle_apply">
   <fieldset id="fieldsetStyle">
     <legend id="legendMed_apply" class="titleMed">Meditation Application Form</legend>
@@ -245,6 +247,7 @@
     </div>
   </div>
 </form>
+</div>
 
 <div id="saveAppFormModal" class="modal hide fade">
   <div class="modal-header">
