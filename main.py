@@ -6,7 +6,9 @@ import jinja2
 import os
 
 from google.appengine.api import users
-from database import create, read, update, delete, mafCreate, mafRead, mafUpdate, mafDelete, retreatRead, retreatCreate
+from database import create, read, update, delete
+from database import mafCreate, mafRead
+from database import retreatRead, retreatCreate
 
 
 jinja_environment = jinja2.Environment(
@@ -48,6 +50,11 @@ class RESTfulHandler(webapp2.RequestHandler):
       return False
     return True
 
+  def isAdmin(self, email):
+    if users.is_current_user_admin():
+      return True
+    return False
+
   def checkData(self, data):
     if (data):
       self.response.out.write(data)
@@ -60,6 +67,8 @@ class RESTfulHandler(webapp2.RequestHandler):
     else:
       if self.request.url.endswith('apply'):
         self.checkData(mafRead(email))
+      elif self.request.url.endswith('retreat'):
+        self.checkData(retreatRead(email))
       else:
         self.checkData(read(email))
 
@@ -69,6 +78,11 @@ class RESTfulHandler(webapp2.RequestHandler):
     else:
       if self.request.url.endswith('apply'):
         self.checkData(mafCreate(email, self.request.body))
+      elif self.request.url.endswith('retreat'):
+        if self.isAdmin(email):
+          self.checkData(retreatCreate(self.request.body))
+        else:
+          self.error(404)
       else:
         self.checkData(create(email, self.request.body))
 
@@ -76,57 +90,20 @@ class RESTfulHandler(webapp2.RequestHandler):
     if not self.isLegalUser(email):
       self.error(404)
     else:
-      if self.request.url.endswith('apply'):
-        self.checkData(mafUpdate(email, self.request.body))
-      else:
+      if self.request.url.endswith(email):
         self.checkData(update(email, self.request.body))
+      else:
+        self.error(404)
+
 
   def delete(self, email):
     if not self.isLegalUser(email):
       self.error(404)
     else:
-      if self.request.url.endswith('apply'):
-        self.checkData(mafDelete(email))
-      else:
+      if self.request.url.endswith(email):
         self.checkData(delete(email))
-
-
-class RESTfulRetreatHandler(webapp2.RequestHandler):
-  def isLegalUser(self, email):
-    user = users.get_current_user()
-    if not user:
-      return False
-    if email != user.email():
-      return False
-    return True
-
-  def isAdmin(self, email):
-    user = users.get_current_user()
-    if not user:
-      return False
-    if email != user.email():
-      return False
-    if not users.is_current_user_admin():
-      return False
-    return True
-
-  def checkData(self, data):
-    if (data):
-      self.response.out.write(data)
-    else:
-      self.error(404)
-
-  def get(self, email):
-    if not self.isLegalUser(email):
-      self.error(404)
-    else:
-      self.checkData(retreatRead(email))
-
-  def post(self, email):
-    if not self.isAdmin(email):
-      self.error(404)
-    else:
-      self.checkData(retreatCreate(self.request.body))
+      else:
+        self.error(404)
 
 
 class RedirectPage(webapp2.RequestHandler):
@@ -137,6 +114,6 @@ class RedirectPage(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/(userdata|apply|record|retreat)', RedirectPage),
                                ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/apply', RESTfulHandler),
-                               ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/retreat', RESTfulRetreatHandler),
+                               ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/retreat', RESTfulHandler),
                                ('/RESTful/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})', RESTfulHandler)],
                               debug=True)

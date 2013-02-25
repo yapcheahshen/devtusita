@@ -90,14 +90,6 @@ def mafRead(email):
     return None
 
 
-def mafUpdate(email, jsonData):
-  return
-
-
-def mafDelete(email):
-  return
-
-
 def retreatCreate(jsonData):
   # extract start date of retreat
   try:
