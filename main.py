@@ -59,40 +59,36 @@ class RESTfulHandler(webapp2.RequestHandler):
       self.error(404)
     else:
       if self.request.url.endswith('apply'):
-        data = mafRead(email)
+        self.checkData(mafRead(email))
       else:
-        data = read(email)
-      self.checkData(data)
+        self.checkData(read(email))
 
   def post(self, email):
     if not self.isLegalUser(email):
       self.error(404)
     else:
       if self.request.url.endswith('apply'):
-        data = mafCreate(email, self.request.body)
+        self.checkData(mafCreate(email, self.request.body))
       else:
-        data = create(email, self.request.body)
-      self.checkData(data)
+        self.checkData(create(email, self.request.body))
 
   def put(self, email):
     if not self.isLegalUser(email):
       self.error(404)
     else:
       if self.request.url.endswith('apply'):
-        data = mafUpdate(email, self.request.body)
+        self.checkData(mafUpdate(email, self.request.body))
       else:
-        data = update(email, self.request.body)
-      self.checkData(data)
+        self.checkData(update(email, self.request.body))
 
   def delete(self, email):
     if not self.isLegalUser(email):
       self.error(404)
     else:
       if self.request.url.endswith('apply'):
-        data = mafDelete(email)
+        self.checkData(mafDelete(email))
       else:
-        data = delete(email)
-      self.checkData(data)
+        self.checkData(delete(email))
 
 
 class RESTfulRetreatHandler(webapp2.RequestHandler):
