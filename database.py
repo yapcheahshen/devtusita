@@ -127,3 +127,25 @@ def retreatRead(email):
     result.append(obj)
 
   return json.dumps(result)
+
+
+def retreatUpdate(jsonData):
+  # extract start date of retreat
+  try:
+    retreatObj = json.loads(jsonData)
+    # startDateStr example: 2013-02-22
+    startDateStr = retreatObj['startDate']
+    # array = [year, month, day]
+    array = startDateStr.split('-')
+    # from Python doc: class datetime.date(year, month, day)
+    startDate = datetime.date(int(array[0]), int(array[1]), int(array[2]))
+
+    rt = ndb.Key(urlsafe = retreatObj['urlsafe'])
+    rt.json = jsonData
+    rt.startDate = startDate
+  except:
+    return
+
+  rt.put()
+  return rt.json
+

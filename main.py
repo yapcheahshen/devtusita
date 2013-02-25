@@ -8,7 +8,7 @@ import os
 from google.appengine.api import users
 from database import create, read, update, delete
 from database import mafCreate, mafRead
-from database import retreatRead, retreatCreate
+from database import retreatRead, retreatCreate, retreatUpdate
 
 
 jinja_environment = jinja2.Environment(
@@ -92,6 +92,11 @@ class RESTfulHandler(webapp2.RequestHandler):
     else:
       if self.request.url.endswith(email):
         self.checkData(update(email, self.request.body))
+      elif self.request.url.endswith('retreat'):
+        if self.isAdmin(email):
+          self.checkData(retreatUpdate(self.request.body))
+        else:
+          self.error(404)
       else:
         self.error(404)
 
