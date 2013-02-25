@@ -215,6 +215,15 @@ function manageRetreatsCtrl($scope, $http, $location) {
   // redirect to / if user is not logged in
   if (!$scope.isLogin) $location.path('/');
 
+  $scope.manageRetreat = function(urlsafe) {
+    $scope.retreat = undefined;
+    for (var i=0; i < $scope.retreats.length; i++) {
+      if ($scope.retreats[i].urlsafe == urlsafe)
+        $scope.retreat = $scope.retreats[i];
+    }
+    $('#manageRetreatModal').modal();
+  };
+
   $scope.urlRESTRetreat = $scope.urlREST + '/retreat'
   $scope.isRetreatDataReady = false;
   // Get Retreat Data
