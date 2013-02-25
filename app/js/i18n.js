@@ -73,7 +73,8 @@ angular.module('tusita.i18n', []).
   factory('i18nserv', [function() {
   // service: for translating texts according to locale
     // FIXME: bad practice
-    var i18nStr = tusitaLocales;
+//    var i18nStr = tusitaLocales;
+    var i18nStr = {};
 
     // zh_CN derived from zh_TW by TongWen library
     i18nStr['zh_CN'] = (function() {

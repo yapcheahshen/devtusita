@@ -20,22 +20,22 @@
     <p id="login1">
     <span class="fontStyle_hello">Hello!</span>
     <span class="fontStyle_user">{{ userData.name }}</span>
-    <span class="fontStyle_logout"><a href="{$ signoutURL $}" target="_self">(Sign Out)</a></span>
+    <span class="fontStyle_logout"><a href="{$ signoutURL $}" target="_self">({{_("Sign Out")}})</a></span>
     </p>
    </div>
    <div ng-hide='isUserDataReady'>
     <p id="login2">
     <span class="fontStyle_hello">Hello!</span>
     <span class="fontStyle_user" id="userEmail">{$ userEmail $}</span>
-    <span class="fontStyle_logout"><a href="{$ signoutURL $}" target="_self">(Sign Out)</a></span>
+    <span class="fontStyle_logout"><a href="{$ signoutURL $}" target="_self">({{_("Sign Out")}})</a></span>
     </p>
    </div>
   {% else %}
   <p id="login">
-   <a href="{$ signinOrRegisterURL $}" target="_self">Sign In or Register</a>
+   <a href="{$ signinOrRegisterURL $}" target="_self">{{_("Sign In or Register")}}</a>
   </p>
   {% endif %}
-  <h3>Personal Page of Tusita Hermitage</h3>
+  <h3>{{_("Personal Page of Tusita Hermitage")}}</h3>
  </div>
  <div id="root">
   <p id="path">
@@ -66,5 +66,11 @@
 <script src="/js/app.js"></script>
 <script src="/js/controllers.js"></script>
 <script src="/js/directives.js"></script>
+<script src="/js/i18n.js"></script>
+  <script src="/js/ext/tongwen_core.js"></script>
+  <script src="/js/ext/tongwen_table_s2t.js"></script>
+  <script src="/js/ext/tongwen_table_t2s.js"></script>
+  <script src="/js/ext/tongwen_table_ps2t.js"></script>
+  <script src="/js/ext/tongwen_table_pt2s.js"></script>
 </body>
 </html>
