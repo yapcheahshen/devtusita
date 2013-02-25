@@ -1,0 +1,65 @@
+# Chinese translations for PACKAGE package.
+# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-25 23:51+0800\n"
+"PO-Revision-Date: 2013-02-25 23:51+0800\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../app/index.html:21 ../app/index.html:28
+msgid "Hello"
+msgstr "哈囉"
+
+#: ../app/index.html:23 ../app/index.html:30
+msgid "Sign Out"
+msgstr "登出"
+
+#: ../app/index.html:35
+msgid "Sign In or Register"
+msgstr "登入或註冊"
+
+#: ../app/index.html:38
+msgid "Personal Page of Tusita Hermitage"
+msgstr "兜率天修行林個人網頁"
+
+#: ../app/index.html:42
+msgid "Tusita"
+msgstr "兜率天"
+
+#: ../app/index.html:44
+msgid "Friends of the Tusita"
+msgstr "兜率天之友"
+
+#: ../app/index.html:47
+msgid "Update My Data"
+msgstr "更新我的資料"
+
+#: ../app/index.html:48
+msgid "Meditation Application"
+msgstr "禪修申請"
+
+#: ../app/index.html:49
+msgid "Meditation Record"
+msgstr "禪修申請紀錄"
+
+#: ../app/index.html:51
+msgid "Add Retreat"
+msgstr "新增禪修期"
+
+#: ../app/index.html:52
+msgid "Manage Retreats"
+msgstr "管理禪修期"
+
+#: ../app/index.html:54
+msgid "Home"
+msgstr "首頁"
