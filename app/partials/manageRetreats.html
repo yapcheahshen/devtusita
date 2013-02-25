@@ -1,0 +1,6 @@
+<div ng-hide="isRetreatDataReady">Loading Retreat Data...</div>
+<div ng-show="isRetreatDataReady">
+  <div ng-repeat="retreat in retreats">
+    {{retreat}}
+  </div>
+</div>

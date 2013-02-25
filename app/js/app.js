@@ -26,5 +26,10 @@ angular.module('tusitaPersonal', ['tusitaPersonal-directives'], function($routeP
     controller: retreatCtrl
   });
 
+  $routeProvider.when('/manageRetreats', {
+    templateUrl: '/partials/manageRetreats.html',
+    controller: manageRetreatsCtrl
+  });
+
   $routeProvider.otherwise({redirectTo: '/'});
 });

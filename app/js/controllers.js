@@ -211,3 +211,25 @@ function retreatCtrl($scope, $http, $templateCache, $location) {
   };
 }
 
+function manageRetreatsCtrl($scope, $http, $location) {
+  // redirect to / if user is not logged in
+  if (!$scope.isLogin) $location.path('/');
+
+  $scope.urlRESTRetreat = $scope.urlREST + '/retreat'
+  $scope.isRetreatDataReady = false;
+  // Get Retreat Data
+  $http({method: 'GET',
+         url: $scope.urlRESTRetreat}).
+    success(function(data, status) {
+      // get retreat data successfully
+      $scope.retreats = data;
+      $scope.isRetreatDataReady = true;
+    }).
+    error(function(data, status) {
+      // failed to get retreat data
+      // FIXME: do better error showing
+      alert('fail to get retreat data');
+      $location.path('/');
+  });
+}
+manageRetreatsCtrl.$inject = ['$scope', '$http', '$location'];
