@@ -10,6 +10,7 @@ class Person(ndb.Model):
 
 class MedAppForm(ndb.Model):
   json = ndb.TextProperty()
+  retreat = ndb.KeyProperty()
 
 class Retreat(ndb.Model):
   json = ndb.TextProperty()
@@ -60,17 +61,24 @@ def delete(email):
 def mafCreate(email, jsonData):
   person = Person.get_by_id(email)
   if person == None:
-    return None
+    return
 
-  form = MedAppForm(json = jsonData,
-                    parent = person.key)
-
+  try:
+    form = MedAppForm(json = jsonData,
+                      retreat = ndb.Key(urlsafe = json.loads(jsonData)['retreat']),
+                      parent = person.key)
+  except:
+    form = MedAppForm(json = jsonData,
+                      parent = person.key)
   form.put()
+
+  # append this meditaion application form to user basic
   if person.activeMedAppForm:
     person.activeMedAppForm.append(form.key)
   else:
     person.activeMedAppForm = [form.key]
   person.put()
+
   return form.json
 
 
