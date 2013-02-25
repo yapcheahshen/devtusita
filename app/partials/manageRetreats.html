@@ -26,27 +26,27 @@
   <div class="modal-body">
     <div class="row-fluid">
       <div class="span4">Place</div>
-      <div class="span8">{{retreatSelected.place}}</div>
+      <div class="span8"><input id="retreatPlace" type="text" placeholder="Place" ng-model="retreatSelected.place"/></div>
     </div>
     <div class="row-fluid">
       <div class="span4">Start Date</div>
-      <div class="span8">{{retreatSelected.startDate}}</div>
+      <div class="span8"><input id="retreatStartDate" type="text" placeholder="Start Date" ng-model="retreatSelected.startDate" datepicker/></div>
     </div>
     <div class="row-fluid">
       <div class="span4">End Date</div>
-      <div class="span8">{{retreatSelected.endDate}}</div>
+      <div class="span8"><input id="retreatEndDate" type="text" placeholder="End Date" ng-model="retreatSelected.endDate" datepicker/></div>
     </div>
     <div class="row-fluid">
       <div class="span4">Instructor</div>
-      <div class="span8">{{retreatSelected.instructor}}</div>
+      <div class="span8"><input id="retreatInstructor" type="text" placeholder="Instructor" ng-model="retreatSelected.instructor"/></div>
     </div>
     <div class="row-fluid">
       <div class="span4">Receiver Email</div>
-      <div class="span8">{{retreatSelected.receiverEmail}}</div>
+      <div class="span8"><input id="retreatReceiver" type="text" placeholder="Receiver Email" ng-model="retreatSelected.receiverEmail"/></div>
     </div>
     <div class="row-fluid">
       <div class="span4">Max # of Students</div>
-      <div class="span8">{{retreatSelected.max}}</div>
+      <div class="span8"><input id="retreatMax" type="text" placeholder="Maximum Number of Students" ng-model="retreatSelected.max"/></div>
     </div>
   </div>
   <div class="modal-footer">
