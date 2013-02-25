@@ -140,7 +140,7 @@ def retreatUpdate(jsonData):
     # from Python doc: class datetime.date(year, month, day)
     startDate = datetime.date(int(array[0]), int(array[1]), int(array[2]))
 
-    rt = ndb.Key(urlsafe = retreatObj['urlsafe'])
+    rt = ndb.Key(urlsafe = retreatObj['urlsafe']).get()
     rt.json = jsonData
     rt.startDate = startDate
   except:
