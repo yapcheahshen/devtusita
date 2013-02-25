@@ -1,4 +1,6 @@
 <div ng-hide="isRetreatDataReady">Loading Retreat Data...</div>
+<div ng-show="updatingRetreatData">Updating Retreat Data...</div>
+<div ng-show="failToUpdateRetreatData">Fail to Update Retreat Data...</div>
 <div ng-show="isRetreatDataReady">
   <table class="table table-striped">
     <caption class="alert alert-info">All Retreats</caption>
@@ -50,6 +52,7 @@
     </div>
   </div>
   <div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" ng-click="saveModifiedRetreat(retreatSelected)">Save</button>
     <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
   </div>
 </div>

@@ -225,6 +225,26 @@ function manageRetreatsCtrl($scope, $http, $location) {
   };
 
   $scope.urlRESTRetreat = $scope.urlREST + '/retreat'
+
+  $scope.saveModifiedRetreat = function(retreat) {
+    $scope.updatingRetreatData = true;
+
+    // update retreat data to server through RESTful API
+    $http({method: 'PUT',
+           url: $scope.urlRESTRetreat,
+           data: JSON.stringify(retreat)}).
+      success(function(data, status) {
+        // update successfully
+        $scope.updatingRetreatData = undefined;
+        $scope.failToUpdateRetreatData = undefined;
+      }).
+      error(function(data, status) {
+        // failed to update retreat data
+        $scope.updatingRetreatData = undefined;
+        $scope.failToUpdateRetreatData = true;
+    });
+  };
+
   $scope.isRetreatDataReady = false;
   // Get Retreat Data
   $http({method: 'GET',
