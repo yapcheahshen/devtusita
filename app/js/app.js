@@ -1,4 +1,4 @@
-angular.module('tusitaPersonal', ['tusitaPersonal-directives'], function($routeProvider, $locationProvider) {
+angular.module('tusitaPersonal', ['tusitaPersonal-directives', 'tusita.i18n'], function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $routeProvider.when('/', {
