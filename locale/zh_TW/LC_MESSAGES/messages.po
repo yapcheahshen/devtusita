@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-02 22:47+0800\n"
+"POT-Creation-Date: 2013-03-02 22:54+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -86,6 +86,7 @@ msgid "Email"
 msgstr "電子郵件"
 
 #: pytools/../app/partials/userdata.html:19
+#: pytools/../app/partials/userdata.html:113
 msgid "Name"
 msgstr "姓名"
 
@@ -100,3 +101,82 @@ msgstr "請告訴我們您的姓名."
 #: pytools/../app/partials/userdata.html:30
 msgid "Birthday"
 msgstr "生日"
+
+#: pytools/../app/partials/userdata.html:36
+msgid "Citizenship"
+msgstr "國籍"
+
+#: pytools/../app/partials/userdata.html:42
+msgid "ID Number"
+msgstr "身份證號碼"
+
+#: pytools/../app/partials/userdata.html:48
+msgid "Gender"
+msgstr "性別"
+
+#: pytools/../app/partials/userdata.html:51
+msgid "Male"
+msgstr "男性"
+
+#: pytools/../app/partials/userdata.html:54
+msgid "Female"
+msgstr "女性"
+
+#: pytools/../app/partials/userdata.html:59
+#: pytools/../app/partials/userdata.html:125
+msgid "Landline"
+msgstr "電話號碼"
+
+#: pytools/../app/partials/userdata.html:65
+#: pytools/../app/partials/userdata.html:131
+msgid "Cellphone"
+msgstr "手機號碼"
+
+#: pytools/../app/partials/userdata.html:71
+#: pytools/../app/partials/userdata.html:137
+msgid "Address"
+msgstr "地址"
+
+#: pytools/../app/partials/userdata.html:77
+msgid "Dhamma Name"
+msgstr "法名"
+
+#: pytools/../app/partials/userdata.html:83
+msgid "Current Status"
+msgstr "目前身份"
+
+#: pytools/../app/partials/userdata.html:86
+msgid "Ordained"
+msgstr "出家"
+
+#: pytools/../app/partials/userdata.html:89
+msgid "Laity"
+msgstr "在家"
+
+#: pytools/../app/partials/userdata.html:93
+msgid "Preceptor Name"
+msgstr "戒師姓名"
+
+#: pytools/../app/partials/userdata.html:97
+msgid "Ordination Date"
+msgstr "出家日期"
+
+#: pytools/../app/partials/userdata.html:101
+msgid "Ordination Place"
+msgstr "出家地點"
+
+#: pytools/../app/partials/userdata.html:111
+msgid "Emergency Contact"
+msgstr "緊急聯絡人"
+
+#: pytools/../app/partials/userdata.html:119
+msgid "Relationship"
+msgstr "關係"
+
+#: pytools/../app/partials/userdata.html:145
+msgid "SAVE"
+msgstr "儲存"
+
+#: pytools/../app/partials/userdata.html:146
+msgid "RESET"
+msgstr "重設"
