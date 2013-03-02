@@ -8,26 +8,26 @@
   </div>
   <form name="form" class="form-horizontal" id="formStyle">
     <fieldset id="basicData">
-      <legend id="titleBasic">Basic Data</legend>
+      <legend id="titleBasic">{{_("Basic Data")}}</legend>
       <div class="control-group">
-        <label class="control-label" for="userDataEmail">Email</label>
+        <label class="control-label" for="userDataEmail">{{_("Email")}}</label>
         <div class="controls itemDiv">
           <input id="userDataEmail" type="email" placeholder="Email" readonly required ng-model="email"/>
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="userDataName">Name</label>
+        <label class="control-label" for="userDataName">{{_("Name")}}</label>
         <div class="controls itemDiv">
           <input id="userDataName" type="text" placeholder="Name" name="name" required ng-model="user.name"/>
           <div ng-show="form.name.$dirty && form.name.$invalid"></div>
           <div class="alert alert-error" ng-show="form.name.$dirty && form.name.$invalid">
-            <span>Invalid:</span>
-            <span ng-show="form.name.$error.required">Please tell us your name.</span>
+            <span>{{_("Invalid")}}:</span>
+            <span ng-show="form.name.$error.required">{{_("Please tell us your name.")}}</span>
           </div>
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="userDataBirthday">Birthday</label>
+        <label class="control-label" for="userDataBirthday">{{_("Birthday")}}</label>
         <div class="controls itemDiv">
           <input id="userDataBirthday" type="text" placeholder="Birthday" ng-model="user.birthday" datepicker/>
         </div>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-02 22:39+0800\n"
+"POT-Creation-Date: 2013-03-02 22:47+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,62 +16,87 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../app/index.html:21 ../app/index.html:28 ../app/partials/userdata.html:5
+#: pytools/../app/index.html:21 pytools/../app/index.html:28
+#: pytools/../app/partials/userdata.html:5
 msgid "Hello"
 msgstr "哈囉"
 
-#: ../app/index.html:23 ../app/index.html:30
+#: pytools/../app/index.html:23 pytools/../app/index.html:30
 msgid "Sign Out"
 msgstr "登出"
 
-#: ../app/index.html:35
+#: pytools/../app/index.html:35
 msgid "Sign In or Register"
 msgstr "登入或註冊"
 
-#: ../app/index.html:38
+#: pytools/../app/index.html:38
 msgid "Personal Page of Tusita Hermitage"
 msgstr "兜率天修行林個人網頁"
 
-#: ../app/index.html:42
+#: pytools/../app/index.html:42
 msgid "Tusita"
 msgstr "兜率天"
 
-#: ../app/index.html:44
+#: pytools/../app/index.html:44
 msgid "Friends of the Tusita"
 msgstr "兜率天之友"
 
-#: ../app/index.html:47
+#: pytools/../app/index.html:47
 msgid "Update My Data"
 msgstr "更新我的資料"
 
-#: ../app/index.html:48
+#: pytools/../app/index.html:48
 msgid "Meditation Application"
 msgstr "禪修申請"
 
-#: ../app/index.html:49
+#: pytools/../app/index.html:49
 msgid "Meditation Record"
 msgstr "禪修申請紀錄"
 
-#: ../app/index.html:51
+#: pytools/../app/index.html:51
 msgid "Add Retreat"
 msgstr "新增禪修期"
 
-#: ../app/index.html:52
+#: pytools/../app/index.html:52
 msgid "Manage Retreats"
 msgstr "管理禪修期"
 
-#: ../app/index.html:54
+#: pytools/../app/index.html:54
 msgid "Home"
 msgstr "首頁"
 
-#: ../app/partials/userdata.html:2
+#: pytools/../app/partials/userdata.html:2
 msgid "Saving User Data..."
 msgstr "儲存使用者資料中..."
 
-#: ../app/partials/userdata.html:3
+#: pytools/../app/partials/userdata.html:3
 msgid "Sorry. Fail to save your data. Please check your internet connection and try again."
 msgstr "抱歉. 儲存您的資料失敗. 請檢查您的網路連線後再試一次."
 
-#: ../app/partials/userdata.html:7
+#: pytools/../app/partials/userdata.html:7
 msgid "Please fill in the following basic data."
 msgstr "請填寫下列基本資料"
+
+#: pytools/../app/partials/userdata.html:11
+msgid "Basic Data"
+msgstr "基本資料"
+
+#: pytools/../app/partials/userdata.html:13
+msgid "Email"
+msgstr "電子郵件"
+
+#: pytools/../app/partials/userdata.html:19
+msgid "Name"
+msgstr "姓名"
+
+#: pytools/../app/partials/userdata.html:24
+msgid "Invalid"
+msgstr "無效"
+
+#: pytools/../app/partials/userdata.html:25
+msgid "Please tell us your name."
+msgstr "請告訴我們您的姓名."
+
+#: pytools/../app/partials/userdata.html:30
+msgid "Birthday"
+msgstr "生日"
