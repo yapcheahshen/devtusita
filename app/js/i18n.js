@@ -39,13 +39,17 @@ angular.module('tusita.i18n', []).
     };
   }]).
 
-  run(['$rootScope', 'i18nserv', function($rootScope, i18nserv) {
+  run(['$rootScope', 'i18nserv', 'tusitaI18nSetting', function($rootScope, i18nserv, tusitaI18nSetting) {
   // initialization code (similar to main)
     // FIXME: use angular.element or jQuery?
     // get value passed by server
     var locale = document.getElementById('locale').innerHTML;
     $rootScope.tusitaLocale = locale.split('~')[0];
     $rootScope.tusitaI18nLangQs = eval('(' + locale.split('~')[1] + ')');
+
+    $rootScope.setLocale = function(locale) {
+      tusitaI18nSetting.setLocale(locale);
+    };
 
     /**
      * for using {{_("i18n_string")}} at client side
