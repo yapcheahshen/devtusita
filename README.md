@@ -28,8 +28,17 @@ This is a model inherited from <i>[ndb.Model](https://developers.google.com/appe
 ```python
 class MedAppForm(ndb.Model):
   json = ndb.TextProperty()
+  retreat = ndb.KeyProperty()
 ```
-This models stores the user meditation application. The only one field <i>json</i> store the form data in JSON format.
+This model stores the user meditation application. The field <i>json</i> stores the form data in JSON format, and the field <i>retreat</i> stores the retreat that meditators apply for.
+
+### Retreat
+```python
+class Retreat(ndb.Model):
+  json = ndb.TextProperty()
+  startDate = ndb.DateProperty()
+```
+This model stores the retreat data that created by system adminstrators. The field <i>json</i> stores the retreat data (such as start_date and end_date) in json format, and the field <i>startDate</i> stores the beginning date of the retreat in Python [date](http://docs.python.org/2/library/datetime.html) format.
 
 ## RESTful API
 The are repective API for each model:
@@ -38,4 +47,7 @@ CRUD (create, read, update, and delete) are all supported. The url for communica
 
 ### RESTful API for MedAppForm
 Only <i>create</i> and <i>read</i> are supported. The url is <b>/RESTful/{{email}}/apply</b>, where {{email}} is the email address of the user. The read operation will return all applied form(s) back to client.
+
+### RESTful API for Retreat
+<i>create</i>, <i>read</i>, <i>update</i> are supported. The url is <b>/RESTful/{{email}}/retreat</b>, where {{email}} is the email address of the user. The read operation will return all retreats back to client.
 
