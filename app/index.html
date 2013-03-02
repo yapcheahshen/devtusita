@@ -37,7 +37,7 @@
   {% endif %}
   <h3>{{_("Personal Page of Tusita Hermitage")}}</h3>
  </div>
- <div id="root">
+ <div id="root" ng-cloak>
   <p id="path">
    <span class="spanStyle02b"><a id="indexA" href="http://tusitainternational.net/zh/" target="_self">{{_("Tusita")}}</a></span>
    <span class="spanStyle01b">&#8596</span>
@@ -55,7 +55,7 @@
   </p>
  </div>
  </div>
-   <span class="dropdown">
+   <span class="dropdown" ng-cloak>
      <a style="color: black; font-size: 1.25em;" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">
        {{ tusitaLocale | translate }} <b class="caret"></b>
      </a>

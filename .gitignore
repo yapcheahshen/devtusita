@@ -1,4 +1,4 @@
 *.pyc
 app/js/ext/
-locale/
+locale/messages.pot
 app/js/locales.js

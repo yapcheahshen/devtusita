@@ -1,10 +1,10 @@
 <div id="divTop">
-  <div ng-show="savingUserData" style="color: red;">Saving User Data...</div>
-  <div ng-show="failToSaveUserData" style="color: red;">Sorry. Fail to save your data. Please check your internet connection and try again.</div>
+  <div ng-show="savingUserData" style="color: red;">{{_("Saving User Data...")}}</div>
+  <div ng-show="failToSaveUserData" style="color: red;">{{_("Sorry. Fail to save your data. Please check your internet connection and try again.")}}</div>
   <div ng-hide="isUserDataReady" id="helloDiv">
-    <span id="helloWord">Hello!</span>
+    <span id="helloWord">{{_("Hello")}}!</span>
     <span id="userEmail00">{{ userEmail }}</span>
-    <span id="please">Please fill in the following basic data.</span>
+    <span id="please">{{_("Please fill in the following basic data.")}}</span>
   </div>
   <form name="form" class="form-horizontal" id="formStyle">
     <fieldset id="basicData">

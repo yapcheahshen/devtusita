@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 23:51+0800\n"
+"POT-Creation-Date: 2013-03-02 22:39+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../app/index.html:21 ../app/index.html:28
+#: ../app/index.html:21 ../app/index.html:28 ../app/partials/userdata.html:5
 msgid "Hello"
 msgstr "哈囉"
 
@@ -63,3 +63,15 @@ msgstr "管理禪修期"
 #: ../app/index.html:54
 msgid "Home"
 msgstr "首頁"
+
+#: ../app/partials/userdata.html:2
+msgid "Saving User Data..."
+msgstr "儲存使用者資料中..."
+
+#: ../app/partials/userdata.html:3
+msgid "Sorry. Fail to save your data. Please check your internet connection and try again."
+msgstr "抱歉. 儲存您的資料失敗. 請檢查您的網路連線後再試一次."
+
+#: ../app/partials/userdata.html:7
+msgid "Please fill in the following basic data."
+msgstr "請填寫下列基本資料"
