@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 21:06+0800\n"
+"POT-Creation-Date: 2013-03-07 21:24+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -92,62 +92,66 @@ msgstr "觀看"
 msgid "Meditation Application Detail"
 msgstr "禪修申請細節"
 
-#: ../app/partials/record.html:27
+#: ../app/partials/record.html:27 ../app/partials/apply.html:7
 msgid "Meditation Method"
 msgstr "禪修方法"
 
-#: ../app/partials/record.html:31
+#: ../app/partials/record.html:31 ../app/partials/apply.html:13
 msgid "Meditation Instructor"
 msgstr "禪修導師"
 
-#: ../app/partials/record.html:35
+#: ../app/partials/record.html:35 ../app/partials/apply.html:19
 msgid "Join Our Meditaion Before?"
 msgstr "以前曾參加過我們的禪修?"
 
-#: ../app/partials/record.html:40 ../app/partials/manageRetreats.html:30
-#: ../app/partials/retreat.html:8
+#: ../app/partials/record.html:40 ../app/partials/apply.html:29
+#: ../app/partials/manageRetreats.html:30 ../app/partials/retreat.html:8
 msgid "Place"
 msgstr "地點"
 
-#: ../app/partials/record.html:44
+#: ../app/partials/record.html:44 ../app/partials/apply.html:33
+#: ../app/partials/apply.html:240
 msgid "Date"
 msgstr "日期"
 
-#: ../app/partials/record.html:48 ../app/partials/manageRetreats.html:42
-#: ../app/partials/retreat.html:29
+#: ../app/partials/record.html:48 ../app/partials/apply.html:37
+#: ../app/partials/manageRetreats.html:42 ../app/partials/retreat.html:29
 msgid "Instructor"
 msgstr "指導禪師"
 
-#: ../app/partials/record.html:53
+#: ../app/partials/record.html:53 ../app/partials/apply.html:46
 msgid "Serious Illness?"
 msgstr "是否有較嚴重的疾病？"
 
 #: ../app/partials/record.html:58 ../app/partials/record.html:76
+#: ../app/partials/apply.html:56 ../app/partials/apply.html:83
 msgid "Illness Name"
 msgstr "疾病名稱"
 
 #: ../app/partials/record.html:62 ../app/partials/record.html:80
+#: ../app/partials/apply.html:60 ../app/partials/apply.html:87
 msgid "Prescription"
 msgstr "處方"
 
 #: ../app/partials/record.html:66 ../app/partials/record.html:84
-#: ../app/partials/record.html:102
+#: ../app/partials/record.html:102 ../app/partials/apply.html:64
+#: ../app/partials/apply.html:91 ../app/partials/apply.html:118
 msgid "Treatment Status"
 msgstr "治療狀態"
 
-#: ../app/partials/record.html:71
+#: ../app/partials/record.html:71 ../app/partials/apply.html:73
 msgid "Mental Illness?"
 msgstr "是否有任何精神方面的疾患?"
 
-#: ../app/partials/record.html:89
+#: ../app/partials/record.html:89 ../app/partials/apply.html:100
 msgid "In the past three yesrs, addict to alcohol, drug, or narcotic?"
-msgstr "最近3年以來，是否有飲酒及服用毒品及任何麻醉品？"
+msgstr "最近三年以來，是否有飲酒及服用毒品及任何麻醉品？"
 
-#: ../app/partials/record.html:94
+#: ../app/partials/record.html:94 ../app/partials/apply.html:110
 msgid "Addiction Time"
 msgstr "成癮時間"
 
-#: ../app/partials/record.html:98
+#: ../app/partials/record.html:98 ../app/partials/apply.html:114
 msgid "Addiction Type"
 msgstr "成癮類型"
 
@@ -159,10 +163,70 @@ msgstr "禪修期Key"
 msgid "Submit Date"
 msgstr "申請日期"
 
-#: ../app/partials/record.html:116 ../app/partials/manageRetreats.html:56
+#: ../app/partials/record.html:116 ../app/partials/apply.html:261
+#: ../app/partials/apply.html:262 ../app/partials/manageRetreats.html:56
 #: ../app/partials/retreat.html:68 ../app/partials/retreat.html:69
 msgid "Close"
 msgstr "關閉"
+
+#: ../app/partials/apply.html:1 ../app/partials/manageRetreats.html:1
+msgid "Loading Retreat Data"
+msgstr "載入禪修期資料中"
+
+#: ../app/partials/apply.html:5
+msgid "Meditation Application Form"
+msgstr "禪修申請表"
+
+#: ../app/partials/apply.html:22 ../app/partials/apply.html:49
+#: ../app/partials/apply.html:76 ../app/partials/apply.html:103
+msgid "Yes"
+msgstr "是"
+
+#: ../app/partials/apply.html:25 ../app/partials/apply.html:52
+#: ../app/partials/apply.html:79 ../app/partials/apply.html:106
+msgid "No"
+msgstr "否"
+
+#: ../app/partials/apply.html:127
+msgid "Available Retreat"
+msgstr "所有的禪修期"
+
+#: ../app/partials/apply.html:130
+msgid "from"
+msgstr "從"
+
+#: ../app/partials/apply.html:130
+msgid "to"
+msgstr "到"
+
+#: ../app/partials/apply.html:136
+msgid "Important Rules and Regulations of Tusita Hermitage"
+msgstr "兜率天修行林的重要規則"
+
+#: ../app/partials/apply.html:238
+msgid "Sincerely"
+msgstr "真誠地"
+
+#: ../app/partials/apply.html:239 ../app/partials/userdata.html:19
+#: ../app/partials/userdata.html:113
+msgid "Name"
+msgstr "姓名"
+
+#: ../app/partials/apply.html:245
+msgid "SUBMIT"
+msgstr "提交"
+
+#: ../app/partials/apply.html:246 ../app/partials/userdata.html:146
+msgid "RESET"
+msgstr "重設"
+
+#: ../app/partials/apply.html:257
+msgid "Please wait for our review!"
+msgstr "請等待我們的審查!"
+
+#: ../app/partials/apply.html:258
+msgid "Cannot save your data! Please check your internet connection!"
+msgstr "無法儲存您的資料!請檢查您的網路連線!"
 
 #: ../app/partials/userdata.html:2
 msgid "Saving User Data..."
@@ -183,10 +247,6 @@ msgstr "基本資料"
 #: ../app/partials/userdata.html:13
 msgid "Email"
 msgstr "電子郵件"
-
-#: ../app/partials/userdata.html:19 ../app/partials/userdata.html:113
-msgid "Name"
-msgstr "姓名"
 
 #: ../app/partials/userdata.html:24
 msgid "Invalid"
@@ -271,14 +331,6 @@ msgstr "關係"
 #: ../app/partials/userdata.html:145 ../app/partials/retreat.html:52
 msgid "SAVE"
 msgstr "儲存"
-
-#: ../app/partials/userdata.html:146
-msgid "RESET"
-msgstr "重設"
-
-#: ../app/partials/manageRetreats.html:1
-msgid "Loading Retreat Data"
-msgstr "載入禪修期資料中"
 
 #: ../app/partials/manageRetreats.html:2
 msgid "Updating Retreat Data"

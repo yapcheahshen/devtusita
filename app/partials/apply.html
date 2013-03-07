@@ -1,40 +1,40 @@
-<div ng-hide="isRetreatDataReady">Loading Retreat Data...</div>
+<div ng-hide="isRetreatDataReady">{{_("Loading Retreat Data")}}...</div>
 <div ng-show="isRetreatDataReady">
 <form name="form" class="form-horizontal" ng-show="isRetreatDataReady" id="formStyle_apply">
   <fieldset id="fieldsetStyle">
-    <legend id="legendMed_apply" class="titleMed">Meditation Application Form</legend>
+    <legend id="legendMed_apply" class="titleMed">{{_("Meditation Application Form")}}</legend>
     <div class="control-group divStyle01">
-      <label class="control-label" for="afMeditationMethod">Meditation Method</label>
+      <label class="control-label" for="afMeditationMethod">{{_("Meditation Method")}}</label>
       <div class="controls divStyle03">
         <input id="afMeditationMethod" type="text" placeholder="Meditation Method" ng-model="user.medMethod"/>
       </div>
     </div>
     <div class="control-group divStyle01">
-      <label class="control-label" for="afMeditationInstructor">Meditation Instructor</label>
+      <label class="control-label" for="afMeditationInstructor">{{_("Meditation Instructor")}}</label>
       <div class="controls divStyle03">
         <input id="afMeditationInstructor" type="text" placeholder="Meditation Instructor" ng-model="user.medInstructor"/>
       </div>
     </div>
   <div class="control-group divStyle01">
-    <label class="control-label">Join Our Meditaion Before?</label>
+    <label class="control-label">{{_("Join Our Meditaion Before?")}}</label>
     <div class="controls divStyle02">
       <label class="radio inline">
-        <input type="radio" ng-model="user.joined" value="yes">Yes
+        <input type="radio" ng-model="user.joined" value="yes">{{_("Yes")}}
       </label>
       <label class="radio inline">
-        <input type="radio" ng-model="user.joined" value="no">No
+        <input type="radio" ng-model="user.joined" value="no">{{_("No")}}
       </label>
       <div ng-show="user.joined == 'yes'" class="yesStyle01">
         <div class="control-group">
-          <label class="control-label" for="afJoinedPlace">Place</label>
+          <label class="control-label" for="afJoinedPlace">{{_("Place")}}</label>
           <div class="controls divStyle03">
             <input id="afJoinedPlace" type="text" placeholder="Place" ng-model="user.joinedPlace"/>
           </div>
-          <label class="control-label" for="afJoinedDate">Date</label>
+          <label class="control-label" for="afJoinedDate">{{_("Date")}}</label>
           <div class="controls divStyle03">
             <input id="afJoinedDate" type="text" placeholder="Date" ng-model="user.joinedDate" datepicker/>
           </div>
-          <label class="control-label" for="afJoinedInstructor">Instructor</label>
+          <label class="control-label" for="afJoinedInstructor">{{_("Instructor")}}</label>
           <div class="controls divStyle03">
             <input id="afJoinedInstructor" type="text" placeholder="Instructor" ng-model="user.joinedInstructor"/>
           </div>
@@ -43,25 +43,25 @@
     </div>
   </div>
   <div class="control-group divStyle01">
-    <label class="control-label">Serious Illness?</label>
+    <label class="control-label">{{_("Serious Illness?")}}</label>
     <div class="controls divStyle02">
       <label class="radio inline">
-        <input type="radio" ng-model="user.srIll" value="yes">Yes
+        <input type="radio" ng-model="user.srIll" value="yes">{{_("Yes")}}
       </label>
       <label class="radio inline">
-        <input type="radio" ng-model="user.srIll" value="no">No
+        <input type="radio" ng-model="user.srIll" value="no">{{_("No")}}
       </label>
       <div ng-show="user.srIll == 'yes'" class="yesStyle01">
         <div class="control-group">
-          <label class="control-label" for="afSrillName">Illness Name</label>
+          <label class="control-label" for="afSrillName">{{_("Illness Name")}}</label>
           <div class="controls divStyle03">
             <input id="afSrillName" type="text" placeholder="Illness Name" ng-model="user.srIllName"/>
           </div>
-          <label class="control-label" for="afSrillPrescription">Prescription</label>
+          <label class="control-label" for="afSrillPrescription">{{_("Prescription")}}</label>
           <div class="controls divStyle03">
             <input id="afSrillPrescription" type="text" placeholder="Prescription" ng-model="user.srIllPrescription"/>
           </div>
-          <label class="control-label" for="afSrillTreatmentStatus">Treatment Status</label>
+          <label class="control-label" for="afSrillTreatmentStatus">{{_("Treatment Status")}}</label>
           <div class="controls divStyle03">
             <input id="afSrillTreatmentStatus" type="text" placeholder="Treatment Status" ng-model="user.srIllTreatment"/>
           </div>
@@ -70,25 +70,25 @@
     </div>
   </div>
   <div class="control-group divStyle01">
-    <label class="control-label">Mental Illness?</label>
+    <label class="control-label">{{_("Mental Illness?")}}</label>
     <div class="controls divStyle02">
       <label class="radio inline">
-        <input type="radio" ng-model="user.mtIll" value="yes">Yes
+        <input type="radio" ng-model="user.mtIll" value="yes">{{_("Yes")}}
       </label>
       <label class="radio inline">
-        <input type="radio" ng-model="user.mtIll" value="no">No
+        <input type="radio" ng-model="user.mtIll" value="no">{{_("No")}}
       </label>
       <div ng-show="user.mtIll == 'yes'" class="yesStyle01">
         <div class="control-group">
-          <label class="control-label" for="afMtillName">Illness Name</label>
+          <label class="control-label" for="afMtillName">{{_("Illness Name")}}</label>
           <div class="controls divStyle03">
             <input id="afMtillName" type="text" placeholder="Illness Name" ng-model="user.mtIllName"/>
           </div>
-          <label class="control-label" for="afMtillPrescription">Prescription</label>
+          <label class="control-label" for="afMtillPrescription">{{_("Prescription")}}</label>
           <div class="controls divStyle03">
             <input id="afMtillPrescription" type="text" placeholder="Prescription" ng-model="user.mtIllPrescription"/>
           </div>
-          <label class="control-label" for="afMtillTreatmentStatus">Treatment Status</label>
+          <label class="control-label" for="afMtillTreatmentStatus">{{_("Treatment Status")}}</label>
           <div class="controls divStyle03">
             <input id="afMtillTreatmentStatus" type="text" placeholder="Treatment Status" ng-model="user.mtIllTreatment"/>
           </div>
@@ -97,25 +97,25 @@
     </div>
   </div>
   <div class="control-group divStyle01">
-    <label class="control-label">In the past three yesrs, addict to alcohol, drug, or narcotic?</label>
+    <label class="control-label">{{_("In the past three yesrs, addict to alcohol, drug, or narcotic?")}}</label>
     <div class="controls divStyle02">
       <label class="radio inline">
-        <input type="radio" ng-model="user.adct" value="yes">Yes
+        <input type="radio" ng-model="user.adct" value="yes">{{_("Yes")}}
       </label>
       <label class="radio inline">
-        <input type="radio" ng-model="user.adct" value="no">No
+        <input type="radio" ng-model="user.adct" value="no">{{_("No")}}
       </label>
       <div ng-show="user.adct == 'yes'">
         <div class="control-group yesStyle01">
-          <label class="control-label" for="afAddictTime">Addiction Time</label>
+          <label class="control-label" for="afAddictTime">{{_("Addiction Time")}}</label>
           <div class="controls">
             <input id="afAddictTime" type="text" placeholder="Addiction Time" ng-model="user.adctTime" datepicker/>
           </div>
-          <label class="control-label" for="afAddictType">Addiction Type</label>
+          <label class="control-label" for="afAddictType">{{_("Addiction Type")}}</label>
           <div class="controls">
             <input id="afAddictType" type="text" placeholder="Addiction Type" ng-model="user.adctType"/>
           </div>
-          <label class="control-label" for="afAddictTreatmentStatus">Treatment Status</label>
+          <label class="control-label" for="afAddictTreatmentStatus">{{_("Treatment Status")}}</label>
           <div class="controls">
             <input id="afAddictTreatmentStatus" type="text" placeholder="Treatment Status" ng-model="user.adctTreatment"/>
           </div>
@@ -124,16 +124,16 @@
     </div>
   </div>
   <div class="control-group divStyle01">
-    <label class="control-label">Available Retreat</label>
+    <label class="control-label">{{_("Available Retreat")}}</label>
     <div class="controls divStyle02">
       <div ng-repeat="retreat in retreats">
-        <input type="radio" ng-model="user.retreat" value="{{retreat.urlsafe}}">{{retreat.place}}(from {{retreat.startDate}} to {{retreat.endDate}})
+        <input type="radio" ng-model="user.retreat" value="{{retreat.urlsafe}}">{{retreat.place}}({{_("from")}} {{retreat.startDate}} {{_("to")}} {{retreat.endDate}})
       </div>
     </div>
   </div>
 
   <div class="alert alert-info alert-block">
-    <strong>Important Rules and Regulations of Tusita Hermitage </strong>
+    <strong>{{_("Important Rules and Regulations of Tusita Hermitage")}}</strong>
     <ol style="text-align: left;">
       <li>
         <label class="checkbox">
@@ -235,15 +235,15 @@
     </ul>
   </div>
   <div id="sincerDiv">
-    <p id="sinStyle">Sincerely,</p>
-      Name: <input type="text" ng-model="user.printName" required />,
-      Date: <input type="text" ng-model="user.formSubmitDate" datepicker/>
+    <p id="sinStyle">{{_("Sincerely")}},</p>
+      {{_("Name")}}: <input type="text" ng-model="user.printName" required />,
+      {{_("Date")}}: <input type="text" ng-model="user.formSubmitDate" datepicker/>
   </div>
   </fieldset>
   <div class="control-group" id="submit">
     <div class="controls">
-      <button id="sub" class="btn btn-primary" ng-click="submit(user)" ng-disabled="form.$invalid || isUnchanged(user)">SUBMIT</button>
-      <button id="res" class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)">RESET</button>
+      <button id="sub" class="btn btn-primary" ng-click="submit(user)" ng-disabled="form.$invalid || isUnchanged(user)">{{_("SUBMIT")}}</button>
+      <button id="res" class="btn" ng-click="reset()" ng-disabled="isUnchanged(user)">{{_("RESET")}}</button>
     </div>
   </div>
 </form>
@@ -254,11 +254,11 @@
     <h3>Info</h3>
   </div>
   <div class="modal-body">
-    <div ng-hide="failToSaveUserData"><p>Please wait for our review!</p></div>
-    <div ng-show="failToSaveUserData"><p>Cannot save your data! Please check your internet connection!</p></div>
+    <div ng-hide="failToSaveUserData"><p>{{_("Please wait for our review!")}}</p></div>
+    <div ng-show="failToSaveUserData"><p>{{_("Cannot save your data! Please check your internet connection!")}}</p></div>
   </div>
   <div class="modal-footer">
-    <div ng-hide="failToSaveUserData"><a href="/" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a></div>
-    <div ng-show="failToSaveUserData"><button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button></div>
+    <div ng-hide="failToSaveUserData"><a href="/" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">{{_("Close")}}</a></div>
+    <div ng-show="failToSaveUserData"><button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">{{_("Close")}}</button></div>
   </div>
 </div>

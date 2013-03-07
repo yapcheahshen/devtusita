@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="appForm in appForms">
-        <td>{{_("Record"))} #{{ $index + 1 }}</td>
+        <td>{{_("Record")}} #{{ $index + 1 }}</td>
         <td><a name="{{ appForm.urlsafe }}" ng-click="showAppForm(appForm.urlsafe)">{{_("See")}}</a></td>
       </tr>
     </tbody>
