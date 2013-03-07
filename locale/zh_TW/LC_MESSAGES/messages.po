@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 20:30+0800\n"
+"POT-Creation-Date: 2013-03-07 20:48+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -63,6 +63,104 @@ msgstr "管理禪修期"
 #: ../app/index.html:54
 msgid "Home"
 msgstr "首頁"
+
+#: ../app/partials/record.html:1
+msgid "Loading Record"
+msgstr "載入紀錄中"
+
+#: ../app/partials/record.html:4
+msgid "Meditation Application Record"
+msgstr "禪修申請紀錄"
+
+#: ../app/partials/record.html:7
+msgid "Data"
+msgstr "資料"
+
+#: ../app/partials/record.html:8
+msgid "Action"
+msgstr "動作"
+
+#: ../app/partials/record.html:13
+msgid "Record"
+msgstr "紀錄"
+
+#: ../app/partials/record.html:14
+msgid "See"
+msgstr "觀看"
+
+#: ../app/partials/record.html:23
+msgid "Meditation Application Detail"
+msgstr "禪修申請細節"
+
+#: ../app/partials/record.html:27
+msgid "Meditation Method"
+msgstr "禪修方法"
+
+#: ../app/partials/record.html:31
+msgid "Meditation Instructor"
+msgstr "禪修導師"
+
+#: ../app/partials/record.html:35
+msgid "Join Our Meditaion Before?"
+msgstr "以前曾參加過我們的禪修?"
+
+#: ../app/partials/record.html:40 ../app/partials/retreat.html:8
+msgid "Place"
+msgstr "地點"
+
+#: ../app/partials/record.html:44
+msgid "Date"
+msgstr "日期"
+
+#: ../app/partials/record.html:48 ../app/partials/retreat.html:29
+msgid "Instructor"
+msgstr "指導禪師"
+
+#: ../app/partials/record.html:53
+msgid "Serious Illness?"
+msgstr "是否有較嚴重的疾病？"
+
+#: ../app/partials/record.html:58 ../app/partials/record.html:76
+msgid "Illness Name"
+msgstr "疾病名稱"
+
+#: ../app/partials/record.html:62 ../app/partials/record.html:80
+msgid "Prescription"
+msgstr "處方"
+
+#: ../app/partials/record.html:66 ../app/partials/record.html:84
+#: ../app/partials/record.html:102
+msgid "Treatment Status"
+msgstr "治療狀態"
+
+#: ../app/partials/record.html:71
+msgid "Mental Illness?"
+msgstr "是否有任何精神方面的疾患?"
+
+#: ../app/partials/record.html:89
+msgid "In the past three yesrs, addict to alcohol, drug, or narcotic?"
+msgstr "最近3年以來，是否有飲酒及服用毒品及任何麻醉品？"
+
+#: ../app/partials/record.html:94
+msgid "Addiction Time"
+msgstr "成癮時間"
+
+#: ../app/partials/record.html:98
+msgid "Addiction Type"
+msgstr "成癮類型"
+
+#: ../app/partials/record.html:107
+msgid "Retreat Key"
+msgstr "禪修期Key"
+
+#: ../app/partials/record.html:111
+msgid "Submit Date"
+msgstr "申請日期"
+
+#: ../app/partials/record.html:116 ../app/partials/retreat.html:68
+#: ../app/partials/retreat.html:69
+msgid "Close"
+msgstr "關閉"
 
 #: ../app/partials/userdata.html:2
 msgid "Saving User Data..."
@@ -177,18 +275,12 @@ msgid "RESET"
 msgstr "重設"
 
 #: ../app/partials/retreat.html:2
-#, fuzzy
 msgid "Saving Retreat Data"
-msgstr "儲存使用者資料中..."
+msgstr "儲存禪修期資料中..."
 
 #: ../app/partials/retreat.html:5
-#, fuzzy
 msgid "Retreat Data"
-msgstr "新增禪修期"
-
-#: ../app/partials/retreat.html:8
-msgid "Place"
-msgstr "地點"
+msgstr "禪修期日期"
 
 #: ../app/partials/retreat.html:15
 msgid "Start Date"
@@ -197,10 +289,6 @@ msgstr "開始日期"
 #: ../app/partials/retreat.html:22
 msgid "End Date"
 msgstr "結束日期"
-
-#: ../app/partials/retreat.html:29
-msgid "Instructor"
-msgstr "指導禪師"
 
 #: ../app/partials/retreat.html:36
 msgid "Receiver Email"
@@ -217,7 +305,3 @@ msgstr "成功儲存禪修期資料"
 #: ../app/partials/retreat.html:65
 msgid "Cannot save retreat data! Please check your internet connection and try again!"
 msgstr "無法儲存禪修期資料!請檢查您的網路連線後再試一次!"
-
-#: ../app/partials/retreat.html:68 ../app/partials/retreat.html:69
-msgid "Close"
-msgstr "關閉"
