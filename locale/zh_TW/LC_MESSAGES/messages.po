@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 20:48+0800\n"
+"POT-Creation-Date: 2013-03-07 21:06+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -72,11 +72,11 @@ msgstr "載入紀錄中"
 msgid "Meditation Application Record"
 msgstr "禪修申請紀錄"
 
-#: ../app/partials/record.html:7
+#: ../app/partials/record.html:7 ../app/partials/manageRetreats.html:9
 msgid "Data"
 msgstr "資料"
 
-#: ../app/partials/record.html:8
+#: ../app/partials/record.html:8 ../app/partials/manageRetreats.html:10
 msgid "Action"
 msgstr "動作"
 
@@ -104,7 +104,8 @@ msgstr "禪修導師"
 msgid "Join Our Meditaion Before?"
 msgstr "以前曾參加過我們的禪修?"
 
-#: ../app/partials/record.html:40 ../app/partials/retreat.html:8
+#: ../app/partials/record.html:40 ../app/partials/manageRetreats.html:30
+#: ../app/partials/retreat.html:8
 msgid "Place"
 msgstr "地點"
 
@@ -112,7 +113,8 @@ msgstr "地點"
 msgid "Date"
 msgstr "日期"
 
-#: ../app/partials/record.html:48 ../app/partials/retreat.html:29
+#: ../app/partials/record.html:48 ../app/partials/manageRetreats.html:42
+#: ../app/partials/retreat.html:29
 msgid "Instructor"
 msgstr "指導禪師"
 
@@ -157,8 +159,8 @@ msgstr "禪修期Key"
 msgid "Submit Date"
 msgstr "申請日期"
 
-#: ../app/partials/record.html:116 ../app/partials/retreat.html:68
-#: ../app/partials/retreat.html:69
+#: ../app/partials/record.html:116 ../app/partials/manageRetreats.html:56
+#: ../app/partials/retreat.html:68 ../app/partials/retreat.html:69
 msgid "Close"
 msgstr "關閉"
 
@@ -274,6 +276,54 @@ msgstr "儲存"
 msgid "RESET"
 msgstr "重設"
 
+#: ../app/partials/manageRetreats.html:1
+msgid "Loading Retreat Data"
+msgstr "載入禪修期資料中"
+
+#: ../app/partials/manageRetreats.html:2
+msgid "Updating Retreat Data"
+msgstr "更新禪修期資料中"
+
+#: ../app/partials/manageRetreats.html:3
+msgid "Fail to Update Retreat Data"
+msgstr "更新禪修期資料失敗"
+
+#: ../app/partials/manageRetreats.html:6
+msgid "All Retreats"
+msgstr "所有禪修期"
+
+#: ../app/partials/manageRetreats.html:15
+msgid "Retreat"
+msgstr "禪修期"
+
+#: ../app/partials/manageRetreats.html:16
+msgid "Modify"
+msgstr "修改"
+
+#: ../app/partials/manageRetreats.html:26
+msgid "Retreat Detail"
+msgstr "禪修期細節"
+
+#: ../app/partials/manageRetreats.html:34 ../app/partials/retreat.html:15
+msgid "Start Date"
+msgstr "開始日期"
+
+#: ../app/partials/manageRetreats.html:38 ../app/partials/retreat.html:22
+msgid "End Date"
+msgstr "結束日期"
+
+#: ../app/partials/manageRetreats.html:46 ../app/partials/retreat.html:36
+msgid "Receiver Email"
+msgstr "受理報名員電子郵件"
+
+#: ../app/partials/manageRetreats.html:50 ../app/partials/retreat.html:43
+msgid "Max # of Students"
+msgstr "最多禪修者人數"
+
+#: ../app/partials/manageRetreats.html:55
+msgid "Save"
+msgstr "儲存"
+
 #: ../app/partials/retreat.html:2
 msgid "Saving Retreat Data"
 msgstr "儲存禪修期資料中..."
@@ -281,22 +331,6 @@ msgstr "儲存禪修期資料中..."
 #: ../app/partials/retreat.html:5
 msgid "Retreat Data"
 msgstr "禪修期日期"
-
-#: ../app/partials/retreat.html:15
-msgid "Start Date"
-msgstr "開始日期"
-
-#: ../app/partials/retreat.html:22
-msgid "End Date"
-msgstr "結束日期"
-
-#: ../app/partials/retreat.html:36
-msgid "Receiver Email"
-msgstr "受理報名員電子郵件"
-
-#: ../app/partials/retreat.html:43
-msgid "Max # of Students"
-msgstr "最多禪修者人數"
 
 #: ../app/partials/retreat.html:64
 msgid "Save Retreat Data Successfully"
