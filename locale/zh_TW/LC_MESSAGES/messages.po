@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 21:24+0800\n"
+"POT-Creation-Date: 2013-03-07 21:39+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -202,6 +202,46 @@ msgstr "到"
 #: ../app/partials/apply.html:136
 msgid "Important Rules and Regulations of Tusita Hermitage"
 msgstr "兜率天修行林的重要規則"
+
+#: ../app/partials/apply.html:140
+msgid "The Tusita Sangha Council (Council) Chairs the Management and Administration of the Hermitages"
+msgstr "修行林是由僧伽護教團所管理。"
+
+#: ../app/partials/apply.html:145
+msgid "Sangha & Sayalay Officers serve on behalf of the Council to carry-out daily administrative duties of the Hermitages"
+msgstr "僧團執行員和十戒尼執行員代表僧伽護教團處理日常行政事務。"
+
+#: ../app/partials/apply.html:150
+msgid "Students must respectfully adhere to administrative instructions given by management"
+msgstr "學生必須恭敬地服從管理者的指示。"
+
+#: ../app/partials/apply.html:155
+msgid "The Hermitages do not allow self-practitioners; interviews with the Meditation Teacher must be attended"
+msgstr "修行林不允許自修，學生必需向禪師報告禪修。"
+
+#: ../app/partials/apply.html:160
+msgid "Students must take Dhamma instructions from only the approved Meditation Teacher"
+msgstr "學生只可以向受批准的禪師學禪。"
+
+#: ../app/partials/apply.html:165
+msgid "Students should practice with respect, sincerity, diligence, honesty, patience, perseverance and continuous mindfulness throughout their stay at the Hermitages"
+msgstr "住在修行林期間，學生必需恭敬地、真誠地、精進地、誠實地、耐心地、堅毅地、持續保持正念地修行。"
+
+#: ../app/partials/apply.html:172
+msgid "Declaration"
+msgstr "宣言"
+
+#: ../app/partials/apply.html:173
+msgid "I hereby declare that"
+msgstr "在此我宣告"
+
+#: ../app/partials/apply.html:177
+msgid "I will respect the Theravada Sangha system, Tusita Sangha Council leadership and administration of the Hermitage."
+msgstr "我會尊敬上座部僧團系統、兜率天僧伽護教團對於修行林的領導與管理。"
+
+#: ../app/partials/apply.html:182
+msgid "I will observe the No-Money rules strictly here during my stay and from now onwards (please relinquish all forms of money as well as all requisites not obtained according to Vinaya before entering the Hermitages)."
+msgstr "我會在此及從此遵守不持金錢戒。（請在進來修行林之前舍掉所有形式的金錢，以及一切不依戒得來的物品。）"
 
 #: ../app/partials/apply.html:238
 msgid "Sincerely"
