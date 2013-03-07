@@ -1,46 +1,46 @@
 <div id="divTop">
-  <div ng-show="savingRetreatData" style="color: red;">Saving Retreat Data...</div>
+  <div ng-show="savingRetreatData" style="color: red;">{{_("Saving Retreat Data")}}...</div>
   <form name="form" class="form-horizontal" id="formStyle">
     <fieldset id="basicData">
-      <legend class="title" id="titleBasic">Retreat Data</legend>
+      <legend class="title" id="titleBasic">{{_("Retreat Data")}}</legend>
 
       <div class="control-group">
-        <label class="control-label" for="retreatPlace">Place</label>
+        <label class="control-label" for="retreatPlace">{{_("Place")}}</label>
         <div class="controls itemDiv">
           <input id="retreatPlace" type="text" placeholder="Place" ng-model="retreat.place"/>
         </div>
       </div>
 
       <div class="control-group">
-        <label class="control-label" for="retreatStartDate">Start Date</label>
+        <label class="control-label" for="retreatStartDate">{{_("Start Date")}}</label>
         <div class="controls itemDiv">
           <input id="retreatStartDate" type="text" placeholder="Start Date" ng-model="retreat.startDate" datepicker/>
         </div>
       </div>
 
       <div class="control-group">
-        <label class="control-label" for="retreatEndDate">End Date</label>
+        <label class="control-label" for="retreatEndDate">{{_("End Date")}}</label>
         <div class="controls itemDiv">
           <input id="retreatEndDate" type="text" placeholder="End Date" ng-model="retreat.endDate" datepicker/>
         </div>
       </div>
 
       <div class="control-group">
-        <label class="control-label" for="retreatInstructor">Instructor</label>
+        <label class="control-label" for="retreatInstructor">{{_("Instructor")}}</label>
         <div class="controls itemDiv">
           <input id="retreatInstructor" type="text" placeholder="Instructor" ng-model="retreat.instructor"/>
         </div>
       </div>
 
       <div class="control-group">
-        <label class="control-label" for="retreatReceiver">Receiver Email</label>
+        <label class="control-label" for="retreatReceiver">{{_("Receiver Email")}}</label>
         <div class="controls itemDiv">
           <input id="retreatReceiver" type="text" placeholder="Receiver Email" ng-model="retreat.receiverEmail"/>
         </div>
       </div>
 
       <div class="control-group">
-        <label class="control-label" for="retreatMax">Max # of Students</label>
+        <label class="control-label" for="retreatMax">{{_("Max # of Students")}}</label>
         <div class="controls itemDiv">
           <input id="retreatMax" type="text" placeholder="Maximum Number of Students" ng-model="retreat.max"/>
         </div>
@@ -49,7 +49,7 @@
     </fieldset>
     <div class="control-group">
       <div class="controls itemDiv">
-        <button id="save" class="btn btn-primary" ng-click="submit(retreat)" ng-disabled="form.$invalid || isUnchanged(retreat)">SAVE</button>
+        <button id="save" class="btn btn-primary" ng-click="submit(retreat)" ng-disabled="form.$invalid || isUnchanged(retreat)">{{_("SAVE")}}</button>
       </div>
     </div>
   </form>
@@ -61,11 +61,11 @@
     <h3>Info</h3>
   </div>
   <div class="modal-body">
-    <div ng-hide="failToSaveRetreatData"><p>Save Retreat Data Successfully!</p></div>
-    <div ng-show="failToSaveRetreatData"><p>Cannot save retreat data! Please check your internet connection and try again!</p></div>
+    <div ng-hide="failToSaveRetreatData"><p>{{_("Save Retreat Data Successfully")}}!</p></div>
+    <div ng-show="failToSaveRetreatData"><p>{{_("Cannot save retreat data! Please check your internet connection and try again!")}}</p></div>
   </div>
   <div class="modal-footer">
-    <div ng-hide="failToSaveRetreatData"><a href="/" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a></div>
-    <div ng-show="failToSaveRetreatData"><button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button></div>
+    <div ng-hide="failToSaveRetreatData"><a href="/" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">{{_("Close")}}</a></div>
+    <div ng-show="failToSaveRetreatData"><button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">{{_("Close")}}</button></div>
   </div>
 </div>

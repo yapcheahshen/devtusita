@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-02 22:54+0800\n"
+"POT-Creation-Date: 2013-03-07 20:30+0800\n"
 "PO-Revision-Date: 2013-02-25 23:51+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,167 +16,208 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: pytools/../app/index.html:21 pytools/../app/index.html:28
-#: pytools/../app/partials/userdata.html:5
+#: ../app/index.html:21 ../app/index.html:28 ../app/partials/userdata.html:5
 msgid "Hello"
 msgstr "哈囉"
 
-#: pytools/../app/index.html:23 pytools/../app/index.html:30
+#: ../app/index.html:23 ../app/index.html:30
 msgid "Sign Out"
 msgstr "登出"
 
-#: pytools/../app/index.html:35
+#: ../app/index.html:35
 msgid "Sign In or Register"
 msgstr "登入或註冊"
 
-#: pytools/../app/index.html:38
+#: ../app/index.html:38
 msgid "Personal Page of Tusita Hermitage"
 msgstr "兜率天修行林個人網頁"
 
-#: pytools/../app/index.html:42
+#: ../app/index.html:42
 msgid "Tusita"
 msgstr "兜率天"
 
-#: pytools/../app/index.html:44
+#: ../app/index.html:44
 msgid "Friends of the Tusita"
 msgstr "兜率天之友"
 
-#: pytools/../app/index.html:47
+#: ../app/index.html:47
 msgid "Update My Data"
 msgstr "更新我的資料"
 
-#: pytools/../app/index.html:48
+#: ../app/index.html:48
 msgid "Meditation Application"
 msgstr "禪修申請"
 
-#: pytools/../app/index.html:49
+#: ../app/index.html:49
 msgid "Meditation Record"
 msgstr "禪修申請紀錄"
 
-#: pytools/../app/index.html:51
+#: ../app/index.html:51
 msgid "Add Retreat"
 msgstr "新增禪修期"
 
-#: pytools/../app/index.html:52
+#: ../app/index.html:52
 msgid "Manage Retreats"
 msgstr "管理禪修期"
 
-#: pytools/../app/index.html:54
+#: ../app/index.html:54
 msgid "Home"
 msgstr "首頁"
 
-#: pytools/../app/partials/userdata.html:2
+#: ../app/partials/userdata.html:2
 msgid "Saving User Data..."
 msgstr "儲存使用者資料中..."
 
-#: pytools/../app/partials/userdata.html:3
+#: ../app/partials/userdata.html:3
 msgid "Sorry. Fail to save your data. Please check your internet connection and try again."
 msgstr "抱歉. 儲存您的資料失敗. 請檢查您的網路連線後再試一次."
 
-#: pytools/../app/partials/userdata.html:7
+#: ../app/partials/userdata.html:7
 msgid "Please fill in the following basic data."
 msgstr "請填寫下列基本資料"
 
-#: pytools/../app/partials/userdata.html:11
+#: ../app/partials/userdata.html:11
 msgid "Basic Data"
 msgstr "基本資料"
 
-#: pytools/../app/partials/userdata.html:13
+#: ../app/partials/userdata.html:13
 msgid "Email"
 msgstr "電子郵件"
 
-#: pytools/../app/partials/userdata.html:19
-#: pytools/../app/partials/userdata.html:113
+#: ../app/partials/userdata.html:19 ../app/partials/userdata.html:113
 msgid "Name"
 msgstr "姓名"
 
-#: pytools/../app/partials/userdata.html:24
+#: ../app/partials/userdata.html:24
 msgid "Invalid"
 msgstr "無效"
 
-#: pytools/../app/partials/userdata.html:25
+#: ../app/partials/userdata.html:25
 msgid "Please tell us your name."
 msgstr "請告訴我們您的姓名."
 
-#: pytools/../app/partials/userdata.html:30
+#: ../app/partials/userdata.html:30
 msgid "Birthday"
 msgstr "生日"
 
-#: pytools/../app/partials/userdata.html:36
+#: ../app/partials/userdata.html:36
 msgid "Citizenship"
 msgstr "國籍"
 
-#: pytools/../app/partials/userdata.html:42
+#: ../app/partials/userdata.html:42
 msgid "ID Number"
 msgstr "身份證號碼"
 
-#: pytools/../app/partials/userdata.html:48
+#: ../app/partials/userdata.html:48
 msgid "Gender"
 msgstr "性別"
 
-#: pytools/../app/partials/userdata.html:51
+#: ../app/partials/userdata.html:51
 msgid "Male"
 msgstr "男性"
 
-#: pytools/../app/partials/userdata.html:54
+#: ../app/partials/userdata.html:54
 msgid "Female"
 msgstr "女性"
 
-#: pytools/../app/partials/userdata.html:59
-#: pytools/../app/partials/userdata.html:125
+#: ../app/partials/userdata.html:59 ../app/partials/userdata.html:125
 msgid "Landline"
 msgstr "電話號碼"
 
-#: pytools/../app/partials/userdata.html:65
-#: pytools/../app/partials/userdata.html:131
+#: ../app/partials/userdata.html:65 ../app/partials/userdata.html:131
 msgid "Cellphone"
 msgstr "手機號碼"
 
-#: pytools/../app/partials/userdata.html:71
-#: pytools/../app/partials/userdata.html:137
+#: ../app/partials/userdata.html:71 ../app/partials/userdata.html:137
 msgid "Address"
 msgstr "地址"
 
-#: pytools/../app/partials/userdata.html:77
+#: ../app/partials/userdata.html:77
 msgid "Dhamma Name"
 msgstr "法名"
 
-#: pytools/../app/partials/userdata.html:83
+#: ../app/partials/userdata.html:83
 msgid "Current Status"
 msgstr "目前身份"
 
-#: pytools/../app/partials/userdata.html:86
+#: ../app/partials/userdata.html:86
 msgid "Ordained"
 msgstr "出家"
 
-#: pytools/../app/partials/userdata.html:89
+#: ../app/partials/userdata.html:89
 msgid "Laity"
 msgstr "在家"
 
-#: pytools/../app/partials/userdata.html:93
+#: ../app/partials/userdata.html:93
 msgid "Preceptor Name"
 msgstr "戒師姓名"
 
-#: pytools/../app/partials/userdata.html:97
+#: ../app/partials/userdata.html:97
 msgid "Ordination Date"
 msgstr "出家日期"
 
-#: pytools/../app/partials/userdata.html:101
+#: ../app/partials/userdata.html:101
 msgid "Ordination Place"
 msgstr "出家地點"
 
-#: pytools/../app/partials/userdata.html:111
+#: ../app/partials/userdata.html:111
 msgid "Emergency Contact"
 msgstr "緊急聯絡人"
 
-#: pytools/../app/partials/userdata.html:119
+#: ../app/partials/userdata.html:119
 msgid "Relationship"
 msgstr "關係"
 
-#: pytools/../app/partials/userdata.html:145
+#: ../app/partials/userdata.html:145 ../app/partials/retreat.html:52
 msgid "SAVE"
 msgstr "儲存"
 
-#: pytools/../app/partials/userdata.html:146
+#: ../app/partials/userdata.html:146
 msgid "RESET"
 msgstr "重設"
+
+#: ../app/partials/retreat.html:2
+#, fuzzy
+msgid "Saving Retreat Data"
+msgstr "儲存使用者資料中..."
+
+#: ../app/partials/retreat.html:5
+#, fuzzy
+msgid "Retreat Data"
+msgstr "新增禪修期"
+
+#: ../app/partials/retreat.html:8
+msgid "Place"
+msgstr "地點"
+
+#: ../app/partials/retreat.html:15
+msgid "Start Date"
+msgstr "開始日期"
+
+#: ../app/partials/retreat.html:22
+msgid "End Date"
+msgstr "結束日期"
+
+#: ../app/partials/retreat.html:29
+msgid "Instructor"
+msgstr "指導禪師"
+
+#: ../app/partials/retreat.html:36
+msgid "Receiver Email"
+msgstr "受理報名員電子郵件"
+
+#: ../app/partials/retreat.html:43
+msgid "Max # of Students"
+msgstr "最多禪修者人數"
+
+#: ../app/partials/retreat.html:64
+msgid "Save Retreat Data Successfully"
+msgstr "成功儲存禪修期資料"
+
+#: ../app/partials/retreat.html:65
+msgid "Cannot save retreat data! Please check your internet connection and try again!"
+msgstr "無法儲存禪修期資料!請檢查您的網路連線後再試一次!"
+
+#: ../app/partials/retreat.html:68 ../app/partials/retreat.html:69
+msgid "Close"
+msgstr "關閉"
