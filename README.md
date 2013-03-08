@@ -7,7 +7,7 @@ The website is powered by [Google App Engine](https://developers.google.com/appe
 
 <i>REPO_DIR</i> below means the directory where you git clone this repository. <i>GAE_PYSDK_DIR</i> means the directory of [Google App Engine Python SDK](https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python).
 
-Download JavaScript library ([1](http://tongwen.openfoundry.org/src/web/tongwen_core.js), [2](http://tongwen.openfoundry.org/src/web/tongwen_table_s2t.js), [3](http://tongwen.openfoundry.org/src/web/tongwen_table_t2s.js), [4](http://tongwen.openfoundry.org/src/web/tongwen_table_ps2t.js), [5](http://tongwen.openfoundry.org/src/web/tongwen_table_pt2s.js)) for conversion between Traditional and Simplified Chinese from [New Tong Wen Tang](http://tongwen.openfoundry.org/). Put under <i>REPO_DIR/app/js/ext/</i>.
+1. Download JavaScript library ([1](http://tongwen.openfoundry.org/src/web/tongwen_core.js), [2](http://tongwen.openfoundry.org/src/web/tongwen_table_s2t.js), [3](http://tongwen.openfoundry.org/src/web/tongwen_table_t2s.js), [4](http://tongwen.openfoundry.org/src/web/tongwen_table_ps2t.js), [5](http://tongwen.openfoundry.org/src/web/tongwen_table_pt2s.js)) for conversion between Traditional and Simplified Chinese from [New Tong Wen Tang](http://tongwen.openfoundry.org/). Put under <i>REPO_DIR/app/js/ext/</i>.
 ```bash
     mkdir -p REPO_DIR/app/js/ext/
     cd REPO_DIR/app/js/ext/
@@ -16,6 +16,17 @@ Download JavaScript library ([1](http://tongwen.openfoundry.org/src/web/tongwen_
     wget http://tongwen.openfoundry.org/src/web/tongwen_table_t2s.js
     wget http://tongwen.openfoundry.org/src/web/tongwen_table_ps2t.js
     wget http://tongwen.openfoundry.org/src/web/tongwen_table_pt2s.js
+```
+
+2. Create i18n files for production use:
+```bash
+    cd REPO_DIR/pytools/
+    # create i18n files
+    python i18nUtils.py pot
+    python i18nUtils.py po
+
+    # create JavaScript file ( REPO_DIR/app/js/locales.js ) of translated strings for client side
+    python i18nUtils.py js
 ```
 
 Development 
