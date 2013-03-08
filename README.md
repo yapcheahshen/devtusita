@@ -3,6 +3,21 @@ Source Code for Personal Page of Tusita Hermitage
 
 The website is powered by [Google App Engine](https://developers.google.com/appengine/), [AngularJS](http://angularjs.org/), [Bootstrap](http://twitter.github.com/bootstrap/), and [Glyphicons Halflings](http://glyphicons.com/).
 
+## Setup of Development Environment
+
+<i>REPO_DIR</i> below means the directory where you git clone this repository. <i>GAE_PYSDK_DIR</i> means the directory of [Google App Engine Python SDK](https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python).
+
+1. Download JavaScript library ([1](http://tongwen.openfoundry.org/src/web/tongwen_core.js), [2](http://tongwen.openfoundry.org/src/web/tongwen_table_s2t.js), [3](http://tongwen.openfoundry.org/src/web/tongwen_table_t2s.js), [4](http://tongwen.openfoundry.org/src/web/tongwen_table_ps2t.js), [5](http://tongwen.openfoundry.org/src/web/tongwen_table_pt2s.js)) for conversion between Traditional and Simplified Chinese from [New Tong Wen Tang](http://tongwen.openfoundry.org/). Put under <i>REPO_DIR/app/js/ext/</i>.
+```bash
+    mkdir -p REPO_DIR/app/js/ext/
+    cd REPO_DIR/app/js/ext/
+    wget http://tongwen.openfoundry.org/src/web/tongwen_core.js
+    wget http://tongwen.openfoundry.org/src/web/tongwen_table_s2t.js
+    wget http://tongwen.openfoundry.org/src/web/tongwen_table_t2s.js
+    wget http://tongwen.openfoundry.org/src/web/tongwen_table_ps2t.js
+    wget http://tongwen.openfoundry.org/src/web/tongwen_table_pt2s.js
+```
+
 Development 
 ---------
 
