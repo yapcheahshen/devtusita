@@ -48,70 +48,56 @@ class RESTfulHandler(webapp2.RequestHandler):
   def isLegalUser(self, email):
     user = users.get_current_user()
     if not user:
-      return False
+      self.abort(404)
     if email != user.email():
-      return False
-    return True
+      self.abort(404)
 
   def isAdmin(self, email):
-    if users.is_current_user_admin():
-      return True
-    return False
+    if not users.is_current_user_admin():
+      self.abort(404)
 
   def checkData(self, data):
     if (data):
       self.response.out.write(data)
     else:
-      self.error(404)
+      self.abort(404)
 
   def get(self, email):
-    if not self.isLegalUser(email):
-      self.error(404)
+    self.isLegalUser(email)
+    if self.request.url.endswith('apply'):
+      self.checkData(mafRead(email))
+    elif self.request.url.endswith('retreat'):
+      self.checkData(retreatRead(email))
     else:
-      if self.request.url.endswith('apply'):
-        self.checkData(mafRead(email))
-      elif self.request.url.endswith('retreat'):
-        self.checkData(retreatRead(email))
-      else:
-        self.checkData(read(email))
+      self.checkData(read(email))
 
   def post(self, email):
-    if not self.isLegalUser(email):
-      self.error(404)
+    self.isLegalUser(email)
+    if self.request.url.endswith('apply'):
+      self.checkData(mafCreate(email, self.request.body))
+    elif self.request.url.endswith('retreat'):
+      self.isAdmin(email)
+      self.checkData(retreatCreate(self.request.body))
     else:
-      if self.request.url.endswith('apply'):
-        self.checkData(mafCreate(email, self.request.body))
-      elif self.request.url.endswith('retreat'):
-        if self.isAdmin(email):
-          self.checkData(retreatCreate(self.request.body))
-        else:
-          self.error(404)
-      else:
-        self.checkData(create(email, self.request.body))
+      self.checkData(create(email, self.request.body))
 
   def put(self, email):
-    if not self.isLegalUser(email):
-      self.error(404)
+    self.isLegalUser(email)
+    if self.request.url.endswith(email):
+      self.checkData(update(email, self.request.body))
+    elif self.request.url.endswith('retreat'):
+      self.isAdmin(email)
+      self.checkData(retreatUpdate(self.request.body))
     else:
-      if self.request.url.endswith(email):
-        self.checkData(update(email, self.request.body))
-      elif self.request.url.endswith('retreat'):
-        if self.isAdmin(email):
-          self.checkData(retreatUpdate(self.request.body))
-        else:
-          self.error(404)
-      else:
-        self.error(404)
+      self.abort(404)
 
 
   def delete(self, email):
-    if not self.isLegalUser(email):
-      self.error(404)
+    self.isLegalUser(email)
+    if self.request.url.endswith(email):
+      self.checkData(delete(email))
     else:
-      if self.request.url.endswith(email):
-        self.checkData(delete(email))
-      else:
-        self.error(404)
+      self.abort(404)
 
 
 class RedirectPage(webapp2.RequestHandler):
