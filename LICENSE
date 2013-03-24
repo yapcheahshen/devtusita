@@ -1,0 +1,11 @@
+<a href="http://tongwen.openfoundry.org/">新同文堂(New Tong Wen Tang)</a>
+description:
+  中文網頁繁簡轉換(webpage translation between traditional and simplified chinese)
+files:
+  app/js/ext/tongwen_core.js
+  app/js/ext/tongwen_table_ps2t.js
+  app/js/ext/tongwen_table_pt2s.js
+  app/js/ext/tongwen_table_s2t.js
+  app/js/ext/tongwen_table_t2s.js
+LICENSE:
+  <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU GPL v2</a>

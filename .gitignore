@@ -1,3 +1,2 @@
 *.pyc
-app/js/ext/
 locale/messages.pot
