@@ -6,13 +6,10 @@ The website is powered by [Google App Engine](https://developers.google.com/appe
 ## 系統設計
 
 登入前:
-
 僅看得到Welcome及News.
 
 登入後(僅限Google帳號登入):
-
 瀏覽器從伺服器讀取該帳號基本資料(註1),若:
-
   * 1) 讀不到的到基本資料(第一次登入):強制導到填寫基本資料畫面,若不填寫則無法進入其他畫面,填寫後瀏覽器會把基本資料存到伺服器(註2)
   * 2) 讀得到的到基本資料:系統管理者會看到六個頁面,登入使用者則會看到四個頁面:
     * (一)更新我的資料(登入使用者皆可看到): 在此可修改基本資料,修改後瀏覽器會把修改的資料存到伺服器.(註3)
@@ -26,7 +23,7 @@ The website is powered by [Google App Engine](https://developers.google.com/appe
 
 附註:
 
-註1:透過RESTful api(網址: <strong>/RESTful/{{email}}</strong>, 舉例來說,若使用者登入時的email是<em>example@gmail.com</em>, 則為<strong>/RESTful/example@gmail.com</strong>)讀取基本資料(讀取Person model)
+註1:透過RESTful api(網址: <strong>/RESTful/{{email}}</strong>, 舉例來說,若使用者登入時的email是<em>example@gmail.com</em>, 則為<strong>/RESTful/example@gmail.com</strong>)讀取基本資料(讀取<em>Person</em> model)
 
 註2:資料打包成json透過RESTful api ( 網址: <strong>/RESTful/{{email}}</strong> ) 傳到server存起來.(存到<em>Person</em> model)
 
