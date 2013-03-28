@@ -6,23 +6,36 @@ The website is powered by [Google App Engine](https://developers.google.com/appe
 ## 系統設計
 
 登入前:
-僅看得到News及Welcome.
+僅看得到Welcome及News.
 
-登入後:
-透過RESTful api(網址: /RESTful/{{email}}, 舉例來說,若使用者登入時的email是example@gmail.com, 則為/RESTful/example@gmail.com)讀取基本資料:
-
-1)若讀不到的到基本資料(第一次登入):強制導到填寫基本資料畫面,若不填寫則無法進入其他畫面,填寫後將資料打包成json透過RESTful api ( 網址: /RESTful/{{email}} ) 傳到server存起來.(存到Person model)
-
-2)若讀得到的到基本資料:系統管理者會看到六個頁面,登入使用者則會看到四個頁面:
- (1)更新我的資料(登入使用者皆可看到): 更改後將資料打包成json透過RESTful api( 網址: /RESTful/{{email}} )傳到server存起來.(存到Person model)
- (2)禪修申請(登入使用者皆可看到): 程式會先透過RESTful api( 網址: /RESTful/{{email}}/retreat )讀取所有的禪修期,並顯示在申請表單上給申請者選擇,申請者填寫送出後將資料打包成json透過RESTful api( 網址: /RESTful/{{email}}/apply )傳到server存起來(存到MedAppForm model), server會同時更新Person model,將此MedAppForm model entity的key附加在該使用者Person model entity的activeMedAppForm欄位.
- (3)禪修申請記錄(登入使用者皆可看到): 透過RESTful api( 網址: /RESTful/{{email}}/apply )讀取該使用者的所有申請資料.
- (4)新增禪修期(僅系統管理者可看到): 填寫送出後,資料打包成json透過RESTful api( 網址: /RESTful/{{email}}/retreat )傳到server存起來.(存到Retreat model)
- (5)管理禪修期(僅系統管理者可看到): 透過RESTful api( 網址: /RESTful/{{email}}/retreat )讀取所有禪修期資料,系統管理者修改其中一個禪修期後,在透過同一個api存起來.
- (6)首頁(登入使用者皆可看到): 顯示News及Welcome
+登入後(僅限Google帳號登入):
+瀏覽器從伺服器讀取該帳號基本資料(註1),若:
+1) 讀不到的到基本資料(第一次登入):強制導到填寫基本資料畫面,若不填寫則無法進入其他畫面,填寫後瀏覽器會把基本資料存到伺服器(註2)
+2) 讀得到的到基本資料:系統管理者會看到六個頁面,登入使用者則會看到四個頁面:
+  (一)更新我的資料(登入使用者皆可看到): 在此可修改基本資料,修改後瀏覽器會把修改的資料存到伺服器.(註3)
+  (二)禪修申請(登入使用者皆可看到): 點選此頁面,瀏覽器會從伺服器讀取目前所有的禪修期,顯示在申請表上給使用者選擇,等使用者填好後,把使用者申請資料存到伺服器(註4)
+  (三)禪修申請記錄(登入使用者皆可看到): 顯示使用者所有的禪修申請紀錄(註5)
+  (四)新增禪修期(僅系統管理者可看到): 系統管理員可新增禪修期讓使用者在禪修申請頁面選擇.(註6)
+  (五)管理禪修期(僅系統管理者可看到): 瀏覽器會從伺服器讀取所有的禪修期並顯示出來,系統管理員可選擇其中一個禪修期並修改之,修改後會把此修改存回伺服器.(註7)
+  (六)首頁(登入使用者皆可看到): 顯示Welcome及News.
 
 為了簡化開發及維護,禪師必須加為系統管理者才可新增及管理禪修期.
 
+附註:
+
+註1:透過RESTful api(網址: /RESTful/{{email}}, 舉例來說,若使用者登入時的email是example@gmail.com, 則為/RESTful/example@gmail.com)讀取基本資料(讀取Person model)
+
+註2:資料打包成json透過RESTful api ( 網址: /RESTful/{{email}} ) 傳到server存起來.(存到Person model)
+
+註3:資料打包成json透過RESTful api ( 網址: /RESTful/{{email}} ) 傳到server存起來.(存到Person model)
+
+註4:瀏覽器會先透過RESTful api( 網址: /RESTful/{{email}}/retreat )讀取所有的禪修期(讀取Retreat model),並顯示在申請表單上給申請者選擇,申請者填寫送出後將資料打包成json透過RESTful api( 網址: /RESTful/{{email}}/apply )傳到server存起來(存到MedAppForm model), server會同時更新Person model,將此MedAppForm model entity的key附加在該使用者Person model entity的activeMedAppForm欄位.
+
+註5:透過RESTful api( 網址: /RESTful/{{email}}/apply )讀取該使用者的所有申請資料,(讀取MedAppForm model)
+
+註6:填寫送出後,資料打包成json透過RESTful api( 網址: /RESTful/{{email}}/retreat )傳到server存起來.(存到Retreat model)
+
+註7:透過RESTful api( 網址: /RESTful/{{email}}/retreat )讀取所有禪修期資料(讀取Retreat model),系統管理者修改其中一個禪修期後,再透過同一個api存起來.
 
 ## Setup of Development Environment
 
